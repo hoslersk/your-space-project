@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+veronica = User.create(username: "vronnieli", first_name: "Veronica", last_name: "Li", email: "vronnieli@gmail.com", password: "password")
+
+silvana = User.create(username: "silvanagv", first_name: "Silvana", last_name: "G", email: "silvanagv@gmail.com", password: "password")
+
+plaza = Venue.create(host_id: 1, name: "The Plaza", address: "Central Plaza, New York, NY 10000", description: "fancy")
+
+listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: "09:00:00", available_end_time: "23:00:00")
