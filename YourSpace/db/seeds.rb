@@ -12,4 +12,8 @@ silvana = User.create(username: "silvanagv", first_name: "Silvana", last_name: "
 
 plaza = Venue.create(host_id: 1, name: "The Plaza", address: "Central Plaza, New York, NY 10000", description: "fancy")
 
-listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: "09:00:00", available_end_time: "23:00:00")
+listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
+
+res = Reservation.create(listing_id: 1, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, confirmed?: true)
+
+ven = Venue.create(name: "The Crib", host_id: 1, address: "2011 w street", description: "The best place ever")
