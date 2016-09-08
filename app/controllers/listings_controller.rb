@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-
+  before_action :authorize, only: [:show, :index]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def show
