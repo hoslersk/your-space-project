@@ -1,0 +1,33 @@
+<h1>Modify your reservation</h1>
+
+<%= form_for @reservation do |f| %>
+<p>
+  note: ideally new reservation form should sit on listing page (pass listing_id hidden field instead)
+</p>
+
+<%= f.hidden_field :listing_id, value: @reservation.listing_id %>
+<br>
+<p>
+  note: renter_id from session id (also hidden field)
+</p>
+<%= f.hidden_field :renter_id, value: @reservation.renter_id %>
+<br>
+<%= f.label :start_date %>
+<%= f.date_select :start_date %>
+<br>
+<%= f.label :end_date %>
+<%= f.date_select :end_date %>
+<br>
+<%= f.label :start_time %>
+<%= f.time_select :start_time, {ampm: true, minute_step: 15} %>
+<br>
+
+<%= f.label :end_time %>
+<%= f.time_select :end_time, {ampm: true, minute_step: 15} %>
+<br>
+<%= f.hidden_field :confirmed?, value: false %>
+<%= f.submit %>
+
+
+<% end %>
+<%= link_to "Cancel reservation", reservation_path(@reservation), method: "delete" %>

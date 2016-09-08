@@ -1,0 +1,14 @@
+<h1> <%= @venue.name %></h1>
+<ul>
+  <li> Address: <%=  @venue.address%></li>
+  <li> Description: <%=  @venue.description%></li>
+  <li> Contact: <%=  @venue.host.first_name %> <%=@venue.host.last_name%>, <%=@venue.host.email%>  </li>
+</ul>
+
+<br>
+
+<%= link_to "Edit your venue", edit_venue_path(@venue) %>
+<%= link_to "Delete your venue", venue_path(@venue), method: :delete%>
+<!-- Show all listings for this venue here <br> <br>
+
+Show reservation info (book button) -->
