@@ -1,5 +1,0 @@
-
-<h1> Insert Name Here's Reservations </h1>
-<% @reservations.each do |reservation| %>
- <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
- <% end %>
