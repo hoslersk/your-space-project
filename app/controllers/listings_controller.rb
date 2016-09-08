@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+
   def show
     @listing = Listing.find(params[:id])
   end
@@ -13,7 +15,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(safe_params)
+    @listing = Listing.create(listing_params)
     redirect_to listing_path(@listing)
   end
 
@@ -24,7 +26,7 @@ class ListingsController < ApplicationController
   def update
     #byebug
     @listing = Listing.find(params[:id])
-    @listing.update(safe_params)
+    @listing.update(listing_params)
     redirect_to listing_path(@listing)
   end
 
@@ -36,7 +38,11 @@ class ListingsController < ApplicationController
 
   private
 
-  def safe_params
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  def listing_params
     params.require(:listing).permit(:venue_id, :available_start_date, :available_end_date, :available_start_time, :available_end_time)
   end
 
