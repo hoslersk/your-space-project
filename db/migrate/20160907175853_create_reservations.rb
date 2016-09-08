@@ -7,7 +7,7 @@ class CreateReservations < ActiveRecord::Migration[5.0]
       t.date :end_date
       t.time :start_time
       t.time :end_time
-      t.boolean :confirmed?
+      t.boolean :confirmed?, default: false
 
       t.timestamps
     end

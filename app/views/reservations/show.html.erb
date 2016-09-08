@@ -4,3 +4,6 @@
 
 
 <h3> The end date is: <%= @reservation.end_date.strftime('%a %b %d %Y') %>, at <%= @reservation.end_time.strftime('%I:%M %p') %> </h3>
+
+<%= link_to "Modify Reservation", edit_reservation_path(@reservation) %>
+<%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
