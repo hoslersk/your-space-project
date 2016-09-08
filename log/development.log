@@ -995,3 +995,103 @@ Completed 200 OK in 638ms (Views: 621.6ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 415ms (Views: 411.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/1" for ::1 at 2016-09-08 11:54:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 64ms (Views: 26.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-09-08 11:54:07 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-09-08 11:54:41 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-09-08 11:54:46 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mq6Uo1poJ79pAEKjBdnUWCr8p2t8ERbU+N/EJJectmkvTJ4KNSL3kkgtRhBZo/Jo9Hjgu2gakQhUOQQa/wCxWg==", "user"=>{"username"=>"vronnieli", "first_name"=>"Veronica", "last_name"=>"Li", "email"=>"vronnieli@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$B3xnL.hJcafWuYbKH71AXe4ZfWeCHvlhTIHuAI1syV1Eh96YDHnxG"], ["updated_at", 2016-09-08 15:54:46 UTC], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 73ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-08 11:54:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-09-08 11:55:01 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-08 11:55:29 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-08 11:55:45 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vc/KeQwVajk1DSk3Dd3fYTkMcfcLMH1rYygQxhTYjrKgLcDQY1+6FBQgLYRRp/lR54g2Jx87+rfPztD4fESJgQ==", "user"=>{"username"=>"hoslersk", "first_name"=>"Schyler", "last_name"=>"Hosler", "email"=>"schylerhosler@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "hoslersk"], ["first_name", "Schyler"], ["last_name", "Hosler"], ["email", "schylerhosler@gmail.com"], ["password_digest", "$2a$10$oRPOAJSF9eUkbrTuuM/GluIHLEDC7Hy1/B3gQWpg.9sDTHCeES81G"], ["created_at", 2016-09-08 15:55:45 UTC], ["updated_at", 2016-09-08 15:55:45 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 71ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/3" for ::1 at 2016-09-08 11:55:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/3" for ::1 at 2016-09-08 11:55:49 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"784P2MR6Of6KeVNgVxQG9rxeK1/Ou0qLb9rcBgMCSE/yLAVxqzDp06tUV9MLbiDGYtpsj9qwzVfDPBw4a55PfA==", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-08 11:55:49 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
