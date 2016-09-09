@@ -1,7 +1,13 @@
+<h2>Welcome back!</h2>
+
 <%= form_tag action='/sessions' do %>
-  <%= label_tag :name %>
-  <%= text_field_tag 'user[name]' %>
-  <%= label_tag :password %>
-  <%= password_field_tag 'user[password]' %>
-  <%= submit_tag 'Sign In' %>
+
+<p><%= label_tag :name %>
+<%= text_field_tag 'user[name]' %></p>
+
+<p><%= label_tag :password %>
+<%= password_field_tag 'user[password]' %></p>
+
+<p><%= submit_tag 'Sign In' %></p>
+
 <% end %>

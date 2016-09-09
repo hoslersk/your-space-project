@@ -1,9 +1,9 @@
-<ul>
-  <li>Username: <%= @user.username %></li>
-  <li>First name: <%= @user.first_name %></li>
-  <li>Last name: <%= @user.last_name %></li>
-  <li>Email: <%= @user.email %></li>
-</ul>
+<h2>User Profile</h2>
+
+<p><strong>Username: </strong><%= @user.username %></p>
+<p><strong>First name: </strong><%= @user.first_name %></p>
+<p><strong>Last name: </strong><%= @user.last_name %></p>
+<p><strong>Email: </strong><%= @user.email %></p>
 
 <%= link_to "Edit User", edit_user_path(@user) %>
 <%= link_to "Delete User", user_path(@user), method: :delete %>
