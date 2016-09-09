@@ -14,10 +14,10 @@ plaza = Venue.create(host_id: 1, name: "The Plaza", address: "Central Plaza, New
 
 listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
 
-res = Reservation.create(listing_id: 1, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, comment: "Can I bring my dog?", confirmed?: true)
+res = Reservation.create(listing_id: 1, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, comment: "Can I bring my dog?", confirmed: true)
 
 ven = Venue.create(name: "The Crib", host_id: 1, address: "2011 w street", description: "The best place ever")
 
 listing2 = Listing.create(venue_id: 2, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
 
-res2 = Reservation.create(listing_id: 2, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, confirmed?: true)
+res2 = Reservation.create(listing_id: 2, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, confirmed: true)

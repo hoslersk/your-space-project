@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  before_action :authorize
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -11,7 +11,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    reservation = Reservation.create(reservation_params)
+    reservation = Reservation.new(reservation_params)
+    # set up email conditional for .save
+    reservation.save
     redirect_to reservation_path(reservation)
   end
 
@@ -38,7 +40,7 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:listing_id, :renter_id, :start_date, :end_date, :start_time, :end_time, :confirmed?, :comment)
+    params.require(:reservation).permit(:listing_id, :renter_id, :start_date, :end_date, :start_time, :end_time, :confirmed, :comment)
   end
 
 end

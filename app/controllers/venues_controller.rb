@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-
+before_action :authorize, except: [:show, :index]
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def new
