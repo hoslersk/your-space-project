@@ -6194,3 +6194,40 @@ Completed 200 OK in 850ms (Views: 820.3ms | ActiveRecord: 1.5ms)
 >>>>>>> 66bec2d8e8bffd6f29db59178f0e3854bfd83b72
 
 
+Started GET "/" for ::1 at 2016-09-09 18:51:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 792ms (Views: 778.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 18:51:55 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 82ms (Views: 53.7ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/signup" for ::1 at 2016-09-09 18:52:08 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C+jtcEKzo59h5voS0k7dOPqaK3B5HDSEn4Btwmva04GbR1OhcCK+LVGWgD2c4LQXqB99PSpO5V8QDplBCk/xoA==", "user"=>{"first_name"=>"Schyler", "last_name"=>"Hosler", "username"=>"hoslersk", "email"=>"schylerhosler@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "hoslersk"], ["first_name", "Schyler"], ["last_name", "Hosler"], ["email", "schylerhosler@gmail.com"], ["password_digest", "$2a$10$GMlSgQxVUISfcurW5WDyY.xuEm3PLHxANcFwdu5/oWbdwwSUx.3tq"], ["created_at", 2016-09-09 22:52:08 UTC], ["updated_at", 2016-09-09 22:52:08 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 18:52:08 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 45.0ms | ActiveRecord: 0.8ms)
+
+
