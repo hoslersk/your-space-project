@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
 
   def create
     reservation = Reservation.new(reservation_params)
+    # set up email conditional for .save
     reservation.save
     redirect_to reservation_path(reservation)
   end
