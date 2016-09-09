@@ -7,3 +7,39 @@
 
 <%= link_to "Edit User", edit_user_path(@user) %>
 <%= link_to "Delete User", user_path(@user), method: :delete %>
+
+<h1>Reservations (as renter) -</h1>
+put logic here to link to venues show if they do not have any reservations.
+
+<h3>Confirmed Reservations (as renter)</h1>
+<%@user.confrimed_renter_reservations.each do |res| %>
+<%= res.listing.venue.name %>
+<%= res.start_date %>
+<%= res.end_date %>
+<% end %>
+
+<h3>Pending Reservations (as renter)</h1>
+<%@user.pending_renter_reservations.each do |res| %>
+<%= res.listing.venue.name %>
+<%= res.start_date %>
+<%= res.end_date %>
+<% end %>
+
+<h1>Confirmed Reservations (as renter)</h1>
+<h3>Pending Reservations (as host)</h1>
+<%@user.pending_host_reservations.each do |res| %>
+<%= res.listing.venue.name %>
+<%= res.start_date %>
+<%= res.end_date %>
+<%= form_for(res) do |f|%>
+<%= f.hidden_field :confirmed, :value => true %>
+<%= f.submit "Confirm Booking" %>
+<% end %>
+<% end %>
+
+<h3>Confirmed Reservations (as host)</h1>
+<%@user.confirmed_host_reservations.each do |res| %>
+<%= res.listing.venue.name %> <br>
+<%= res.start_date %> <br>
+<%= res.end_date %> <br>
+<% end %>
