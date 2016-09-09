@@ -8,6 +8,8 @@ before_action :authorize, except: [:show, :index]
 
   def create
     @venue = Venue.create(venue_params)
+    @venue.host_id=(current_user.id)
+    @venue.save
     redirect_to venue_path(@venue)
   end
 
@@ -38,7 +40,7 @@ before_action :authorize, except: [:show, :index]
  end
 
  def venue_params
-   params.require(:venue).permit(:name, :address, :description, :host_id)
+   params.require(:venue).permit(:name, :address, :description)
  end
 
 end

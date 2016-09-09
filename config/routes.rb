@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :listings
   resources :reservations
-  resources :users
+  resources :users, except: :new
   resources :venues
   root 'sessions#home', as: 'home'
 
