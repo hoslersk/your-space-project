@@ -1755,6 +1755,451 @@ To silence this deprecation warning, add the following:
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "confirmed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["listing_id", 2], ["renter_id", 2], ["start_date", Thu, 08 Sep 2016], ["end_date", Thu, 08 Sep 2016], ["start_time", 2016-09-08 22:00:18 UTC], ["end_time", 2016-09-08 22:00:18 UTC], ["confirmed", true], ["created_at", 2016-09-08 22:00:18 UTC], ["updated_at", 2016-09-08 22:00:18 UTC]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+<<<<<<< HEAD
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5744011779605681190);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5744011779605681190)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'listings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reservations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'venues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/reservations" for ::1 at 2016-09-08 18:05:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__992256221372550591_70347064668860 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__992256221372550591_70347064668860 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__992256221372550591_70347064668860 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__992256221372550591_70347064668860 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 593ms (Views: 558.1ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:05:08 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:05:41 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1s1YM3QOBGFRjP4jeaxnx+U/Psoem1I10iUEWhYxivC54VjXEGK+HUMaozQZzj0CJtw5Yg1V4DB9/NCKCXgkHw==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"13", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed?" = $2[0m  [["listing_id", 2], ["confirmed?", true]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 6.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column reservations.confirmed? does not exist
+LINE 1: ...tions" WHERE "reservations"."listing_id" = $1 AND "reservati...
+                                                             ^
+: SELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed?" = $2):
+  
+app/models/reservation.rb:23:in `no_reservation_conflicts'
+app/controllers/reservations_controller.rb:14:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.3ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:06:26 -0400
+Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 53ms (Views: 35.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:06:42 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h/TOYIVmz4zMQtfXkSmYAZmfV5dNBPo7Ekezho+w5Dzo2M6E4Qp18N7UisDxS8LEWnxQP17KSD69nmdWkPlK0w==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"12", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:14)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:14)
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 2], ["renter_id", 2], ["start_date", Thu, 08 Sep 2016], ["end_date", Mon, 12 Sep 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:06:42 UTC], ["updated_at", 2016-09-08 22:06:42 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/3
+Completed 302 Found in 51ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/reservations/3" for ::1 at 2016-09-08 18:06:42 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 47ms (Views: 39.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:06:59 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:07:13 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:07:23 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mHQvtJDx2aZZH+lVPWGlKXT5Kq6mW/Kb91r5LeqDqJr3WC9Q9J1j2kuJtEJdA//stxotBrWVQJ5Ygy399coGdQ==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"11", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 1], ["confirmed", true]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 1], ["renter_id", 2], ["start_date", Thu, 08 Sep 2016], ["end_date", Sun, 11 Sep 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:07:23 UTC], ["updated_at", 2016-09-08 22:07:23 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/4
+Completed 302 Found in 13ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/reservations/4" for ::1 at 2016-09-08 18:07:23 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 41ms (Views: 35.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-08 18:07:33 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:08:07 -0400
+Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 67ms (Views: 34.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:08:18 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xuZZ1nONWsJsJF75Z+UFGbwSEnYxlQM6YYiwcMEVZiipylkyF+Hgvn6yA+4Hh1/cf/EV3iJbsT/OUWSg3lzIxw==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"11", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:14)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:14)
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (2.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 1], ["confirmed", true]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 1], ["renter_id", 2], ["start_date", Thu, 08 Sep 2016], ["end_date", Sun, 11 Sep 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:10:24 UTC], ["updated_at", 2016-09-08 22:10:24 UTC]]
+  [1m[35m (209.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 245306ms (ActiveRecord: 219.5ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/reservations_controller.rb:14:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (446.2ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (111.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (77.8ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (702.9ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:13:12 -0400
+Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (308.2ms)
+Completed 200 OK in 1341ms (Views: 1095.0ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:13:31 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tnNuZCZwy5Aiq8wvLQf5sSrBLSNEufkLHUPeGGE3BQ7ZX26AQhxx7DA9kThNZaN06SIqi1d3Sw6ymgrIfn6r4Q==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2015", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2015", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at (byebug):1)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at (byebug):1)
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 1], ["confirmed", true]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 80595ms (ActiveRecord: 7.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `process_action'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:59:in `eval'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:59:in `safe_eval'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:53:in `warning_eval'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:29:in `block in multiple_thread_eval'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:92:in `allowing_other_threads'
+byebug (9.0.5) lib/byebug/helpers/eval.rb:29:in `multiple_thread_eval'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:164:in `block in run_cmd'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:169:in `safely'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:160:in `run_cmd'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:134:in `repl'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:98:in `process_commands'
+byebug (9.0.5) lib/byebug/processors/command_processor.rb:78:in `at_return'
+byebug (9.0.5) lib/byebug/context.rb:128:in `at_return'
+=======
 Started GET "/" for ::1 at 2016-09-08 18:26:22 -0400
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by SessionsController#home as HTML
@@ -1918,6 +2363,7 @@ actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `
 actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
 actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
 actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+>>>>>>> bd8a341475d75e47b8ac65e3687aea938620ea85
 actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
 actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
 activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
@@ -1948,7 +2394,11 @@ actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
 actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
 actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
 rack (2.0.1) lib/rack/etag.rb:25:in `call'
+<<<<<<< HEAD
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+=======
 rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+>>>>>>> bd8a341475d75e47b8ac65e3687aea938620ea85
 rack (2.0.1) lib/rack/head.rb:12:in `call'
 rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
 rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
@@ -1988,6 +2438,31 @@ puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/reservations" for ::1 at 2016-09-08 18:15:01 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (488.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (121.3ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (105.6ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (810.1ms)
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (1770.7ms)
+Completed 200 OK in 2590ms (Views: 2536.7ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/reservationsnew" for ::1 at 2016-09-08 18:15:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/reservationsnew"):
+=======
   Rendering /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
@@ -2013,6 +2488,7 @@ Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.0ms)
 Started POST "/sessions" for ::1 at 2016-09-08 18:40:36 -0400
   
 ActionController::RoutingError (No route matches [POST] "/sessions"):
+>>>>>>> bd8a341475d75e47b8ac65e3687aea938620ea85
   
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
@@ -2041,6 +2517,787 @@ puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (51.6ms)
+  Rendered collection of /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (259.5ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (26.1ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1071.8ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:15:41 -0400
+Processing by ReservationsController#new as HTML
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:15:41 -0400
+Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+  Rendering reservations/new.html.erb within layouts/application
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (521.0ms)
+  Rendered reservations/new.html.erb within layouts/application (493.2ms)
+Completed 200 OK in 2396ms (Views: 2072.4ms | ActiveRecord: 7.1ms)
+
+
+Completed 200 OK in 2419ms (Views: 2136.3ms | ActiveRecord: 31.1ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:15:59 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"67HzBBNqBCu4IY/TSboc/OqZDvLeEE2cT2X+0pd1qIeEnfPgdwa+V6q30sQp2EY5KXoJWs3e/5ngvCoCiDwGaA==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2015", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2015", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"15", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"15"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:15)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:15)
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (202.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 54809ms (ActiveRecord: 213.8ms)
+
+
+  
+SystemExit (exit):
+  
+app/models/reservation.rb:15:in `date_is_valid'
+app/controllers/reservations_controller.rb:15:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (719.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (177.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (112.3ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1102.7ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:17:19 -0400
+Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from new at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:10)
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (327.7ms)
+Completed 200 OK in 1377ms (Views: 1123.7ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:17:31 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aSe7dcwXeFu6qx3MMpttcj1ON8RHCoArC91J539mdPgGC7uRqHvCJ6g9QNtS+Te3/q0wbFTEMi6kBJ03YC/aFw==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2015", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2015", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:15)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from create at /Users/veronicali/Development/code/your-space-project/app/controllers/reservations_controller.rb:15)
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 1], ["confirmed", true]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 777ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (488.6ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (123.5ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (108.5ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (814.4ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:17:48 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (318.9ms)
+Completed 200 OK in 1193ms (Views: 1151.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:18:15 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjhCjKQMZp1dTOqbTSNeR7mGIDwX4xrARApjU+VHS0+tFEJowGDc4U/at4wtQQSCemUnlAQtqMXr07eD+g7loA==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"4", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"15", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 1], ["confirmed", true]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (473.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (113.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (103.4ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (772.4ms)
+Started GET "/listings" for ::1 at 2016-09-08 18:18:29 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.8ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (360.5ms)
+Started GET "/listings" for ::1 at 2016-09-08 18:18:30 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (40.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (43.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (8.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (194.7ms)
+Completed 500 Internal Server Error in 967ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    4:     <title>YourSpace</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___705913969764867108_70347029473380'
+Completed 200 OK in 3832ms (Views: 3713.0ms | ActiveRecord: 92.1ms)
+
+
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (748.5ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (175.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1038.6ms)
+Started GET "/reservations" for ::1 at 2016-09-08 18:18:43 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (267.2ms)
+Completed 200 OK in 1087ms (Views: 1055.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/listings/1" for ::1 at 2016-09-08 18:18:59 -0400
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/show.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 948ms (Views: 883.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/listings/1/edit" for ::1 at 2016-09-08 18:19:03 -0400
+Processing by ListingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/edit.html.erb within layouts/application
+  Rendered listings/_form.html.erb (318.3ms)
+  Rendered listings/edit.html.erb within layouts/application (334.5ms)
+Completed 200 OK in 1206ms (Views: 1152.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues/2" for ::1 at 2016-09-08 18:19:19 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 40ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Venue with 'id'=2):
+  
+app/controllers/venues_controller.rb:37:in `set_venue'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (483.7ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (114.7ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.6ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (697.8ms)
+Started GET "/listings/1/edit" for ::1 at 2016-09-08 18:19:22 -0400
+Processing by ListingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (1.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.9ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/edit.html.erb within layouts/application
+  Rendered listings/_form.html.erb (317.1ms)
+  Rendered listings/edit.html.erb within layouts/application (328.4ms)
+Completed 200 OK in 1272ms (Views: 1173.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/listings/1/edit" for ::1 at 2016-09-08 18:19:52 -0400
+Processing by ListingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/edit.html.erb within layouts/application
+  Rendered listings/_form.html.erb (337.1ms)
+  Rendered listings/edit.html.erb within layouts/application (347.9ms)
+Completed 200 OK in 1173ms (Views: 1120.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listings/1" for ::1 at 2016-09-08 18:19:55 -0400
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/show.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 912ms (Views: 855.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:20:01 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (94.1ms)
+Completed 200 OK in 886ms (Views: 844.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:20:02 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 935ms (Views: 906.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-08 18:20:18 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (8.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (206.4ms)
+Completed 200 OK in 979ms (Views: 941.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:21:03 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 909ms (Views: 873.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:23:30 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 911ms (Views: 874.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:23:33 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (1.0ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 919ms (Views: 891.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/listings/1" for ::1 at 2016-09-08 18:23:36 -0400
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering listings/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/show.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 897ms (Views: 840.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/listings/1" for ::1 at 2016-09-08 18:23:39 -0400
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XlGI/VKW+cN9YB/dqD1F9F7SC7P0nYfud5vTxr6zr9YxfYgZNvpDv2/2QsrIXx8xnTEMG+dTNevYQgcWofoBOQ==", "id"=>"1"}
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "listings" WHERE "listings"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 91ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/listings" for ::1 at 2016-09-08 18:23:39 -0400
+Processing by ListingsController#index as HTML
+  Rendering listings/index.html.erb within layouts/application
+  [1m[36mListing Load (0.8ms)[0m  [1m[34mSELECT "listings".* FROM "listings"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered listings/index.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 824ms (Views: 794.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-08 18:26:07 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (75.4ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: 
+    2: <h1> Insert Name Here's Reservations </h1>
+    3: <% @reservations.each do |reservation| %>
+    4:  <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
+    5:  <% end %>
+  
+app/views/reservations/index.html.erb:4:in `block in _app_views_reservations_index_html_erb__992256221372550591_70347067231520'
+app/views/reservations/index.html.erb:3:in `_app_views_reservations_index_html_erb__992256221372550591_70347067231520'
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:26:08 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (518.7ms)
+Started GET "/reservations" for ::1 at 2016-09-08 18:26:11 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (63.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+Completed 200 OK in 2880ms (Views: 2563.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mVenue Load (78.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (300.8ms)
+Completed 500 Internal Server Error in 615ms (ActiveRecord: 155.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: 
+    2: <h1> Insert Name Here's Reservations </h1>
+    3: <% @reservations.each do |reservation| %>
+    4:  <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
+    5:  <% end %>
+  
+app/views/reservations/index.html.erb:4:in `block in _app_views_reservations_index_html_erb__992256221372550591_70347065085540'
+app/views/reservations/index.html.erb:3:in `_app_views_reservations_index_html_erb__992256221372550591_70347065085540'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1354.1ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1348.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (176.7ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (158.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.7ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.4ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1925.0ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1912.3ms)
+Started GET "/reservations" for ::1 at 2016-09-08 18:27:17 -0400
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 561ms (Views: 538.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:27:22 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (228.4ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:27:22 -0400
+Processing by ReservationsController#new as HTML
+Completed 200 OK in 846ms (Views: 815.8ms | ActiveRecord: 0.0ms)
+
+
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (236.5ms)
+Completed 200 OK in 964ms (Views: 871.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:27:48 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cRDHrCRTpAnNzfem6MzJd6dHcVRc9IaLU7NsIX2CNeoePMdIQD8edd9bqrGIrpOyZKR2/E86NI78arjxYsubBQ==", "reservation"=>{"listing_id"=>"1", "renter_id"=>"1", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `available_start_date' for nil:NilClass):
+  
+app/models/reservation.rb:14:in `date_is_valid'
+app/controllers/reservations_controller.rb:15:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (432.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (94.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (67.3ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (698.1ms)
+Started PUT "/__web_console/repl_sessions/39dc63da7d8c2596fe7b5aca1122ce7e" for ::1 at 2016-09-08 18:28:37 -0400
+Started PUT "/__web_console/repl_sessions/39dc63da7d8c2596fe7b5aca1122ce7e" for ::1 at 2016-09-08 18:28:46 -0400
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:29:11 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (220.7ms)
+Completed 200 OK in 791ms (Views: 773.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:29:16 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q1E9fwguYmGEOiVjsMmLJT8RmHNuNeoCWQpPBXzu26UsfT2bbELYHZaseHTQq9Hg/PKf2337WAf205vVY6d1Sg==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 2], ["renter_id", 2], ["start_date", Thu, 08 Sep 2016], ["end_date", Thu, 08 Sep 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:29:16 UTC], ["updated_at", 2016-09-08 22:29:16 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/6
+Completed 302 Found in 157ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/reservations/6" for ::1 at 2016-09-08 18:29:16 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 630ms (Views: 584.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:31:51 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (217.7ms)
+Completed 200 OK in 773ms (Views: 746.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:32:02 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VRQRsE5KGIpjhHfgy+hcgYWb7spBUBjnhb45Mmi59mg6OBFUKiai9nESKverigZERnjpYlKequIqZ+3id/BYhw==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (337.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (76.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (72.0ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (573.2ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:32:10 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (216.4ms)
+Completed 200 OK in 795ms (Views: 776.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:32:26 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZvMOKGocD6JAueZLa/zheOc4om/KpDprCTcFDCfT1hAJ3w7MDnC13lIvu1wLnru9JNulx9lqiG6m7tHcOJp4/w==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"1", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"7", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 2], ["renter_id", 2], ["start_date", Sat, 01 Oct 2016], ["end_date", Fri, 07 Oct 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:32:26 UTC], ["updated_at", 2016-09-08 22:32:26 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/7
+Completed 302 Found in 172ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/reservations/7" for ::1 at 2016-09-08 18:32:26 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 704ms (Views: 673.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:33:10 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (216.0ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:33:11 -0400
+Processing by ReservationsController#new as HTML
+Completed 200 OK in 805ms (Views: 788.2ms | ActiveRecord: 0.0ms)
+
+
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (216.3ms)
+Completed 200 OK in 859ms (Views: 831.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:33:36 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g789CBJDqU1keB2f9xisQfy0Dj5Gg5wNBJQswBLXXQfskz3sdi8TMXbuQIiXevaEP1cJllVNLgirTfgQDZ7z6A==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"5", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"12", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (330.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (72.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (77.5ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (561.0ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:33:43 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (221.7ms)
+Completed 200 OK in 795ms (Views: 766.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:33:53 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BwB7s5p6sF3oJHNoM5dFV9j9hSylB7flBE9jMRq8s/hoLHtX/hYKIfqyLn9T9R+SGx6ChLbJBeCrlrfhBfUdFw==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"11", "start_date(3i)"=>"8", "end_date(1i)"=>"2016", "end_date(2i)"=>"12", "end_date(3i)"=>"8", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (323.5ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (73.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (67.7ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (544.7ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:34:02 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (206.7ms)
+Completed 200 OK in 794ms (Views: 775.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:34:21 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9OGo5srEzMcilzo4te2EMqgVvlC/52L+m3yK2L/3FJWbzagCrqh2uzABZy/Vj973a/a5+Kwp0Ps0pV4IoL66eg==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"13", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"17", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.7ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 2], ["renter_id", 2], ["start_date", Thu, 13 Oct 2016], ["end_date", Mon, 17 Oct 2016], ["start_time", 2016-09-08 22:00:00 UTC], ["end_time", 2016-09-08 22:00:00 UTC], ["created_at", 2016-09-08 22:34:21 UTC], ["updated_at", 2016-09-08 22:34:21 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/reservations/8
+Completed 302 Found in 173ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/reservations/8" for ::1 at 2016-09-08 18:34:21 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 631ms (Views: 588.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:35:33 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (256.8ms)
+Started GET "/reservations/new" for ::1 at 2016-09-08 18:35:34 -0400
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (270.5ms)
+Completed 200 OK in 1518ms (Views: 1489.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1206ms (Views: 1144.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-08 18:35:58 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6D/kIKQ7Nr9LtTSUbiHKf0Kw/0eQ+6z1GPoMJTSkQUKHE+TEwFeMw1kjaYMOQ5C6gVP474M1HvC3I9j1K+3vrQ==", "reservation"=>{"listing_id"=>"2", "renter_id"=>"2", "start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"5", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"15", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"8", "start_time(4i)"=>"22", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"8", "end_time(4i)"=>"22", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 2], ["confirmed", true]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reservations", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/reservations_controller.rb:16:in `create'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (332.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (74.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (78.3ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (574.8ms)
+=======
   Rendering /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /Users/silvanagoberdhan-vigle/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
@@ -2163,3 +3420,4 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
 
 
+>>>>>>> bd8a341475d75e47b8ac65e3687aea938620ea85
