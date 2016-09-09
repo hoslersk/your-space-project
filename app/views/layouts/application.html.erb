@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <nav>
+      <%  if current_user %>
+        <%#= @user.first_name %>  |  Welcome to Your Space | <%= link_to "sign out", '/signout', method: :delete  %>
+
+        <%else %>
+        <%= link_to "sign in", '/signin' %>
+        insert registration link stuff here
+        <% end %>
+
+    </nav>
     <%= yield %>
   </body>
 </html>
