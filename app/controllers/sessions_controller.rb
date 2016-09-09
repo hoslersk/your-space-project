@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def home
+    current_user
   end
 
   def new
