@@ -12,7 +12,7 @@
     <nav>
       <%  if current_user %>
       <%# byebug %>
-        <%= @current_user.first_name %>  |  Welcome to Your Space | <%= link_to "sign out", '/signout', method: :delete  %>
+        <%= current_user.first_name %>  |  Welcome to Your Space | <%= link_to "sign out", '/signout', method: :delete  %>
 
         <%else %>
         <%= link_to "sign in", '/signin'%> | <%= link_to 'Sign Up', '/signup' %>

@@ -1,6 +1,6 @@
 <%= form_tag action='/sessions' do %>
-  <%= label_tag :name %>
-  <%= text_field_tag 'user[name]' %>
+  <%= label_tag :user_name %>
+  <%= text_field_tag 'user[username]' %>
   <%= label_tag :password %>
   <%= password_field_tag 'user[password]' %>
   <%= submit_tag 'Sign In' %>
