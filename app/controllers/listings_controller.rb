@@ -4,6 +4,11 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    # @listing.each do |list|
+    #   @list_dates = []
+
+
+
   end
 
   def index

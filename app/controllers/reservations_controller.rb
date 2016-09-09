@@ -11,7 +11,10 @@ class ReservationsController < ApplicationController
   end
 
   def create
+
     reservation = Reservation.create(reservation_params)
+
+    reservation.start_date=(params)
     redirect_to reservation_path(reservation)
   end
 
