@@ -10,11 +10,11 @@ veronica = User.create(username: "vronnieli", first_name: "Veronica", last_name:
 
 silvana = User.create(username: "silvanagv", first_name: "Silvana", last_name: "G", email: "silvanagv@gmail.com", password: "password")
 
-listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
+# listing1 = Listing.create(venue_id: 1, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
 
 res = Reservation.create(listing_id: 1, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, comment: "Can I bring my dog?", confirmed: true)
 
-listing2 = Listing.create(venue_id: 2, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
+# listing2 = Listing.create(venue_id: 2, available_start_date: Time.now, available_end_date: Time.now, available_start_time: Time.now, available_end_time: Time.now)
 
 res2 = Reservation.create(listing_id: 2, renter_id: 2, start_date: Time.now, end_date: Time.now, start_time: Time.now, end_time: Time.now, confirmed: true)
 

@@ -22,6 +22,11 @@
  #map {
    height: 500px;
    width: 500px;
+   display: block;
    float: right;
-   position: absolute;
  }
+
+#venues-list {
+display: block;
+float: left;
+}
