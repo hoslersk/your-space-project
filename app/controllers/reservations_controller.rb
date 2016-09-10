@@ -10,8 +10,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-
-
   def create
     reservation = Reservation.new(reservation_params) #makes a new reservation (not yet saved! with the reqested dates )
     venue_id = params[:reservation][:venue_id]
@@ -40,8 +38,6 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    listing_id = @reservation.listing_id
-
     @reservation.update(reservation_params)
     redirect_to reservation_path(@reservation)
   end

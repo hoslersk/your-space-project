@@ -19,9 +19,7 @@ Note: Insert calendar listing view here
 <br>
 <br>
 
-Put conditional logic here to only render this make a reservation form if you you do not 'own' the venue
-
-
+<% if @venue.host_id != current_user.id %>
 
 <h3> Make a reservation</h3>
   <%= form_for Reservation.new do |f| %>
@@ -43,6 +41,7 @@ Put conditional logic here to only render this make a reservation form if you yo
   <%= f.submit %>
 
 
+  <% end %>
   <% end %>
 
 

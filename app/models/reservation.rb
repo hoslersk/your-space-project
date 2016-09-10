@@ -7,12 +7,18 @@ class Reservation < ApplicationRecord
 
   # review?
 
-  validate :date_is_valid, :no_reservation_conflicts
+  validate :date_is_valid, :no_reservation_conflicts, :start_before_end
 
  def date_is_valid
    # reservation request falls within listing availability dates
    if self.start_date < self.listing.available_start_date || self.end_date > self.listing.available_end_date
      errors.add(:date_is_invalid, "reservation date must be within the listing dates")
+   end
+ end
+
+ def start_before_end
+   if self.end_date < self.start_date
+     errors.add(:invalid_date_range, "The start date must be before the end date")
    end
  end
 
