@@ -18,6 +18,7 @@ class Reservation < ApplicationRecord
 
 
  def no_reservation_conflicts
+
    # appends error if reservation request conflicts with other confirmed reservations for the listing
    confirmed_reservations = Reservation.where(listing_id: self.listing.id, confirmed: true)
    confirmed_reservations.each do |confirmed_reservation|
