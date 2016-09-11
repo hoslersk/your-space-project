@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
   venCalendar();
-  format();
 });
 
-function venCalendar() {
+function venCalendar(format) {
   if ($('#calendar_ven').length > 0) {
     $('#calendar_ven').fullCalendar({
       events: `/venues/${$('div#calendar_ven')[0].getAttribute("data-ven-id")}.json`
