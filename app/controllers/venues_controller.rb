@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-
+before_action :authorize, except: [:show, :index]
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -8,6 +8,8 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.create(venue_params)
+    @venue.host_id=(current_user.id)
+    @venue.save
     redirect_to venue_path(@venue)
   end
 
@@ -46,7 +48,7 @@ class VenuesController < ApplicationController
  end
 
  def venue_params
-   params.require(:venue).permit(:name, :address, :description, :host_id)
+   params.require(:venue).permit(:name, :address, :description)
  end
 
 end

@@ -1,6 +1,6 @@
 <h1>Show</h1>
 <ul>
-  <li><%= link_to @listing.venue.name, listing_path(@listing) %>
+  <li><%= link_to @listing.venue.name, venue_path(@listing.venue) %>
     <ul>
       <li>Available Dates: <%= @listing.available_start_date.strftime("%B %e, %Y") %> - <%= @listing.available_end_date.strftime("%B %e, %Y") %></li>
       <li>Available Hours: <%= @listing.available_start_time.strftime("%H:%M") %> - <%= @listing.available_end_time.strftime("%H:%M") %></li>

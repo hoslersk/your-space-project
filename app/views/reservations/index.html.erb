@@ -1,7 +1,18 @@
 
-<h1> Insert Name Here's Reservations </h1>
+<h1> All Reservations (for testing purposes) </h1>
 <% @reservations.each do |reservation| %>
  <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
  <% end %>
 
+
 <div id="calendar_res"></div>
+
+ <h1> <%= current_user.first_name %>'s Renter Reservations</h1>
+ <% current_user.renter_reservations.each do |reservation| %>
+  <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
+  <% end %>
+
+  <h1> <%= current_user.first_name %>'s Host Reservations</h1>
+  <% current_user.host_reservations.each do |reservation| %>
+   <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
+   <% end %>
