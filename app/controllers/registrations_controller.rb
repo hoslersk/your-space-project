@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
     if user.save
       #byebug
       session[:user_id] =  user.id
-      redirect_to home_path(user)
+      redirect_to venues_path
     else
       redirect_to root_path
     end

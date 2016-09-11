@@ -4,22 +4,22 @@
 <p><%= form_tag('/venues', :method => :get) do |f| %>
 
 <%= label_tag :zip_code %>
-<%= text_field_tag :zip_code %>
+<%= text_field_tag :zip_code, nil, :required => true %>
 
 <%= label_tag :from %>
-<%= date_field_tag :start_date %>
+<%= date_field_tag :start_date, nil, :required => true %>
 
 <%= label_tag :to %>
-<%= date_field_tag :end_date %></p>
+<%= date_field_tag :end_date, nil, :required => true %></p>
 
 <p><%= label_tag :price_range %>
 <input type="text" id="price-range-text" readonly style="border:0; color:#f6931f; font-weight:bold; background-color:transparent">
 <center><div id="price-range"></div></center>
-<%= hidden_field_tag :price_min_input, :value %>
-<%= hidden_field_tag :price_max_input, :value %>
+<%= hidden_field_tag :price_min_input, 0 %>
+<%= hidden_field_tag :price_max_input, 0 %>
 
 <br>
-<%= submit_tag 'Search' %></p>
+<%= submit_tag "Search" %></p>
 <% end %>
 </div>
 </body>

@@ -7,30 +7,31 @@
 <p><%= form_tag('/venues', :method => :get) do |f| %>
 
 <%= label_tag :zip_code %>
-<%= text_field_tag :zip_code, @zip_code %>
+<%= text_field_tag :zip_code, @zip_code, :required => true %>
 
 <%= label_tag :from %>
-<%= date_field_tag :start_date, @start_date %>
+<%= date_field_tag :start_date, @start_date, :required => true %>
 
 <%= label_tag :to %>
-<%= date_field_tag :end_date, @end_date %></p>
+<%= date_field_tag :end_date, @end_date, :required => true %></p>
 
 <p><%= label_tag :price_range %>
 <input type="text" id="price-range-text" readonly style="border:0; color:#f6931f; font-weight:bold; background-color:transparent">
 <div id="price-range"></div>
-<%= hidden_field_tag :price_min_input, :value %>
-<%= hidden_field_tag :price_max_input, :value %>
+<%= hidden_field_tag :price_min_input, 0 %>
+<%= hidden_field_tag :price_max_input, 0 %>
 
 <br>
-<%= submit_tag 'Search' %></p>
+<%= submit_tag "Search" %></p>
 <% end %>
 
+<div id="search_results">
 <h2>Search Results</h2>
 
-<% if @venues %>
+<% if @venues != nil %>
   <% @venues.each do |venue| %>
     <div id="venue_results">
-    <%= link_to image_tag(venue.images.first.image.url(:medium)), venue_path(venue) %><br>
+    <%= link_to image_tag(venue.images.first.image.url(:thumb)), venue_path(venue) %><br>
     <%= link_to venue.name, venue_path(venue) %> <br>
     <%= venue.address %><br>
     <%= venue.city %>, <%= venue.zip_code %><br>
@@ -40,3 +41,4 @@
   </div>
   <% end %>
 <% end %>
+</div>
