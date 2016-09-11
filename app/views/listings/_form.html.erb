@@ -1,15 +1,25 @@
 This page should not exist or be used - only make a new listing through the venue.
 
 <%= form_for(@listing) do |f| %>
-  <%= f.label :venue_id %>
-  <%= f.number_field :venue_id %><br>
-  <%= f.label :available_start_date %>
-  <%= f.date_select :available_start_date %><br>
-  <%= f.label :available_start_time %>
-  <%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %><br>
-  <%= f.label :available_end_date %>
-  <%= f.date_select :available_end_date %><br>
-  <%= f.label :available_end_time %>
-  <%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %><br>
-  <%= f.submit %>
+
+<p><%= f.label :venue_id %>
+<%= f.number_field :venue_id %><p>
+
+<p><%= f.label :available_start_date %>
+<%= f.date_select :available_start_date %><p>
+
+<p><%= f.label :available_start_time %>
+<%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %><p>
+
+<p><%= f.label :available_end_date %>
+<%= f.date_select :available_end_date %><p>
+
+<p><%= f.label :available_end_time %>
+<%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %><p>
+
+<p><%= f.label :price %>
+<%= f.text_field :price %><p>
+
+<p><%= f.submit %></p>
+
 <% end %>

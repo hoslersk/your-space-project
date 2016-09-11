@@ -3,14 +3,13 @@
   <head>
     <title>YourSpace</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="margin:0;">
 
-<nav>
   <% if current_user %>
 <ul>
  <li style="float:left">Welcome to YourSpace, <%= current_user.first_name %></li>
@@ -26,7 +25,6 @@
  <li style="float:left"><%= link_to "Sign Up", signup_path %></li>
 </ul>
  <% end %>
-</nav>
 
 
     <% flash.each do |key, value| %>

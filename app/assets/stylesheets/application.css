@@ -12,8 +12,21 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  *= require fullcalendar
  */
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+body.home {
+     background: url(yourspace-background.jpeg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
 
  ul {
      list-style-type: none;
@@ -21,6 +34,7 @@
      padding: 0;
      overflow: hidden;
      background-color: #333;
+     opacity: 0.8;
  }
  li {
      display: block;
@@ -34,5 +48,5 @@
    text-decoration: none;
  }
  li a:hover {
-     background-color: #111;
+      background-color: #111;
  }
