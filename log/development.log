@@ -41759,3 +41759,166 @@ Processing by VenuesController#show as HTML
 Completed 200 OK in 195ms (Views: 190.3ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2016-09-11 19:32:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#home as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (1733.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2361ms (Views: 2316.8ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-11 19:33:00 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  Rendered venues/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 226ms (Views: 225.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-11 19:33:05 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  Rendered venues/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 259ms (Views: 257.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-11 19:33:10 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q2mFe1HnaLeAjT0rorsdIFQl/SOuvo4kegmbdUwJO70sRYWfNYvSy5IbYDzC2Ufll8b6i71wPCHV0E+lU0CVUg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-11 19:33:10 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 234ms (Views: 231.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10002&start_date=2016-09-14&end_date=2016-09-27&price_min_input=65&price_max_input=392&commit=Search" for ::1 at 2016-09-11 19:33:27 -0400
+Processing by VenuesController#index as HTML
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10002", "start_date"=>"2016-09-14", "end_date"=>"2016-09-27", "price_min_input"=>"65", "price_max_input"=>"392", "commit"=>"Search"}
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-14' AND available_end_date >= '2016-09-27' AND price >= '65' AND price <= '392')[0m
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."venue_id" = $1 ORDER BY "images"."id" ASC LIMIT $2[0m  [["venue_id", 1], ["LIMIT", 1]]
+  Rendered venues/index.html.erb within layouts/application (45.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 9.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    31: <% if @venues != nil %>
+    32:   <% @venues.each do |venue| %>
+    33:     <div id="venue_results">
+    34:     <%= link_to image_tag(venue.images.first.image.url(:small)), venue_path(venue) %><br>
+    35:     <%= link_to venue.name, venue_path(venue) %> <br>
+    36:     <%= venue.address %><br>
+    37:     <%= venue.city %>, <%= venue.zip_code %><br>
+  
+app/views/venues/index.html.erb:34:in `block in _app_views_venues_index_html_erb___2837229859528599005_70094845107500'
+app/views/venues/index.html.erb:32:in `_app_views_venues_index_html_erb___2837229859528599005_70094845107500'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.0ms)
+Started PUT "/__web_console/repl_sessions/818192f76f48547a2b9b2c05035cd295" for ::1 at 2016-09-11 19:33:50 -0400
+Started PUT "/__web_console/repl_sessions/818192f76f48547a2b9b2c05035cd295" for ::1 at 2016-09-11 19:33:56 -0400
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "venues" WHERE "venues"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10002&start_date=2016-09-14&end_date=2016-09-27&price_min_input=65&price_max_input=392&commit=Search" for ::1 at 2016-09-11 19:45:10 -0400
+Processing by VenuesController#index as HTML
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10002", "start_date"=>"2016-09-14", "end_date"=>"2016-09-27", "price_min_input"=>"65", "price_max_input"=>"392", "commit"=>"Search"}
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-14' AND available_end_date >= '2016-09-27' AND price >= '65' AND price <= '392')[0m
+  Rendered venues/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 611ms (Views: 596.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-11 19:45:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 271ms (Views: 268.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-11 19:45:23 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5fS2yf7JmB4cibck1Hzwncc/3O8o/t/fjDzAFo19F2GK2LYtmqUiYg4f6jO0HqpYBNzbRzswbdoj5RTGkjS5jg==", "user"=>{"username"=>"vronnieli", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "vronnieli"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/venues
+Completed 302 Found in 94ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-11 19:45:23 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  Rendered venues/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 266.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-11 19:45:27 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  Rendered venues/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 261.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-11 19:45:29 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/_form.html.erb (18.4ms)
+  Rendered venues/new.html.erb within layouts/application (20.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 283ms (Views: 254.3ms | ActiveRecord: 3.6ms)
+
+
