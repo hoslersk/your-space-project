@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # has_many :reviews, :foreign_key => “host_id”, :class_name => "Review"
   has_secure_password
 
-  def confrimed_renter_reservations
+  def confirmed_renter_reservations
     self.renter_reservations.where(confirmed: true)
   end
 

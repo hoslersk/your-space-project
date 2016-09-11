@@ -3812,6 +3812,1735 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 794ms (Views: 745.6ms | ActiveRecord: 1.4ms)
 
 
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2016-09-09 14:35:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 286ms (Views: 270.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:49:50 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 86ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 14:49:54 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-09 14:50:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZUK4wI1ph7y1UXvv0q7xhMa1Fvj7qlHgtJP+mczo6EFDo1GuMF+6TttgC9IFQ9NvAW7RSPCnr8fbjZJ38kBv8g==", "user"=>{"name"=>"Veronica", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:50:02 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 34.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:50:06 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 5.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    17:  <li style="float:right"><%= link_to "Your Reservations", reservations_path%></li>
+    18:  <li style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
+    19: </ul>
+    20:  <h3>Welcome to Your Space, <%= @current_user.first_name %>.</h3>
+    21:  <% else %>
+    22: <ul>
+    23:  <li><%= link_to "Sign In", signin_path %></li>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__2946762451495859867_70325884519940'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.8ms)
+Started GET "/" for ::1 at 2016-09-09 14:50:16 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:50:20 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.9ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    17:  <li style="float:right"><%= link_to "Your Reservations", reservations_path%></li>
+    18:  <li style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
+    19: </ul>
+    20:  <h3>Welcome to Your Space, <%= @current_user.first_name %>.</h3>
+    21:  <% else %>
+    22: <ul>
+    23:  <li><%= link_to "Sign In", signin_path %></li>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__2946762451495859867_70325907564540'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.3ms)
+Started GET "/" for ::1 at 2016-09-09 14:50:24 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 45.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:50:27 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:50:28 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    17:  <li style="float:right"><%= link_to "Your Reservations", reservations_path%></li>
+    18:  <li style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
+    19: </ul>
+    20:  <h3>Welcome to Your Space, <%= @current_user.first_name %>.</h3>
+    21:  <% else %>
+    22: <ul>
+    23:  <li><%= link_to "Sign In", signin_path %></li>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__2946762451495859867_70325915347680'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.6ms)
+Started GET "/" for ::1 at 2016-09-09 14:51:57 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:52:39 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:52:41 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__2696982594388521643_70325914368940 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__2696982594388521643_70325914368940 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__2696982594388521643_70325914368940 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__2696982594388521643_70325914368940 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 95ms (Views: 70.0ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:52:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 47.8ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-09 14:52:50 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0bVapVGt0Xcclc35BXXwnfzX0dB3xcS0wZMpaM0OHx6+mVpBNcFrCw4DkO5lF6pYPzTWeGQLdrFuSv240kex8Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:52:50 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 14:52:54 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-09 14:53:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UJHnHllj4tltQ2QmA1YdVTviKBrskiW8mPOmUKJa9id2cA5w5FXfKwNyFBvUuz++/Dnvquef25v37cq+nPJxlA==", "user"=>{"name"=>"Veronica", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 14:53:02 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:53:03 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    12: 
+    13:   <% if current_user %>
+    14: <ul>
+    15:  <li>Welcome to Your Space, <%= @current_user.first_name %></li>
+    16:  <li><%= link_to "Find a Place!", venues_path %></li>
+    17:  <li style="float:right"><%= link_to "Sign Out", signout_path, method: :delete %></li>
+    18:  <li style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
+  
+app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__2946762451495859867_70325888993060'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.2ms)
+Started GET "/venues" for ::1 at 2016-09-09 14:53:22 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:54:37 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (2.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 53ms (Views: 44.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:54:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 63ms (Views: 50.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:55:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:55:31 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:55:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 62ms (Views: 57.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:55:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:56:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:56:39 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:56:42 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 55ms (Views: 48.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:56:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:57:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:57:31 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 14:57:32 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:57:37 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:57:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 52.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-09-09 14:57:47 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-09-09 14:58:43 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:58:51 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 63ms (Views: 57.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 14:58:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 14:58:56 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 91ms (Views: 82.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:02:05 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 49ms (Views: 41.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:02:33 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:02:54 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:02:56 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:03:17 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:03:43 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:03:45 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:04:10 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:04:41 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:07:04 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 52ms (Views: 47.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:09:40 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:09:42 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:10:44 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:10:47 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:10:48 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (2.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:10:53 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 68ms (Views: 64.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:10:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:10:55 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 74ms (Views: 66.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:10:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:12:08 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:12:11 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:12:28 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:12:31 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:15:22 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:15:28 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:15:30 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (2.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 74ms (Views: 62.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:15:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:16:16 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:16:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:20:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:20:27 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 55.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:20:28 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 54ms (Views: 48.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:20:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 65ms (Views: 58.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:20:35 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:20:36 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 77ms (Views: 72.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:20:37 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 64.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:20:38 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 89ms (Views: 81.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:20:39 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:21:24 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:21:41 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:21:53 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:21:53 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:21:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 43ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:23:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:23:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:29:47 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:29:47 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:29:50 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (1.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 61ms (Views: 54.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:29:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 61ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:31:29 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:39:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 76ms (Views: 70.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:41:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:43:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 37.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:44:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:46:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:46:19 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:46:22 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:50:19 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:50:21 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (12.5ms)
+  Rendered venues/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:50:22 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 51.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:51:18 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 93ms (Views: 86.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:51:20 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (6.9ms)
+  Rendered venues/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 103ms (Views: 96.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:51:42 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (2.4ms)
+  Rendered venues/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:52:54 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (2.7ms)
+  Rendered venues/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:53:59 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (2.9ms)
+  Rendered venues/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:54:22 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (2.4ms)
+  Rendered venues/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:54:27 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (2.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 49.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:54:27 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (7.1ms)
+  Rendered venues/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 81ms (Views: 75.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:54:29 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 60ms (Views: 54.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:54:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:54:41 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (1.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 72.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:54:43 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (4.0ms)
+  Rendered venues/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 15:54:44 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (7.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 85.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 15:54:45 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (7.2ms)
+  Rendered venues/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 79ms (Views: 72.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 15:54:47 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 82ms (Views: 74.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 15:54:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-09 15:54:50 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uFLHoSAnIC7BO0qZz31pDZXOPFooDIJA7hNbQM+cNovXfsdFREuaUtOtF46vHzPIVi078jvCMEVByo+Q0NWYZA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 15:54:50 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 15:58:08 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 15:58:18 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 15:58:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 16:01:04 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial sessions/_venues#index, application/_venues#index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/veronicali/Development/code/your-space-project/app/views"
+):
+    1: <h1>You Are Home</h1>
+    2: 
+    3: <%= render 'venues#index' %>
+  
+app/views/sessions/home.html.erb:3:in `_app_views_sessions_home_html_erb__249695199982239428_70325914382800'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.7ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.0ms)
+Started GET "/" for ::1 at 2016-09-09 16:01:17 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial /_venues with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/veronicali/Development/code/your-space-project/app/views"
+):
+    1: <h1>You Are Home</h1>
+    2: 
+    3: <%= render '/venues' %>
+  
+app/views/sessions/home.html.erb:3:in `_app_views_sessions_home_html_erb__249695199982239428_70325929084920'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.5ms)
+Started GET "/" for ::1 at 2016-09-09 16:01:30 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial /_venues with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/veronicali/Development/code/your-space-project/app/views"
+):
+    1: <h1>You Are Home</h1>
+    2: 
+    3: <%= render venues_path %>
+  
+app/views/sessions/home.html.erb:3:in `_app_views_sessions_home_html_erb__249695199982239428_70325883816360'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.3ms)
+Started GET "/" for ::1 at 2016-09-09 16:04:14 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial /_venues with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/veronicali/Development/code/your-space-project/app/views"
+):
+    1: <h1>You Are Home</h1>
+    2: 
+    3: <%= render '/venues' %>
+  
+app/views/sessions/home.html.erb:3:in `_app_views_sessions_home_html_erb__249695199982239428_70325913793440'
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/veronicali/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.2ms)
+Started GET "/venues" for ::1 at 2016-09-09 16:04:18 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 16:09:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 16:09:13 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:09:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:10:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:10:43 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:10:58 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:11:00 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:12:27 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:12:29 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:13:06 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:15:56 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:16:24 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:16:52 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:17:11 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:17:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:17:17 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 62ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:17:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 88ms (Views: 85.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:17:20 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-09-09 16:17:28 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-09 16:17:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-09 16:17:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TVrzERNuHdBUOaS8QDPaIY9/7Vf8vUHztLdF38f0wHxruxp/rlggIjoI1IGX3vjKSKQq5/ewv9TbqSkx+VxHzw==", "user"=>{"name"=>"Veronica", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 16:17:40 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 16:17:46 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 45.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 16:17:47 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (9.1ms)
+  Rendered venues/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 16:17:48 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 16:17:49 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (8.9ms)
+  Rendered venues/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 16:17:50 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__2696982594388521643_70325885644880 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_reservations_index_html_erb__2696982594388521643_70325885644880 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:3)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__2696982594388521643_70325885644880 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb__2696982594388521643_70325885644880 at /Users/veronicali/Development/code/your-space-project/app/views/reservations/index.html.erb:4)
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 129ms (Views: 100.1ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 16:17:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 57.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 16:18:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-09 16:18:40 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 54ms (Views: 47.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-09 16:18:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 76ms (Views: 68.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-09 16:18:43 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (4.4ms)
+  Rendered venues/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 74ms (Views: 69.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-09 16:18:44 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 90.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-09 16:18:48 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6EmTmsnH0913OVu/VIVDGfTlPo3Wcaly0ZaczvcirmGHZZN+ratpoWWvBqg05xncNwY5JcW/G3d+T0ge6GsAjg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-09 16:18:48 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+=======
 Started GET "/venues" for ::1 at 2016-09-09 14:58:22 -0400
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by VenuesController#index as HTML
@@ -4462,6 +6191,7 @@ Processing by SessionsController#home as HTML
   [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
 Completed 200 OK in 850ms (Views: 820.3ms | ActiveRecord: 1.5ms)
+>>>>>>> 66bec2d8e8bffd6f29db59178f0e3854bfd83b72
 
 
 Started GET "/" for ::1 at 2016-09-09 15:42:51 -0400
