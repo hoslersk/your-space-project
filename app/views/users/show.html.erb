@@ -7,3 +7,65 @@
 
 <%= link_to "Edit User", edit_user_path(@user) %>
 <%= link_to "Delete User", user_path(@user), method: :delete %>
+
+<h1>Reservations Info:</h1>
+
+<% if @user.confirmed_renter_reservations.count == 0 && @user.pending_renter_reservations.count == 0 %>
+ <br>You have no renter reservations - let's change that! <%= link_to "See available venues", venues_path %>
+<% end %>
+
+<% if @user.pending_host_reservations.count == 0 && @user.confirmed_host_reservations.count == 0 %>
+ <br>You have no renter reservations - let's change that - <%= link_to "List a Venue!", new_venue_path %>
+<% end %>
+
+
+<%if @user.confirmed_renter_reservations.length > 0 %>
+
+<h3>Confirmed Reservations (as renter)</h1>
+<%@user.confirmed_renter_reservations.each do |res| %>
+<%= link_to res.listing.venue.name, reservation_path(res) %> <br>
+Start Date: <%= res.start_date %> <br>
+End Date: <%= res.end_date %> <br>
+<% end %>
+
+<% end %>
+
+<% if @user.pending_renter_reservations.length > 0 %>
+
+<h3>Pending Reservations (as renter)</h1>
+<%@user.pending_renter_reservations.each do |res| %>
+<%= link_to res.listing.venue.name, reservation_path(res) %> <br>
+Start Date: <%= res.start_date %> <br>
+End Date: <%= res.end_date %> <br>
+<%= link_to "Cancel Reservation", reservation_path(res), method: :delete %> <br> <br>
+<% end %>
+<% end %>
+
+<% if @user.pending_host_reservations.length > 0 %>
+
+<h3>Pending Reservations (as host)</h1>
+<%@user.pending_host_reservations.each do |res| %>
+<%= res.listing.venue.name %> <br>
+<%= res.start_date %> <br>
+<%= res.end_date %> <br>
+<%= form_for(res) do |f|%>
+<%= f.hidden_field :confirmed, :value => true %>
+<%= f.submit "Confirm Reservation" %> <br>
+<%= link_to "Cancel Reservation", reservation_path(res), method: :delete %> <br>
+<% end %>
+<% end %>
+<% end %>
+
+<% if @user.confirmed_host_reservations.length > 0 %>
+
+<h3>Confirmed Reservations (as host)</h1>
+
+<%@user.confirmed_host_reservations.each do |res| %>
+
+<%= res.listing.venue.name %> <br>
+Reservaton ID: <%= res.id %> <br>
+Start Date: <%= res.start_date %> <br>
+End Date: <%= res.end_date %> <br>
+<%= link_to "Cancel Reservation", reservation_path(res), method: :delete %>
+<% end %>
+<% end %>

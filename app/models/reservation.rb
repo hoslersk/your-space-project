@@ -7,7 +7,7 @@ class Reservation < ApplicationRecord
 
   # review?
 
-  validate :date_is_valid, :no_reservation_conflicts
+  validate :date_is_valid, :no_reservation_conflicts, :start_before_end
 
  def date_is_valid
    # reservation request falls within listing availability dates
@@ -16,8 +16,15 @@ class Reservation < ApplicationRecord
    end
  end
 
+ def start_before_end
+   if self.end_date < self.start_date
+     errors.add(:invalid_date_range, "The start date must be before the end date")
+   end
+ end
+
 
  def no_reservation_conflicts
+
    # appends error if reservation request conflicts with other confirmed reservations for the listing
    confirmed_reservations = Reservation.where(listing_id: self.listing.id, confirmed: true)
    confirmed_reservations.each do |confirmed_reservation|
