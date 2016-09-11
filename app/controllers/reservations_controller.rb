@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
       reservation.renter_id= current_user.id
       reservation.listing = listing.first
         if reservation.save
-          #ReservationRequestMailer.reservation_request_email(reservation.host).deliver
+          ReservationRequestMailer.reservation_request_email(reservation.host).deliver
           redirect_to reservation_path(reservation), notice: "Your reservation was sucessfully created."
         else
           @venue = Venue.find(venue_id)
