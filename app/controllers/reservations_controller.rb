@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+
     reservation = Reservation.new(reservation_params) #makes a new reservation (not yet saved! with the reqested dates )
     venue_id = params[:reservation][:venue_id]
     listing = Listing.all.where("venue_id = ? AND available_start_date <= ? AND available_end_date >= ?", venue_id, reservation.start_date, reservation.end_date) #looks up any listings
@@ -30,6 +31,7 @@ class ReservationsController < ApplicationController
       redirect_to venue_path(Venue.find(venue_id)), notice: "Please select a valid date range (call reservation.errors.messages maybe)" #should be render
     end
     # set up email and date verification/error message conditional for .save
+
   end
 
   def show

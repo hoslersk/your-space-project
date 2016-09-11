@@ -10,3 +10,5 @@
 
 <%= link_to "Edit Listing", edit_listing_path(@listing) %>
 <%= link_to "Remove Listing", listing_path(@listing), method: :delete %>
+
+<div id="calendar_lis" data-listing-id=<%= @listing.id %>></div>

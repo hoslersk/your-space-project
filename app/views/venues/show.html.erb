@@ -7,6 +7,10 @@
 
 <br>
 
+
+
+<div id="calendar_ven" data-ven-id=<%= @venue.id %>></div>
+
 <h3> Lising Dates: </h3>
 <% @venue.listings.each do |listing| %>
 Lising ID: <%= listing.id  %> <br>
@@ -46,6 +50,8 @@ Note: Insert calendar listing view here
 
 
 <!-- Show all listings for this venue here <br> <br>
+
+
 
 Show reservation info (book button) -->
 
