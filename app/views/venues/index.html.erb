@@ -1,9 +1,42 @@
-<h1>Venues Index</h1>
+<h2>Find YourSpace</h2>
 
-<% @venues.each do |venue| %>
-<%= link_to venue.name, venue_path(venue) %> <br>
-<%= venue.address %> <br>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<br><br>
-<%= link_to "List a new venue", new_venue_path %>
+<p><%= form_tag('/venues', :method => :get) do |f| %>
+
+<%= label_tag :zip_code %>
+<%= text_field_tag :zip_code, @zip_code %>
+
+<%= label_tag :from %>
+<%= date_field_tag :start_date, @start_date %>
+
+<%= label_tag :to %>
+<%= date_field_tag :end_date, @end_date %></p>
+
+<p><%= label_tag :price_range %>
+<input type="text" id="price-range-text" readonly style="border:0; color:#f6931f; font-weight:bold; background-color:transparent">
+<div id="price-range"></div>
+<%= hidden_field_tag :price_min_input, :value %>
+<%= hidden_field_tag :price_max_input, :value %>
+
+<br>
+<%= submit_tag 'Search' %></p>
+<% end %>
+
+<h2>Search Results</h2>
+
+<% if @venues %>
+  <% @venues.each do |venue| %>
+    <div id="venue_results">
+    <%= link_to image_tag(venue.images.first.image.url(:medium)), venue_path(venue) %><br>
+    <%= link_to venue.name, venue_path(venue) %> <br>
+    <%= venue.address %><br>
+    <%= venue.city %>, <%= venue.zip_code %><br>
+    <% venue.listings.each do |listing| %>
+      <%= listing.available_start_date %> - <%= listing.available_end_date %><br>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>
