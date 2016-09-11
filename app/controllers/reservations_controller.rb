@@ -13,6 +13,7 @@ class ReservationsController < ApplicationController
   def create
     reservation = Reservation.new(reservation_params)
     # set up email conditional for .save
+    # ReservationRequestMailer.reservation_request_email(@reservation.host).deliver
     reservation.save
     redirect_to reservation_path(reservation)
   end
@@ -24,6 +25,8 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    # include some logic to see if "confirmed" has changed to true...
+    # ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
     @reservation.update(reservation_params)
     redirect_to reservation_path(@reservation)
   end

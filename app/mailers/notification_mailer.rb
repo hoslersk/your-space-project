@@ -1,11 +1,11 @@
 class NotificationMailer < ApplicationMailer
 
-  default from: 'schylerhosler@gmail.com'
+  default from: 'flatiron.app.test@gmail.com'
   layout 'mailer'
 
-  def sample_email(user)
+  def notification_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Sample Email')
+    mail(to: @user.email, subject: 'Notification Email')
   end
 
   # NotificationMailer.notification_email(@user).deliver #for use in UsersController
