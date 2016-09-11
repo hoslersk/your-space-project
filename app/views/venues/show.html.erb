@@ -8,17 +8,8 @@
 <br>
 
 
-
+<h3> Venue Availability</h3>
 <div id="calendar_ven" data-ven-id=<%= @venue.id %>></div>
-
-<h3> Lising Dates: </h3>
-<% @venue.listings.each do |listing| %>
-Lising ID: <%= listing.id  %> <br>
-Start Date: <%= listing.available_start_date %> <br>
-End Date: <%= listing.available_end_date %> <br>
-<% end %>
-
-Note: Insert calendar listing view here
 
 <br>
 <br>
@@ -62,7 +53,7 @@ Show reservation info (book button) -->
   <%= link_to "Delete your venue", venue_path(@venue), method: :delete%>
 <br>
 <br>
-<h3>Create a lising for your venue</h3>
+<h3>Create a listing for your venue</h3>
 <%= form_for(Listing.new) do |f| %>
   <%= f.hidden_field :venue_id, :value => @venue.id %>
 

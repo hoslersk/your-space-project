@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reservations = Reservation.all
+    @user = current_user
   end
 
   def new
@@ -35,6 +35,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
