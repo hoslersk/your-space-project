@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 group :production do
   gem 'rails_12factor'
 end

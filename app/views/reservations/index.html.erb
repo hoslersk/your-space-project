@@ -4,6 +4,9 @@
  <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>
  <% end %>
 
+
+<div id="calendar_res"></div>
+
  <h1> <%= current_user.first_name %>'s Renter Reservations</h1>
  <% current_user.renter_reservations.each do |reservation| %>
   <h3><%= reservation.venue.name %> :<%= reservation.start_date.strftime('%a %b %d %Y') %>, at <%= reservation.start_time.strftime('%I:%M %p') %> to <%= reservation.end_date.strftime('%a %b %d %Y') %>, at <%= reservation.end_time.strftime('%I:%M %p') %> </h3>

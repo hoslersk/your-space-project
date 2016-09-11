@@ -14,6 +14,14 @@ before_action :authorize, except: [:show, :index]
   end
 
   def show
+    listings = @venue.listings
+    hash = {}
+    listings.each do |listing|
+      listing.reservations.each do |res|
+      end
+    end
+
+
   end
 
   def index
