@@ -18,6 +18,7 @@ class ReservationsController < ApplicationController
       reservation.renter_id= current_user.id
       reservation.listing = listing.first
         if reservation.save
+          #ReservationRequestMailer.reservation_request_email(reservation.host).deliver
           redirect_to reservation_path(reservation), notice: "Your reservation was sucessfully created."
         else
           @venue = Venue.find(venue_id)
@@ -39,6 +40,8 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation.update(reservation_params)
+    # include some logic to see if "confirmed" has changed to true...
+    # ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
     redirect_to reservation_path(@reservation)
   end
 
