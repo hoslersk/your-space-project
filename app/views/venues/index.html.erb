@@ -1,9 +1,14 @@
 <h1>Venues Index</h1>
 <div id="venues-list">
   <% @venue_zips = [] %>
+  <% @venue_names = [] %>
+
   <% @venues.each do |venue| %>
   <%= link_to venue.name, venue_path(venue) %> | <%= venue.city %> | <%= venue.description %><br>
   <% @venue_zips << venue.zip_code %>
+  <% @venue_names << venue.name %>
+
+
   <% end %>
   <%= link_to "List a new venue", new_venue_path %>
 </div>
@@ -15,9 +20,7 @@
   <div id="map-canvas"></div>
 </div>
 
-    <script type="text/javascript"
-        src="http://maps.google.com/maps/api/js?sensor=false">
-    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"> </script>
     <script type="text/javascript">
       //Declare the variable that will store the geocode object
       var geocoder;
@@ -57,7 +60,7 @@
                 //variable, we'll call it oMarker, it will be created as a new google.maps.Marker.  The new method take two
                 //parmaters, the first is the map object that you're adding the marker to, and the second is the
                 //position to place the marker which is again the first results geometry location.
-          
+
                 myPlace.lat = results[0].geometry.location.lat();
                 myPlace.lng = results[0].geometry.location.lng();
 
@@ -74,48 +77,41 @@
       function codeVenueAddress() {
         let zipCodes = []
         zipCodes = <%=raw @venue_zips %>
+        let venueNames = []
+        venueNames = <%=raw @venue_names %>
         for (var i=0; i < zipCodes.length;i++){
         var sAddress = zipCodes[i];
+        var name = venueNames[i];
+        console.log(i)
 
-        //Call the geocode method of the geocoder object, this will take two passed in parameters.  The first is
-        //the GeocoderRequest, this says what kind of request is being made and what the request value is.
-        //The second is the callback function that will be used to process the results.
         geocoder.geocode( { 'address': sAddress}, function(results, status) {
-            //The callback function should first check the status value of the callback function.  Use an IF statement
-            //to test the result, check to see if the status equal google.maps.GeocoderStatus.OK.  Also add an
-            //ELSE clause to the if statement as well.
-            if (status == google.maps.GeocoderStatus.OK) {
-                //If the status equals OK, call the setCenter method of the map object variable.  You will pass this
-                //method the results first geometry location.
+          console.log(i)
 
-                //Next use the same result geometry location to add a map marker to the map object variable.  Create a new
-                //variable, we'll call it oMarker, it will be created as a new google.maps.Marker.  The new method take two
-                //parmaters, the first is the map object that you're adding the marker to, and the second is the
-                //position to place the marker which is again the first results geometry location.
+            if (status == google.maps.GeocoderStatus.OK) {
               let venueLat = results[0].geometry.location.lat()
               let venueLng = results[0].geometry.location.lng()
 
-
-
               if ((Math.round(venueLat) == Math.round(myPlace.lat)) && (Math.round(venueLng) == Math.round(myPlace.lng))) {
-                console.log(`yay, there's a match! This venue's lat is ${myPlace.lat}`)
+                var contentString = `<h3> ${name} </h3><p>This is a great place</p>`;
 
-                console.log(Math.round(venueLng))
-                console.log(Math.round(myPlace.lng))
+                var infoWindow = new google.maps.InfoWindow({
+                  content: contentString
+                });
 
                 var marker = new google.maps.Marker({
                     map: map,
-                    position: results[0].geometry.location
+                    position: results[0].geometry.location,
+                    title: name
+                });
+
+                marker.addListener('click', function() {
+                  infoWindow.open(map, marker);
                 });
               }
 
             } else {
-                //Finally we're going to add an alert message to the ELSE to let the user know that the Geocode didn't
-                //work like it should have.  You can use the status to give a bit more information rather than just saying
-                //that it didn't work.
                 alert("Geocode was not successful for the following reason: " + status);
             }
-            // console.log(@venue_zips[i])
           });
         }
       }
