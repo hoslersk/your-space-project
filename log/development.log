@@ -28832,3 +28832,726 @@ Processing by VenuesController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
 Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.6ms)
  16c6332c98feef86aaed8e6da15dc483b37aa095
+Started GET "/reservations/3" for ::1 at 2016-09-11 19:08:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/schylerhosler/Development/code/your-space-project/app/controllers/reservations_controller.rb:46: syntax error, unexpected tCONSTANT, expecting keyword_end
+...) ReservationConfirmationMailer.reservation_confirmation_ema...
+...                               ^):
+  
+app/controllers/reservations_controller.rb:46: syntax error, unexpected tCONSTANT, expecting keyword_end
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.2ms)
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.4ms)
+Started GET "/reservations/3" for ::1 at 2016-09-11 19:10:31 -0400
+  
+SyntaxError (/Users/schylerhosler/Development/code/your-space-project/app/controllers/reservations_controller.rb:45: syntax error, unexpected tCONSTANT, expecting keyword_end
+...) ReservationConfirmationMailer.reservation_confirmation_ema...
+...                               ^):
+  
+app/controllers/reservations_controller.rb:45: syntax error, unexpected tCONSTANT, expecting keyword_end
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/schylerhosler/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.4ms)
+Started GET "/reservations/3" for ::1 at 2016-09-11 19:10:43 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from set_reservation at /Users/schylerhosler/Development/code/your-space-project/app/controllers/reservations_controller.rb:63)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from set_reservation at /Users/schylerhosler/Development/code/your-space-project/app/controllers/reservations_controller.rb:63)
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (46.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 418ms (Views: 340.1ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-11 19:11:14 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (28.1ms)
+  Rendered venues/new.html.erb within layouts/application (30.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 83.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/5" for ::1 at 2016-09-11 19:11:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-11 19:11:23 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", true]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", false]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", false]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", true]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", true]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", false]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", false]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", true]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", true]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb___4449407891227362166_70120471542780 at /Users/schylerhosler/Development/code/your-space-project/app/views/reservations/index.html.erb:61)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_reservations_index_html_erb___4449407891227362166_70120471542780 at /Users/schylerhosler/Development/code/your-space-project/app/views/reservations/index.html.erb:61)
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (54.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 73.6ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473635483431" for ::1 at 2016-09-11 19:11:23 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473635483431"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 5]]
+  [1m[36mListing Load (0.8ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (23.3ms)
+Completed 200 OK in 35ms (Views: 27.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-11 19:11:31 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  Rendered venues/_form.html.erb (2.5ms)
+  Rendered venues/new.html.erb within layouts/application (4.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/venues" for ::1 at 2016-09-11 19:12:44 -0400
+Processing by VenuesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tQpcQzV73dlWZkuVfV9x21VVsCzU4agxdEeZ7jvX4UaXVQg4mv6X0eE+QbbLnEj4AG4FEuQpXpgT6Y2FYtssIQ==", "venue"=>{"name"=>"Moon Walk", "address"=>"The Moon", "description"=>"Moon"}, "commit"=>"Create Venue"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "venues" ("host_id", "name", "address", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["host_id", 5], ["name", "Moon Walk"], ["address", "The Moon"], ["description", "Moon"], ["created_at", 2016-09-11 23:12:44 UTC], ["updated_at", 2016-09-11 23:12:44 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/venues/4
+Completed 302 Found in 18ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/venues/4" for ::1 at 2016-09-11 19:12:44 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered venues/show.html.erb within layouts/application (13.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 39.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/venues/4.json?start=2016-08-28&end=2016-10-09&_=1473635565081" for ::1 at 2016-09-11 19:12:45 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473635565081", "id"=>"4"}
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  Rendering venues/show.json.jbuilder
+  Rendered venues/show.json.jbuilder (0.5ms)
+Completed 200 OK in 42ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/listings" for ::1 at 2016-09-11 19:12:57 -0400
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZefPnTU6SpyTNveC3Boh74omkRvdO1R5mYSCXDRmIBdHuJvmmr8AlCRu/aFq2RjM3x0kJe3zotD+KpY3bWrtcA==", "listing"=>{"venue_id"=>"4", "available_start_date(1i)"=>"2016", "available_start_date(2i)"=>"9", "available_start_date(3i)"=>"11", "available_start_time(1i)"=>"2016", "available_start_time(2i)"=>"9", "available_start_time(3i)"=>"11", "available_start_time(4i)"=>"14", "available_start_time(5i)"=>"00", "available_end_date(1i)"=>"2016", "available_end_date(2i)"=>"9", "available_end_date(3i)"=>"16", "available_end_time(1i)"=>"2016", "available_end_time(2i)"=>"9", "available_end_time(3i)"=>"11", "available_end_time(4i)"=>"23", "available_end_time(5i)"=>"00"}, "commit"=>"Create Listing"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "listings" ("venue_id", "available_start_date", "available_end_date", "available_start_time", "available_end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["venue_id", 4], ["available_start_date", Sun, 11 Sep 2016], ["available_end_date", Fri, 16 Sep 2016], ["available_start_time", 2016-09-11 14:00:00 UTC], ["available_end_time", 2016-09-11 23:00:00 UTC], ["created_at", 2016-09-11 23:12:57 UTC], ["updated_at", 2016-09-11 23:12:57 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/listings/4
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/listings/4" for ::1 at 2016-09-11 19:12:57 -0400
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering listings/show.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered listings/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/listings/4.json?start=2016-08-28&end=2016-10-09&_=1473635577306" for ::1 at 2016-09-11 19:12:57 -0400
+Processing by ListingsController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473635577306", "id"=>"4"}
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering listings/show.json.jbuilder
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 4]]
+  Rendered listings/show.json.jbuilder (13.3ms)
+Completed 200 OK in 27ms (Views: 18.5ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-11 19:13:12 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jISjXKycyC94VzouGmF3vCASxLv6nP7DsHq8GbYxZwyu2/cnAxmCJ88PMA2sok6fdSlxhcpUCGrX1Khy7z2qaw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-11 19:13:12 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-11 19:13:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-11 19:13:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5kUg0X/de1DGjBgqNa8P1no4ysMnoTUhC0VKS7ncAdbEGnSq0FgxWHHUEgmDbDb1LwN//Rdpw4hs614g4NDMsQ==", "user"=>{"username"=>"vronnieli", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "vronnieli"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-11 19:13:21 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-11 19:13:23 -0400
+Processing by VenuesController#index as HTML
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues/4" for ::1 at 2016-09-11 19:13:25 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 4]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/show.html.erb within layouts/application (13.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 44.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/venues/4.json?start=2016-08-28&end=2016-10-09&_=1473635605364" for ::1 at 2016-09-11 19:13:25 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473635605364", "id"=>"4"}
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 4]]
+  Rendering venues/show.json.jbuilder
+  Rendered venues/show.json.jbuilder (1.2ms)
+Completed 200 OK in 26ms (Views: 12.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/reservations" for ::1 at 2016-09-11 19:13:39 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9N9X4RReuSDIugE0i+FGw7CwOPOTPbz7fPqqoNcPZyPWgAOau9vzKH/iCxc9In/g5YuNzaP1SlIbVL7LjgOqRA==", "reservation"=>{"start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"13", "venue_id"=>"4", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"14", "start_time(1i)"=>"2016", "start_time(2i)"=>"9", "start_time(3i)"=>"11", "start_time(4i)"=>"17", "start_time(5i)"=>"00", "end_time(1i)"=>"2016", "end_time(2i)"=>"9", "end_time(3i)"=>"11", "end_time(4i)"=>"23", "end_time(5i)"=>"00"}, "commit"=>"Create Reservation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: venue_id
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE (venue_id = '4' AND available_start_date <= '2016-09-13' AND available_end_date >= '2016-09-14')[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 4], ["confirmed", true]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "reservations" ("listing_id", "renter_id", "start_date", "end_date", "start_time", "end_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["listing_id", 4], ["renter_id", 1], ["start_date", Tue, 13 Sep 2016], ["end_date", Wed, 14 Sep 2016], ["start_time", 2016-09-11 17:00:00 UTC], ["end_time", 2016-09-11 23:00:00 UTC], ["created_at", 2016-09-11 23:13:39 UTC], ["updated_at", 2016-09-11 23:13:39 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservation_request_mailer/reservation_request_email.html.erb within layouts/mailer
+  Rendered reservation_request_mailer/reservation_request_email.html.erb within layouts/mailer (0.5ms)
+  Rendering reservation_request_mailer/reservation_request_email.text.erb within layouts/mailer
+  Rendered reservation_request_mailer/reservation_request_email.text.erb within layouts/mailer (0.4ms)
+ReservationRequestMailer#reservation_request_email: processed outbound mail in 146.7ms
+Sent mail to schylerhosler@gmail.com (779.4ms)
+Date: Sun, 11 Sep 2016 19:13:40 -0400
+From: flatiron.app.test@gmail.com
+To: schylerhosler@gmail.com
+Message-ID: <57d5e5241426d_adc03fc62eb397e453368@Williams-MacBook-Pro.local.mail>
+Subject: YourSpace Reservation Request Has Been Received!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57d5e52412994_adc03fc62eb397e453240";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57d5e52412994_adc03fc62eb397e453240
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Schyler,
+
+You've just received a new request for one of your listings!
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57d5e52412994_adc03fc62eb397e453240
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>Hello Schyler,</h3>
+    <p>
+      You've just received a new request for one of your listings!
+    </p>
+    <p>
+      Please sign in to your account to view details.
+    </p>
+    <p>
+      Sincerely,
+    </p>
+    <p>
+      YourSpace Team
+    </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57d5e52412994_adc03fc62eb397e453240--
+
+Redirected to http://localhost:3000/reservations/4
+Completed 302 Found in 1309ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/reservations/4" for ::1 at 2016-09-11 19:13:40 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (7.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reservations/4/edit" for ::1 at 2016-09-11 19:14:11 -0400
+Processing by ReservationsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservations/edit.html.erb within layouts/application
+  Rendered reservations/edit.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/reservations/4" for ::1 at 2016-09-11 19:14:18 -0400
+Processing by ReservationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BKPplTpYaYSgNykFr/iQW012rTkZ7FUsee1BwqxnvGsm/L3uld0jjBdvIyYZO6l4GE0YBykko4UeQ1Wp9WtxDA==", "reservation"=>{"listing_id"=>"4", "renter_id"=>"1", "start_date(1i)"=>"2016", "start_date(2i)"=>"9", "start_date(3i)"=>"14", "end_date(1i)"=>"2016", "end_date(2i)"=>"9", "end_date(3i)"=>"15", "start_time(1i)"=>"2000", "start_time(2i)"=>"1", "start_time(3i)"=>"1", "start_time(4i)"=>"17", "start_time(5i)"=>"00", "end_time(1i)"=>"2000", "end_time(2i)"=>"1", "end_time(3i)"=>"1", "end_time(4i)"=>"23", "end_time(5i)"=>"00", "confirmed"=>"false"}, "commit"=>"Update Reservation", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameters: listing_id, renter_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 4], ["confirmed", true]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "reservations" SET "start_date" = $1, "end_date" = $2, "updated_at" = $3 WHERE "reservations"."id" = $4[0m  [["start_date", Wed, 14 Sep 2016], ["end_date", Thu, 15 Sep 2016], ["updated_at", 2016-09-11 23:14:18 UTC], ["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering reservation_confirmation_mailer/reservation_confirmation_email.html.erb within layouts/mailer
+  Rendered reservation_confirmation_mailer/reservation_confirmation_email.html.erb within layouts/mailer (0.4ms)
+  Rendering reservation_confirmation_mailer/reservation_confirmation_email.text.erb within layouts/mailer
+  Rendered reservation_confirmation_mailer/reservation_confirmation_email.text.erb within layouts/mailer (0.4ms)
+ReservationConfirmationMailer#reservation_confirmation_email: processed outbound mail in 22.6ms
+Sent mail to vronnieli@gmail.com (625.4ms)
+Date: Sun, 11 Sep 2016 19:14:18 -0400
+From: flatiron.app.test@gmail.com
+To: vronnieli@gmail.com
+Message-ID: <57d5e54adf720_adc03fc62eb3994c53519@Williams-MacBook-Pro.local.mail>
+Subject: YourSpace Reservation Has Been Confirmed!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57d5e54adeefd_adc03fc62eb3994c534ab";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57d5e54adeefd_adc03fc62eb3994c534ab
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Veronica,
+This notification email was sent using SMTP.
+
+
+----==_mimepart_57d5e54adeefd_adc03fc62eb3994c534ab
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Dear Veronica,</h1>
+    <p>
+      This notification email was sent using SMTP.
+    </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57d5e54adeefd_adc03fc62eb3994c534ab--
+
+Redirected to http://localhost:3000/reservations/4
+Completed 302 Found in 670ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/reservations/4" for ::1 at 2016-09-11 19:14:19 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (7.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 41.1ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/signout" for ::1 at 2016-09-11 19:14:33 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Rl24VW1Bv0Ha9hUwrGdgE02jUaahF6D5hRjgX3VrQk9kAuwuwsT1SW2uHxMapFkwGJjkmJHfVlDitvQ0LGePKA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-11 19:14:33 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2016-09-11 19:14:44 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-09-11 19:14:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aa1Lib8xNCnz8YtU5PRXU2BV0WN1wP4UIEKbEpPegPsj8h/yELR+IUSpgXdSN25wNW5kXUUICL1H7I95ytJNnA==", "user"=>{"username"=>"hoslersk", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hoslersk"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-11 19:14:53 -0400
+Processing by SessionsController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-11 19:14:56 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", true]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", false]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", true]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 5], ["confirmed", false]]
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", false]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", true]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 5], ["confirmed", true]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reservations/index.html.erb within layouts/application (22.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 44.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473635696546" for ::1 at 2016-09-11 19:14:56 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473635696546"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 5]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (18.6ms)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 3.5ms)
+
+
+Started PATCH "/reservations/4" for ::1 at 2016-09-11 19:15:01 -0400
+Processing by ReservationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kGIBuxUDjujWh7+kVzq3qn5OWTKd/BOrqRSRI8Z/4sOyPVXAuobE4GHftYfh+Y6JK3XsDK005QLOuoVIn3MvpA==", "reservation"=>{"confirmed"=>"true"}, "commit"=>"Confirm Reservation", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1 AND "reservations"."confirmed" = $2[0m  [["listing_id", 4], ["confirmed", true]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reservations" SET "confirmed" = $1, "updated_at" = $2 WHERE "reservations"."id" = $3[0m  [["confirmed", true], ["updated_at", 2016-09-11 23:15:01 UTC], ["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering reservation_confirmation_mailer/reservation_confirmation_email.html.erb within layouts/mailer
+  Rendered reservation_confirmation_mailer/reservation_confirmation_email.html.erb within layouts/mailer (0.4ms)
+  Rendering reservation_confirmation_mailer/reservation_confirmation_email.text.erb within layouts/mailer
+  Rendered reservation_confirmation_mailer/reservation_confirmation_email.text.erb within layouts/mailer (0.3ms)
+ReservationConfirmationMailer#reservation_confirmation_email: processed outbound mail in 19.0ms
+Sent mail to vronnieli@gmail.com (579.1ms)
+Date: Sun, 11 Sep 2016 19:15:01 -0400
+From: flatiron.app.test@gmail.com
+To: vronnieli@gmail.com
+Message-ID: <57d5e575d410c_adc03fc62eb3994c537fb@Williams-MacBook-Pro.local.mail>
+Subject: YourSpace Reservation Has Been Confirmed!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57d5e575d2dad_adc03fc62eb3994c53664";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57d5e575d2dad_adc03fc62eb3994c53664
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Veronica,
+This notification email was sent using SMTP.
+
+
+----==_mimepart_57d5e575d2dad_adc03fc62eb3994c53664
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Dear Veronica,</h1>
+    <p>
+      This notification email was sent using SMTP.
+    </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57d5e575d2dad_adc03fc62eb3994c53664--
+
+Redirected to http://localhost:3000/reservations/4
+Completed 302 Found in 612ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/reservations/4" for ::1 at 2016-09-11 19:15:02 -0400
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reservations/show.html.erb within layouts/application (5.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 1.5ms)
+
+

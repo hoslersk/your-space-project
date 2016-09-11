@@ -11,7 +11,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-
     reservation = Reservation.new(reservation_params) #makes a new reservation (not yet saved! with the reqested dates )
     venue_id = params[:reservation][:venue_id]
     listing = Listing.all.where("venue_id = ? AND available_start_date <= ? AND available_end_date >= ?", venue_id, reservation.start_date, reservation.end_date) #looks up any listings
@@ -42,10 +41,15 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    @reservation.update(reservation_params)
-    # include some logic to see if "confirmed" has changed to true...
-    # ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
-    redirect_to reservation_path(@reservation)
+    if params[:reservation][:confirmed]
+      @reservation.update(reservation_params)
+      ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
+      redirect_to reservation_path(@reservation)
+    else
+      @reservation.update(reservation_params)
+      ReservationUpdateMailer.reservation_update_email(@reservation.host).deliver
+      redirect_to reservation_path(@reservation)
+    end
   end
 
   def destroy
