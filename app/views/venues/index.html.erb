@@ -92,7 +92,7 @@
               let venueLng = results[0].geometry.location.lng()
 
               if ((Math.round(venueLat) == Math.round(myPlace.lat)) && (Math.round(venueLng) == Math.round(myPlace.lng))) {
-                var contentString = `<h3> ${name} </h3><p>This is a great place</p>`;
+                var contentString = `<h3> ${name} </h3>`;
 
                 var infoWindow = new google.maps.InfoWindow({
                   content: contentString
