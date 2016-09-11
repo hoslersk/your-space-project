@@ -17,6 +17,14 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    listings = @venue.listings
+    hash = {}
+    listings.each do |listing|
+      listing.reservations.each do |res|
+      end
+    end
+
+
   end
 
   def index
