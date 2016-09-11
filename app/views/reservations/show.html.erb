@@ -1,19 +1,33 @@
-<% if @reservation.confirmed == false %>
-  <h1> Hello, <%= @reservation.renter.first_name %>. Your reservation at <%= @reservation.venue.name %> is pending. A representative will be in touch shortly. </h1>
-<% end %>
+<% if @reservation.host.id == current_user.id %>
+  <h1> Hello, <%= @reservation.host.first_name %>. Your venue has been booked by <%= @reservation.renter.first_name %>. </h1>
 
-<% if @reservation.confirmed == true%>
-  <h1> Hello, <%= @reservation.renter.first_name %>. Your reservation at <%= @reservation.venue.name %> is confirmed. </h1>
+    <% if @reservation.confirmed == false %>
+      This reservation has not been confirmed. <br>
+      <%= form_for(@reservation) do |f|%>
+      <%= f.hidden_field :confirmed, :value => true %>
+      <%= f.submit "Confirm Reservation" %> <br>
+      <% end %>
+      <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
+    <% else%>
+      This reservation has been confirmed. <br>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
+    <% end %>
+<% else%>
+  <% if @reservation.confirmed == false %>
+    <h1> Hello, <%= @reservation.renter.first_name %>. Your reservation at <%= @reservation.venue.name %> is pending. A representative will be in touch shortly. </h1>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
+    <%= link_to "Modify Reservation", edit_reservation_path(@reservation) %>
+  <% end %>
+
+  <% if @reservation.confirmed == true%>
+    <h1> Hello, <%= @reservation.renter.first_name %>. Your reservation at <%= @reservation.venue.name %> is confirmed. </h1>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
+  <% end %>
+
 <% end %>
 <br>
-Confirmed: <%= @reservation.confirmed %>
+
 
 <h3> The start date is: <%= @reservation.start_date.strftime('%a %b %d %Y') %>, at <%= @reservation.start_time.strftime('%I:%M %p') %> </h3>
 
-<%= @reservation.confirmed %>
-
 <h3> The end date is: <%= @reservation.end_date.strftime('%a %b %d %Y') %>, at <%= @reservation.end_time.strftime('%I:%M %p') %> </h3>
-
-
-<%= link_to "Modify Reservation", edit_reservation_path(@reservation) %>
-<%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>

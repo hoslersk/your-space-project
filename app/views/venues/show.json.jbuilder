@@ -14,7 +14,7 @@ end
   json.array!(listing.reservations) do |res|
     if res.confirmed == true
       json.extract! res, :id
-      json.title "Not Availble"
+      json.title "Not Available"
       json.start res.start_date
       json.end res.end_date
       #json.url reservation_url(res, format: :html)
