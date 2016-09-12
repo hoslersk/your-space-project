@@ -27,7 +27,8 @@ class ReservationsController < ApplicationController
           redirect_to reservation_path(reservation)
         else
           # redirect to venue show page if cannot save
-          redirect_to venue_path(Venue.find(venue_id))
+          # binding.pry
+          redirect_to venue_path(Venue.find(venue_id)), notice: reservation.errors.full_messages.join(". ")
         end
     else
       redirect_to venue_path(Venue.find(venue_id)), notice: "Please select dates where there is a listing" #should be render

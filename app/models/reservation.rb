@@ -1,4 +1,12 @@
 class Reservation < ApplicationRecord
+    validate :date_is_valid, :no_reservation_conflicts, :start_before_end
+    validates :listing_id, presence: true
+    validates :renter_id, presence: true
+    validates :start_date, presence: true
+    validates :end_date, presence: true
+
+
+
   belongs_to :listing
   has_one :venue, through: :listing
   # delegates: :venue, to: :listing??
@@ -7,7 +15,7 @@ class Reservation < ApplicationRecord
 
   # review?
 
-  validate :date_is_valid, :no_reservation_conflicts, :start_before_end
+
 
  def date_is_valid
    # reservation request falls within listing availability dates

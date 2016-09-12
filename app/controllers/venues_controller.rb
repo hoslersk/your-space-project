@@ -54,8 +54,19 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
+    @venue.listings.each do |lis|
+      lis.reservations.each do |res|
+        res.destroy
+      end
+      lis.delete
+    end
     @venue.delete
     redirect_to venues_path
+  end
+
+  def my_venues
+    @venues = current_user.host_venues
+
   end
 
 

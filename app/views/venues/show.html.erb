@@ -1,10 +1,7 @@
 <div id="venue-show">
 <h1><%= @venue.name %></h1>
 <div id="venue-info">
-<% if current_user.id == @venue.host.id %>
-  <%= link_to "Edit", edit_venue_path(@venue) %>
-  <%= link_to "Delete", venue_path(@venue), method: :delete%>
-<% end %>
+
   <ul>
   <% @venue.images.each do |image| %>
    <p><%= image_tag(image.image.url(:medium)) %></p>
@@ -45,7 +42,8 @@
 <% end %>
 
 <% elsif current_user.id == @venue.host.id %>
-
+<%= link_to "Edit Venue", edit_venue_path(@venue) %>
+<%= link_to "Delete Venue", venue_path(@venue), method: :delete%>
 <h3>Create a New Listing</h3>
 
 <%= form_for(Listing.new) do |f| %>
@@ -68,6 +66,15 @@
 <%= f.text_field :price, :required => true %></p>
 
 <%= f.submit %>
+<% end %>
+
+<h3>Remove Listings</h3>
+
+<% @venue.listings.each do |listing| %>
+Listing ID: <%= listing.id %> <br>
+
+  Available Dates: <%= listing.available_start_date.strftime("%B %e, %Y") %> - <%= listing.available_end_date.strftime("%B %e, %Y") %> <br>
+<%= link_to "Remove Listing", listing_path(listing), method: :delete %> <br> <br>
 <% end %>
 
 <% end %>

@@ -18,7 +18,7 @@
     <!-- <a href="#" class="dropbtn">Dropdown</a> -->
   <div class="dropdown-content">
     <%= link_to "New Venue", new_venue_path %>
-    <%= link_to "Manage YourSpaces", new_venue_path %>
+    <%= link_to "Manage YourSpaces", my_venues_path %>
   </div>
   </li>
  <li class="nav" style="float:right"><%= link_to "Sign Out", signout_path, method: :delete %></li>
@@ -34,6 +34,7 @@
 
 
     <% flash.each do |key, value| %>
+    <% binding.pry %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 
