@@ -41,6 +41,10 @@ class ReservationsController < ApplicationController
 
   end
 
+  def host_reservations
+
+  end
+
   def edit
   end
 
