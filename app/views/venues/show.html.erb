@@ -7,8 +7,73 @@
 
 <br>
 
-<%= link_to "Edit your venue", edit_venue_path(@venue) %>
-<%= link_to "Delete your venue", venue_path(@venue), method: :delete%>
+
+
+<div id="calendar_ven" data-ven-id=<%= @venue.id %>></div>
+
+<h3> Lising Dates: </h3>
+<% @venue.listings.each do |listing| %>
+Lising ID: <%= listing.id  %> <br>
+Start Date: <%= listing.available_start_date %> <br>
+End Date: <%= listing.available_end_date %> <br>
+<% end %>
+
+Note: Insert calendar listing view here
+
+<br>
+<br>
+
+<% if @venue.host_id != current_user.id %>
+
+<h3> Make a reservation</h3>
+  <%= form_for Reservation.new do |f| %>
+  <br>
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date %>
+  <br>
+  <%= f.hidden_field :venue_id, :value => @venue.id  %>
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %>
+  <br>
+  <%= f.label :start_time %>
+  <%= f.time_select :start_time, {ampm: true, minute_step: 15} %>
+  <br>
+
+  <%= f.label :end_time %>
+  <%= f.time_select :end_time, {ampm: true, minute_step: 15} %>
+  <br>
+  <%= f.submit %>
+
+
+  <% end %>
+  <% end %>
+
+
 <!-- Show all listings for this venue here <br> <br>
 
+
+
 Show reservation info (book button) -->
+
+
+
+<% if current_user.id == @venue.host.id %>
+  <%= link_to "Edit your venue", edit_venue_path(@venue) %>
+  <%= link_to "Delete your venue", venue_path(@venue), method: :delete%>
+<br>
+<br>
+<h3>Create a lising for your venue</h3>
+<%= form_for(Listing.new) do |f| %>
+  <%= f.hidden_field :venue_id, :value => @venue.id %>
+
+  <%= f.label :available_start_date %>
+  <%= f.date_select :available_start_date %><br>
+  <%= f.label :available_start_time %>
+  <%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %><br>
+  <%= f.label :available_end_date %>
+  <%= f.date_select :available_end_date %><br>
+  <%= f.label :available_end_time %>
+  <%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %><br>
+  <%= f.submit %>
+<% end %>
+<% end %>
