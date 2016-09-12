@@ -11,5 +11,12 @@ class Listing < ApplicationRecord
   validates :price, presence: {message: "Please enter an amount"}
   validates :price, numericality: {message: "Please enter a numeric value"}
 
+  # def no_overlap
+  #
+  #   # listing
+  #   if self.start_date < self.listing.available_start_date || self.end_date > self.listing.available_end_date
+  #     errors.add(:date_is_invalid, "reservation date must be within the listing dates")
+  #   end
+  # end
 
 end

@@ -19,19 +19,17 @@ class ListingsController < ApplicationController
 
   def create
     listing = Listing.create(listing_params)
-    byebug
-    if listing.id != nil
-      redirect_to listing_path(listing)
-    else
+    # if listing is not saved, create flash messages
+    if listing.id == nil
       flash[:notice] = ""
       listing.errors.messages.each do |attribute, error_message_array|
         error_message_array.each do |error_message|
           flash[:notice] << error_message
         end
       end
-      @listing = listing
-      redirect_to venue_path(@listing.venue)
     end
+    # redirect to venue show page
+    redirect_to venue_path(listing_params[:venue_id])
   end
 
   def edit
