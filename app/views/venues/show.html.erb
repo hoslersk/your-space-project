@@ -1,70 +1,75 @@
-<h1> <%= @venue.name %></h1>
-<ul>
-  <li> Address: <%=  @venue.address%></li>
-  <li> Description: <%=  @venue.description%></li>
-  <li> Contact: <%=  @venue.host.first_name %> <%=@venue.host.last_name%>, <%=@venue.host.email%>  </li>
-</ul>
+<div id="venue-show">
+<h1><%= @venue.name %></h1>
+<div id="venue-info">
+<% if current_user.id == @venue.host.id %>
+  <%= link_to "Edit", edit_venue_path(@venue) %>
+  <%= link_to "Delete", venue_path(@venue), method: :delete%>
+<% end %>
+  <ul>
+  <% @venue.images.each do |image| %>
+   <p><%= image_tag(image.image.url(:medium)) %></p>
+  <% end %>
+  <p><strong>Location: </strong><%= @venue.address + ", " + @venue.city + " " + @venue.zip_code %></p>
+  <p><strong>Description: </strong><%=  @venue.description%></p>
+  <p><strong>Contact: </strong><%=  @venue.host.first_name + " " + @venue.host.last_name + " (" + @venue.host.email + ")" %></p>
+  </ul>
+</div>
 
-<br>
-
-
-<h3> Venue Availability</h3>
-<div id="calendar_ven" data-ven-id=<%= @venue.id %>></div>
-
-<br>
+<div id="venue-availability">
+<div id="calendar_ven" align="left" data-ven-id=<%= @venue.id %>></div>
 <br>
 
 <% if @venue.host_id != current_user.id %>
 
 <h3> Make a reservation</h3>
-  <%= form_for Reservation.new do |f| %>
-  <br>
-  <%= f.label :start_date %>
-  <%= f.date_select :start_date %>
-  <br>
-  <%= f.hidden_field :venue_id, :value => @venue.id  %>
-  <%= f.label :end_date %>
-  <%= f.date_select :end_date %>
-  <br>
-  <%= f.label :start_time %>
-  <%= f.time_select :start_time, {ampm: true, minute_step: 15} %>
-  <br>
 
-  <%= f.label :end_time %>
-  <%= f.time_select :end_time, {ampm: true, minute_step: 15} %>
-  <br>
-  <%= f.submit %>
+<%= form_for Reservation.new do |f| %>
+
+<p><%= f.label :start_date %>
+<%= f.date_select :start_date %></p>
+
+<%= f.hidden_field :venue_id, :value => @venue.id  %>
+
+<p><%= f.label :end_date %>
+<%= f.date_select :end_date %></p>
+
+<p><%= f.label :start_time %>
+<%= f.time_select :start_time, {ampm: true, minute_step: 15} %></p>
 
 
-  <% end %>
-  <% end %>
+<p><%= f.label :end_time %>
+<%= f.time_select :end_time, {ampm: true, minute_step: 15} %></p>
 
+<p><%= f.submit %></p>
 
-<!-- Show all listings for this venue here <br> <br>
+<% end %>
 
+<% elsif current_user.id == @venue.host.id %>
 
+<h3>Create a New Listing</h3>
 
-Show reservation info (book button) -->
-
-
-
-<% if current_user.id == @venue.host.id %>
-  <%= link_to "Edit your venue", edit_venue_path(@venue) %>
-  <%= link_to "Delete your venue", venue_path(@venue), method: :delete%>
-<br>
-<br>
-<h3>Create a listing for your venue</h3>
 <%= form_for(Listing.new) do |f| %>
-  <%= f.hidden_field :venue_id, :value => @venue.id %>
 
-  <%= f.label :available_start_date %>
-  <%= f.date_select :available_start_date %><br>
-  <%= f.label :available_start_time %>
-  <%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %><br>
-  <%= f.label :available_end_date %>
-  <%= f.date_select :available_end_date %><br>
-  <%= f.label :available_end_time %>
-  <%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %><br>
-  <%= f.submit %>
+<%= f.hidden_field :venue_id, :value => @venue.id %>
+
+<p><%= f.label :available_start_date %>
+<%= date_field_tag 'listing[available_start_date]', nil, :required => true %>
+
+<%= f.label :available_end_date %>
+<%= date_field_tag 'listing[available_end_date]', nil, :required => true %></p>
+
+<p><%= f.label :available_start_time %>
+<%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %>
+
+<%= f.label :available_end_time %>
+<%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %></p>
+
+<p><%= f.label :price_per_day %> $
+<%= f.text_field :price, :required => true %></p>
+
+<%= f.submit %>
 <% end %>
+
 <% end %>
+</div>
+</div>

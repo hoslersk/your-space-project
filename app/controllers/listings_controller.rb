@@ -7,8 +7,6 @@ class ListingsController < ApplicationController
     # @listing.each do |list|
     #   @list_dates = []
 
-
-
   end
 
   def index
@@ -21,6 +19,7 @@ class ListingsController < ApplicationController
 
   def create
     listing = Listing.create(listing_params)
+    byebug
     if listing.id != nil
       redirect_to listing_path(listing)
     else
@@ -31,7 +30,7 @@ class ListingsController < ApplicationController
         end
       end
       @listing = listing
-      render 'new'
+      redirect_to venue_path(@listing.venue)
     end
   end
 
