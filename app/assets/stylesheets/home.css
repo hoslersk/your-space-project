@@ -1,0 +1,36 @@
+#search-box {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 300px;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius: 15px 45px;
+    text-align: center;
+    color: white;
+}
+
+#search-box:before {
+  background-color: #BDBAC1;
+  opacity: 0.6;
+  z-index: -1;
+  position: absolute;
+}
+
+#price-range {
+    margin: 10px;
+    align-content: center;
+}
+.ui-slider-horizontal {
+    height: 8px;
+    width: 200px;
+}
+.ui-slider .ui-slider-handle {
+    height: 15px;
+    width: 5px;
+    padding-left: 5px;
+}

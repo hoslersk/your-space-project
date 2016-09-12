@@ -20,8 +20,19 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(listing_params)
-    redirect_to listing_path(@listing)
+    listing = Listing.create(listing_params)
+    if listing.id != nil
+      redirect_to listing_path(listing)
+    else
+      flash[:notice] = ""
+      listing.errors.messages.each do |attribute, error_message_array|
+        error_message_array.each do |error_message|
+          flash[:notice] << error_message
+        end
+      end
+      @listing = listing
+      render 'new'
+    end
   end
 
   def edit
@@ -29,7 +40,6 @@ class ListingsController < ApplicationController
   end
 
   def update
-    #byebug
     @listing = Listing.find(params[:id])
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
@@ -48,7 +58,7 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:venue_id, :available_start_date, :available_end_date, :available_start_time, :available_end_time)
+    params.require(:listing).permit(:venue_id, :available_start_date, :available_end_date, :available_start_time, :available_end_time, :price)
   end
 
 end
