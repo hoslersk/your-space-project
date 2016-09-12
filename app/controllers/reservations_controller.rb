@@ -48,12 +48,16 @@ class ReservationsController < ApplicationController
     @reservation.update(reservation_params)
     # include some logic to see if "confirmed" has changed to true...
     # ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
-    redirect_to reservation_path(@reservation)
+    if @reservation.errors.any?
+      redirect_to reservation_path(@reservation), notice: @reservation.errors.full_messages.join(". ")
+    else
+      redirect_to reservation_path(@reservation)
+    end
   end
 
   def destroy
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to reservations_path, notice: "This reservation has been deleted!"
   end
 
   private

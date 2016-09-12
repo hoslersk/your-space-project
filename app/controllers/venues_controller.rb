@@ -13,7 +13,11 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     @venue = Venue.create(venue_params)
     # @venue.host_id=(current_user.id)
     # @venue.save
-    redirect_to venue_path(@venue)
+    if @venue.errors.any?
+      redirect_to venue_path(@venue), notice: @venue.errors.full_messages.join(". ")
+    else
+      redirect_to venue_path(@venue)
+    end
   end
 
   def show
@@ -50,7 +54,11 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def update
     @venue.update(venue_params)
-    redirect_to venue_path(@venue)
+    if @venue.errors.any?
+      redirect_to venue_path(@venue), notice: @venue.errors.full_messages.join(". ")
+    else
+      redirect_to venue_path(@venue)
+    end
   end
 
   def destroy
@@ -58,9 +66,9 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
       lis.reservations.each do |res|
         res.destroy
       end
-      lis.delete
+      lis.destroy
     end
-    @venue.delete
+    @venue.destroy
     redirect_to venues_path
   end
 

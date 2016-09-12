@@ -68,13 +68,13 @@
 <%= f.submit %>
 <% end %>
 
-<h3>Remove Listings</h3>
+<h3>Listings</h3>
 
 <% @venue.listings.each do |listing| %>
 Listing ID: <%= listing.id %> <br>
 
   Available Dates: <%= listing.available_start_date.strftime("%B %e, %Y") %> - <%= listing.available_end_date.strftime("%B %e, %Y") %> <br>
-<%= link_to "Remove Listing", listing_path(listing), method: :delete %> <br> <br>
+<%= link_to "Delete", listing_path(listing), method: :delete %> <br> <br>
 <% end %>
 
 <% end %>

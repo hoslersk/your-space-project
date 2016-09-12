@@ -1,9 +1,9 @@
 class Reservation < ApplicationRecord
     validate :date_is_valid, :no_reservation_conflicts, :start_before_end
-    validates :listing_id, presence: true
-    validates :renter_id, presence: true
-    validates :start_date, presence: true
-    validates :end_date, presence: true
+    validates :listing_id, presence: {message: 'Please enter a listing id'}
+    validates :renter_id, presence: {message: 'Please enter a renter id'}
+    validates :start_date, presence: {message: 'Please enter a start date'}
+    validates :end_date, presence: {message: 'Please enter an end date'}
 
 
 

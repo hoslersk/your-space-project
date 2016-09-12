@@ -9,15 +9,6 @@ class UsersController < ApplicationController
       @users = User.all
     end
 
-    # def new
-    #   @user = User.new
-    # end
-
-    # def create
-    #   user = User.create(user_params)
-    #   redirect_to user_path(user)
-    # end
-
     def show
     end
 
@@ -26,21 +17,26 @@ class UsersController < ApplicationController
 
     def update
       @user.update(user_params)
-      redirect_to user_path(@user)
+      if @user.errors.any?
+        redirect_to user_path(@user), notice: @user.errors.full_messages.join(". ")
+      else
+        redirect_to user_path(@user)
+      end
     end
 
     def destroy
-      # @user.renter_reservations.each do |res|
-      #   res.delete
-      # end
-      # @user.host_reservations.each do |res|
-      #   res.delete
-      # end
-      # @user.host_venues.each do |ven|
-      #   ven.delete
-      # end
-      # @user
-
+      @user.renter_reservations.each do |res|
+        res.delete
+      end
+      @user.host_reservations.each do |res|
+        res.delete
+      end
+      @user.host_venues.each do |ven|
+        ven.delete
+      end
+      @user.host_listings.each do |list|
+        list.delete
+      end
       @user.destroy
       redirect_to users_path
     end

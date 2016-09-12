@@ -32,10 +32,8 @@
 </ul>
  <% end %>
 
-
-    <% flash.each do |key, value| %>
-    <% binding.pry %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% flash.each do |key, value| %>
+    <div class="alert"><%= value %></div>
   <% end %>
 
     <%= yield %>
