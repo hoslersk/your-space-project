@@ -26,7 +26,9 @@ before_action :authorize, except: [:show, :index]
 
   def index
     @venues = Venue.all
+  #binding.pry
   end
+  # redirect_to root_path
 
   def edit
   end
@@ -41,6 +43,14 @@ before_action :authorize, except: [:show, :index]
     redirect_to venues_path
   end
 
+  def get_venues_for_map
+    @venues = Venue.all
+    respond_to do |format|
+      format.json {render json: @venues}
+    end
+  #  redirect_to venues_path.json
+  end
+
  private
 
  def set_venue
@@ -50,5 +60,8 @@ before_action :authorize, except: [:show, :index]
  def venue_params
    params.require(:venue).permit(:name, :address, :description)
  end
+
+
+
 
 end
