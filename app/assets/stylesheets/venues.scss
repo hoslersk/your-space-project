@@ -2,7 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #calendar_ven {
-  width: 40%;
+  width: 80%;
   margin: auto;
   display: table;
+}
+
+#price-range {
+    margin: 10px;
+    align-content: center;
+}
+.ui-slider-horizontal {
+    height: 8px;
+    width: 200px;
+}
+.ui-slider .ui-slider-handle {
+    height: 15px;
+    width: 5px;
+    padding-left: 5px;
+}
+
+#search-results {
+  overflow: hidden;
+  position: relative;
+}
+
+#venue-results {
+  float: left;
+  width: 30%;
+}
+
+#venue-show {
+  padding-left: 20px
+}
+
+#venue-info {
+  float:left;
+  width:400px;
+}
+
+#venue-availability {
+  float:right;
+  width:700px;
 }

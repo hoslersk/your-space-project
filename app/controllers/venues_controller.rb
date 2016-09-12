@@ -28,20 +28,27 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def index
+    # if the request is coming from a 'search' page, set params equal to respective attributes
     if params[:commit] == "Search"
       @zip_code = params[:zip_code]
       @start_date = params[:start_date]
       @end_date = params[:end_date]
       flash[:notice] = ""
+      # if search submission attributes are nil, return error and load all venues
       if @zip_code == nil || @start_date == nil || @end_date == nil
         flash[:notice] << "Search fields cannot be blank"
+        @venues = Venue.all
+      # else if search dates sensible, return error and load all venues
       elsif @start_date > @end_date
         flash[:notice] << "Start date cannot be before end date"
+        @venues = Venue.all
+      # else run the Active Record query
       else
         @venues = Venue.joins(:listings).where("available_start_date <= ? AND available_end_date >= ? AND price >= ? AND price <= ?", params[:start_date], params[:end_date], params[:price_min_input], params[:price_max_input])
       end
+    # if the request is not coming from the search page, load all venues
     else
-      render 'index'
+      @venues = Venue.all
     end
   end
 
