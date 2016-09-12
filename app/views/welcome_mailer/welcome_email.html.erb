@@ -5,18 +5,44 @@
     <title></title>
   </head>
   <body>
-    <h3>Hello <%= @user.first_name %>,</h3>
-    <p>
-      Thank you for creating an account at YourSpace!
-    </p>
-    <p>
-      As a member of our growing community, we invite you to add a listing for your own venue or explore available venues to host your next big event!
-    </p>
-    <p>
-      Sincerely,
-    </p>
-    <p>
-      YourSpace Team
-    </p>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <%= image_tag("yourspace-white.png", alt: "yourspace logo") %>
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello <%= @user.first_name %>,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Thank you for creating an account at YourSpace!
+            </p>
+            <p>
+              As a member of our growing community, we invite you to add a listing for your own venue or explore available venues to host your next big event!
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
   </body>
 </html>
