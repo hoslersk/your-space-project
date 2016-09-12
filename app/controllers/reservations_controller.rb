@@ -54,6 +54,8 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
+    CancellationMailer.cancellation_mail(@reservation.host).deliver
+    CancellationMailer.cancellation_mail(@reservation.renter).deliver
     redirect_to reservations_path
   end
 
