@@ -110,7 +110,6 @@ $(window).load(function() {
     }
 
     function codeVenueMarkersDefaults(data) {
-        debugger;
 
         var newYorkLat = 40.748713
         var newYorkLng = -73.985675
