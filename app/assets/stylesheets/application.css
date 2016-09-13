@@ -16,6 +16,35 @@
  *= require fullcalendar
  */
 
+ html, body, #map-container {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
+#venues-list {
+display: block;
+float: left;
+}
+
+#geosearch-box, #map-canvas {
+  float:right;
+  margin-right: 20px;
+}
+
+#map-canvas {
+  margin-top: 10px;
+  width: 500px;
+  height: 500px;
+}
+
+#inputButtonGeocode {
+  width: 150px;
+}
+
+#inputTextAddress {
+  width: 200px;
+}
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -37,7 +66,9 @@ body.home {
      overflow: hidden;
      background-color: #333;
      opacity: 0.8;
+
  }
+
  li.nav {
      display: block;
      color: white;

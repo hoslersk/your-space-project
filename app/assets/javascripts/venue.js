@@ -17,7 +17,7 @@ function venCalendar() {
 }
 
 var form = function(view) {
-  debugger;
+   ;
 
   $('span:contains("Not Available")').parent().parent().animate({
     top: '-20px'
@@ -35,7 +35,7 @@ var form = function(view) {
 form()
 
 function format() {
-  debugger;
+   ;
   $('span:contains("Not Available")').parent().parent().animate({
     top: '-20px'
   })
