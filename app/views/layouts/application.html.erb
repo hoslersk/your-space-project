@@ -16,9 +16,9 @@
 
   <% if current_user %>
 <ul class="nav">
- <li class="nav" style="float:left">Welcome to YourSpace, <%= current_user.first_name %></li>
+ <li class="nav" style="float:left"><%= link_to "Welcome to YourSpace, #{current_user.first_name}", home_path%></li>
  <li class="nav" style="float:left"><%= link_to "Find a Place!", venues_path %></li>
- <li class="dropdown" style="float:left" class="dropbtn">Host YourSpace
+ <li class="dropdown dropbtn" style="float:left">Host YourSpace
   <div class="dropdown-content">
     <%= link_to "New Venue", new_venue_path %>
     <%= link_to "Manage MySpaces", my_venues_path %>
@@ -26,7 +26,7 @@
   </li>
  <li class="nav" style="float:right"><%= link_to "Sign Out", signout_path, method: :delete %></li>
  <li class="nav" style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
- <li class="dropdown" style="float:right" class="dropbtn">Your Reservations
+ <li class="dropdown dropbtn" style="float:right">Your Reservations
   <div class="dropdown-content">
     <%= link_to "As Renter", reservations_path %>
     <%= link_to "As Host", host_reservations_path %>
