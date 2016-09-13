@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(window).load(function() {
     $.ajax({
         method: 'GET',
         url: "/venueinfo",
-        dataType: 'json', //required to hit debugger below (matching request and response formats here and in controller's 'respond_to')
+        dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
         success: codeVenueMarkersDefaults
     })
-    $("#inputButtonGeocode").click(function() {
+    $("#someAddress").click(function() {
         var searchInput = $('#inputTextAddress').val()
         $.ajax({
             data: {
@@ -13,7 +13,7 @@ $(document).ready(function() {
             },
             method: 'GET',
             url: "/venueinfo",
-            dataType: 'json', //required to hit debugger below (matching request and response formats here and in controller's 'respond_to')
+            dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
             success: codeVenueMarkers
         })
     });
@@ -110,6 +110,8 @@ $(document).ready(function() {
     }
 
     function codeVenueMarkersDefaults(data) {
+        debugger;
+
         var newYorkLat = 40.748713
         var newYorkLng = -73.985675
         for (var i = 0; i < data.venues.length; i++) {
@@ -171,14 +173,9 @@ $(document).ready(function() {
         //  }
         function makeMarkers() {
             var markers = []
-                // debugger;
-            console.log(myPlace.lat)
-            console.log(myPlace.lng)
-                // debugger;
+                //  ;
             for (var i = 0; i < data.venues.length; i++) {
-                console.log(data.searchInput)
-                console.log(data.venues[0].zip_code)
-                console.log(data.venues[0].name)
+
                 var sAddress = data.venues[i].zip_code
                 var name = data.venues[i].name
                 geocoder.geocode({
@@ -198,8 +195,6 @@ $(document).ready(function() {
                                 position: results[0].geometry.location,
                                 title: name
                             });
-
-                            console.log(i)
                             marker.addListener('click', function() {
                                 infoWindow.open(map, marker);
                             });

@@ -7,8 +7,6 @@ class ListingsController < ApplicationController
     # @listing.each do |list|
     #   @list_dates = []
 
-
-
   end
 
   def index
@@ -20,16 +18,20 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(listing_params)
-    redirect_to listing_path(@listing)
+    listing = Listing.new(listing_params)
+    if listing.save
+      redirect_to venue_path(listing_params[:venue_id])
+    else
+      redirect_to venue_path(listing_params[:venue_id]), notice: listing.errors.full_messages.join(". ")
+    end
+
   end
 
-  def edit
+  def edit #delete
     @listing = Listing.find(params[:id])
   end
 
-  def update
-    #byebug
+  def update #delete
     @listing = Listing.find(params[:id])
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
@@ -37,6 +39,11 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find(params[:id])
+    @listing.reservations.each do |res|
+      res.destroy
+    end
+    # CancellationMailer.cancellation_mail(@reservation.host).deliver
+    # CancellationMailer.cancellation_mail(@reservation.renter).deliver
     @listing.destroy
     redirect_to listings_path
   end
@@ -48,7 +55,7 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:venue_id, :available_start_date, :available_end_date, :available_start_time, :available_end_time)
+    params.require(:listing).permit(:venue_id, :available_start_date, :available_end_date, :available_start_time, :available_end_time, :price)
   end
 
 end

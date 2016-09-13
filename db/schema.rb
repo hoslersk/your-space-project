@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909200847) do
+ActiveRecord::Schema.define(version: 20160911174358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.string   "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.integer  "venue_id"
@@ -23,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160909200847) do
     t.time     "available_end_time"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.float    "price"
   end
 
   create_table "reservations", force: :cascade do |t|

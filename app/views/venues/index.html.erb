@@ -1,19 +1,32 @@
-<h1>Venues Index</h1>
-<div id="venues-list">
 
-  <% @venues.each do |venue| %>
-  <%= link_to venue.name, venue_path(venue) %> | <%= venue.city %> | <%= venue.description %><br>
-  <% end %>
 
-  <%= link_to "List a new venue", new_venue_path %>
+
+
+<h2>Find YourSpace</h2>
+
+<p><%= form_tag('/venues', :method => :get, :remote => true ) do |f| %>
+
+<%= label_tag :zip_code %>
+<%= text_field_tag :zip_code, @zip_code,:id => "someAddress" , :required => true %>
+
+<%= label_tag :from %>
+<%= date_field_tag :start_date, @start_date, :required => true %>
+
+<%= label_tag :to %>
+<%= date_field_tag :end_date, @end_date, :required => true %></p>
+
+<p><%= label_tag :price_range %>
+<input type="text" id="price-range-text" readonly style="border:0; color:#f6931f; font-weight:bold; background-color:transparent">
+<div id="price-range"></div>
+<%= hidden_field_tag :price_min_input, 0 %>
+<%= hidden_field_tag :price_max_input, 0 %>
+
+<br>
+<%= submit_tag "Search" %></p>
+<% end %>
+
+<div id="search-results">
+
+  <%= render partial: 'venue_search_results', locals: { venues: @venues } %>
+
 </div>
-
-<div id="map-container">
-  <div id="geosearch-box">
-    <input type="text" id="inputTextAddress" title="Address to Geocode"/>
-    <input type="button" id="inputButtonGeocode" title="Click to Geocode" value="Find venues" />
-  </div>
-  <div id="map-canvas"></div>
-</div>
-
-<div id="my_div"> </div>
