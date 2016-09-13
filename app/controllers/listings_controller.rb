@@ -45,7 +45,7 @@ class ListingsController < ApplicationController
     # CancellationMailer.cancellation_mail(@reservation.host).deliver
     # CancellationMailer.cancellation_mail(@reservation.renter).deliver
     @listing.destroy
-    redirect_to listings_path
+    redirect_to venue_path(@listing.venue)
   end
 
   private

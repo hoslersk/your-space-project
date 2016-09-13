@@ -15,20 +15,13 @@
 <%= f.number_field :renter_id %>
 <br>
 
-
 <%= f.label :start_date %>
 <%= f.date_select :start_date %>
 <br>
 <%= f.label :end_date %>
 <%= f.date_select :end_date %>
 <br>
-<%= f.label :start_time %>
-<%= f.time_select :start_time, {ampm: true, minute_step: 15} %>
-<br>
 
-<%= f.label :end_time %>
-<%= f.time_select :end_time, {ampm: true, minute_step: 15} %>
-<br>
 <%= f.submit %>
 
 

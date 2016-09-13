@@ -1,5 +1,5 @@
 <h3>Manage Your Venues</h3>
 
 <% @venues.each do |venue| %>
-Edit Your Venue: <%= link_to venue.name, venue_path(venue) %>
+ <%= link_to "Edit #{venue.name}", venue_path(venue) %>
 <% end %>

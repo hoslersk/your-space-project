@@ -11,7 +11,7 @@ class Listing < ApplicationRecord
   validates :price, presence: {message: "Please enter an amount"}
   validates :price, numericality: {message: "Please enter a numeric value"}
 
-  validate :no_overlap
+  validate :no_overlap, :start_before_end
 
   def no_overlap
     # checks if there are listings conflicting prior to listing creation
@@ -20,6 +20,12 @@ class Listing < ApplicationRecord
       if self.available_start_date <= current_listing.available_end_date && self.available_end_date >= current_listing.available_start_date
         errors.add(:no_overlap, "There are listing(s) conflicts")
       end
+    end
+  end
+
+  def start_before_end
+    if self.available_end_date < self.available_start_date
+      errors.add(:invalid_date_range, "The listing start date must be before the end date")
     end
   end
 
