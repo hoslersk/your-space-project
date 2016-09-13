@@ -27,4 +27,5 @@ function venCalendar() {
   }
 }
 
+
 // http://stackoverflow.com/questions/15529244/fullcalendar-pass-view-start-data-to-ajax
