@@ -14,7 +14,7 @@ function venCalendar() {
           "background-color",
           "red")
 
-        $('span:contains("Reserved")').parent().parent().animate({
+        $('span:contains("Reserved")').parent().parent().css({
           top: '-20px'
         })
 
