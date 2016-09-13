@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
       reservation.listing = listing.first
         # run save to run reservation validations
         if reservation.save
-          #ReservationRequestMailer.reservation_request_email(reservation.host).deliver
+          ReservationRequestMailer.reservation_request_email(reservation.host).deliver
           redirect_to reservation_path(reservation)
         else
           # redirect to venue show page if cannot save
@@ -46,17 +46,22 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation.update(reservation_params)
-    # include some logic to see if "confirmed" has changed to true...
-    # ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
     if @reservation.errors.any?
       redirect_to reservation_path(@reservation), notice: @reservation.errors.full_messages.join(". ")
     else
+      if params[:reservation][:confirmed]
+        ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
+      else
+        ReservationUpdateMailer.reservation_update_email(@reservation.host).deliver
+      end
       redirect_to reservation_path(@reservation)
     end
   end
 
   def destroy
     @reservation.destroy
+    CancellationMailer.cancellation_mail(@reservation.host).deliver
+    CancellationMailer.cancellation_mail(@reservation.renter).deliver
     redirect_to reservations_path, notice: "This reservation has been deleted!"
   end
 
