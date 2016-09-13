@@ -54,6 +54,7 @@ class ReservationsController < ApplicationController
     if @reservation.errors.any?
       redirect_to reservation_path(@reservation), notice: @reservation.errors.full_messages.join(". ")
     else
+      # send different mailers based on if udpate is confirmation vs. some other modification
       if params[:reservation][:confirmed]
         ReservationConfirmationMailer.reservation_confirmation_email(@reservation.renter).deliver
       else
@@ -64,10 +65,17 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation.destroy
-    CancellationMailer.cancellation_email(@reservation.host).deliver
-    CancellationMailer.cancellation_email(@reservation.renter).deliver
-    redirect_to reservations_path, notice: "This reservation has been deleted!"
+    if @reservation.host.id == current_user.id
+      @reservation.destroy
+      CancellationMailer.cancellation_email(@reservation.host).deliver
+      CancellationMailer.cancellation_email(@reservation.renter).deliver
+      redirect_to host_reservations_path, notice: "This reservation has been deleted!"
+    elsif @reservation.renter_id == current_user.id
+      @reservation.destroy
+      CancellationMailer.cancellation_email(@reservation.host).deliver
+      CancellationMailer.cancellation_email(@reservation.renter).deliver
+      redirect_to reservations_path, notice: "This reservation has been deleted!"
+    end
   end
 
   private

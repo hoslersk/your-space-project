@@ -4,7 +4,7 @@
 
 <h2>Find YourSpace</h2>
 
-<p><%= form_tag('/venues', :method => :get) do |f| %> 
+<p><%= form_tag('/venues', :method => :get) do |f| %>
 
 <%= label_tag :zip_code %>
 <%= text_field_tag :zip_code, @zip_code,:id => "someAddress" , :required => true %>
@@ -16,7 +16,7 @@
 <%= date_field_tag :end_date, @end_date, :required => true %></p>
 
 <p><%= label_tag :price_range %>
-<input type="text" id="price-range-text" readonly style="border:0; color:#f6931f; font-weight:bold; background-color:transparent">
+<input type="text" id="price-range-text" readonly style="border:0; color:#7DCDCD; font-weight:bold; background-color:transparent">
 <div id="price-range"></div>
 <%= hidden_field_tag :price_min_input, 0 %>
 <%= hidden_field_tag :price_max_input, 0 %>
