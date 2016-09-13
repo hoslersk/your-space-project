@@ -5,10 +5,39 @@
     <title></title>
   </head>
   <body>
-    <h1>Dear <%= @user.name %>,</h1>
-    <p>
-      This notification email was sent using SMTP.
-    </p>
-
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <%= image_tag("yourspace-white.png", alt: "yourspace logo") %>
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Dear <%= @user.first_name %>,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+           Email body here<br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
   </body>
 </html>
