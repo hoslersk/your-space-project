@@ -4,9 +4,6 @@
 <div id="calendar_res_r"></div>
 
 <h1>Reservations Info:</h1>
-<!-- <% if @user.confirmed_renter_reservations.count == 0 && @user.pending_renter_reservations.count == 0 %>
- <br>You have no renter reservations - let's change that! <%= link_to "See available venues", venues_path %>
-<% end %> -->
 
 <% if @user.pending_host_reservations.count == 0 && @user.confirmed_host_reservations.count == 0 %>
  <br>You have no renter reservations - let's change that - <%= link_to "List a Venue!", new_venue_path %>
