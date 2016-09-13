@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create', as: 'registration'
+  get 'my_venues', to: 'venues#my_venues', as: 'my_venues'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

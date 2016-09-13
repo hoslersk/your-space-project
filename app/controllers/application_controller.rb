@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to home_path, notice: "Please log in" unless logged_in?
+    redirect_to home_path unless logged_in?
   end
 
 end

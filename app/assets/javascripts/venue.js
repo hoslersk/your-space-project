@@ -3,23 +3,45 @@ $(document).ready(function() {
   venCalendar();
 });
 
-function venCalendar(format) {
+function venCalendar() {
   if ($('#calendar_ven').length > 0) {
     $('#calendar_ven').fullCalendar({
       events: `/venues/${$('div#calendar_ven')[0].getAttribute("data-ven-id")}.json`
 
 
     });
+
+
+
   }
 }
 
-function format() {
-  $('span:contains("Not Availble")').parent().parent().animate({
+var form = function(view) {
+  debugger;
+
+  $('span:contains("Not Available")').parent().parent().animate({
     top: '-20px'
   })
 
-  $('span:contains("Not Availble")').parent().parent().css('z-index', 9999)
+  $('span:contains("Not Available")').parent().parent().css('z-index', 9999)
 
-  $('span:contains("Not Availble")').parent().parent().css("background-color",
+  $('span:contains("Not Available")').parent().parent().css(
+    "background-color",
+    "red")
+
+  format()
+}
+
+form()
+
+function format() {
+  debugger;
+  $('span:contains("Not Available")').parent().parent().animate({
+    top: '-20px'
+  })
+
+  $('span:contains("Not Available")').parent().parent().css('z-index', 9999)
+
+  $('span:contains("Not Available")').parent().parent().css("background-color",
     "red")
 }
