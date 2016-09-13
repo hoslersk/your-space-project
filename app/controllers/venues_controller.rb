@@ -22,7 +22,6 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-
   end
 
   def index

@@ -38,14 +38,19 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(params[:id])
-    @listing.reservations.each do |res|
+    listing = Listing.find(params[:id])
+    # venue_id = @listing.venue_id
+    # listing.reservations.destroy_all
+    listing.reservations.each do |res|
+      CancellationMailer.cancellation_email(res.host).deliver
+      CancellationMailer.cancellation_email(res.renter).deliver
       res.destroy
     end
-    # CancellationMailer.cancellation_mail(@reservation.host).deliver
-    # CancellationMailer.cancellation_mail(@reservation.renter).deliver
-    @listing.destroy
-    redirect_to venue_path(@listing.venue)
+    listing.destroy
+    @listings = Venue.find(listing.venue_id).listings
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
