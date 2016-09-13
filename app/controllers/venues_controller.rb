@@ -84,9 +84,9 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def get_venues_for_map
-    @venues = Venue.all
+    binding.pry
     respond_to do |format|
-      format.json {render json: {venues: @venues, searchInput: params[:searchInput]}}
+      format.json {render json: {venues: @@venues_for_maps, searchInput: params[:searchInput]}}
     end
   end
 
