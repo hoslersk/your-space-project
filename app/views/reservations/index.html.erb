@@ -34,33 +34,3 @@ End Date: <%= res.end_date %> <br>
 <%= link_to "Cancel Reservation", reservation_path(res), method: :delete %> <br> <br>
 <% end %>
 <% end %>
-
-<!-- <% if @user.pending_host_reservations.length > 0 %>
-
-<h3>Pending Reservations (as host)</h1>
-<%@user.pending_host_reservations.each do |res| %>
-<strong><%= res.renter.first_name %></strong> wants to rent your venue. <br>
-<%= res.listing.venue.name %> <br>
-Start Date: <%= res.start_date %> <br>
-End Date: <%= res.end_date %> <br>
-
-<%= form_for(res) do |f|%>
-<%= f.hidden_field :confirmed, :value => true %>
-<%= f.submit "Confirm Reservation" %> <br>
-<%= link_to "Cancel Reservation", reservation_path(res), method: :delete %> <br>
-<% end %>
-<% end %>
-<% end %>
-
-<% if @user.confirmed_host_reservations.length > 0 %>
-
-<h3>Confirmed Reservations (as host)</h1>
-
-<%@user.confirmed_host_reservations.each do |res| %>
-<%= link_to res.listing.venue.name, reservation_path(res) %> <br>
-Reservaton ID: <%= res.id %> <br>
-Start Date: <%= res.start_date %> <br>
-End Date: <%= res.end_date %> <br>
-<%= link_to "Cancel Reservation", reservation_path(res), method: :delete %>
-<% end %>
-<% end %> -->
