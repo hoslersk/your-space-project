@@ -21,7 +21,6 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-
   end
 
   def index
@@ -48,7 +47,7 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
       @venues = Venue.all
     end
     respond_to do |format|
-      format.js 
+      format.js
       # render HTML if not a ajax request
       format.html
 

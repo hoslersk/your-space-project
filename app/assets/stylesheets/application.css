@@ -31,15 +31,18 @@ body.home {
  ul {
      list-style-type: none;
  }
+
  ul.nav {
      list-style-type: none;
      margin: 0;
      overflow: hidden;
      background-color: #333;
      opacity: 0.8;
+     list-style: none;
+     padding: 0;
  }
  li.nav {
-     display: block;
+     display: inline-block;
      color: white;
      text-align: center;
      text-decoration: none;
@@ -60,6 +63,7 @@ body.home {
  }
  li.dropdown {
      display: inline-block;
+      margin: 0 auto;
  }
  .dropdown-content {
      display: none;

@@ -1,0 +1,5 @@
+<% listings.each do |listing| %>
+  Listing ID: <%= listing.id %> <br>
+  Available Dates: <%= listing.available_start_date.strftime("%B %e, %Y") %> - <%= listing.available_end_date.strftime("%B %e, %Y") %> <br>
+  <%= link_to "Delete", listing_path(listing), method: :delete, remote: true %> <br> <br>
+<% end %>

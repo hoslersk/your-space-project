@@ -7,18 +7,11 @@ function venCalendar() {
   if ($('#calendar_ven').length > 0) {
     $('#calendar_ven').fullCalendar({
       events: `/venues/${$('div#calendar_ven')[0].getAttribute("data-ven-id")}.json`
-
-
     });
-
-
-
   }
 }
 
 var form = function(view) {
-  debugger;
-
   $('span:contains("Not Available")').parent().parent().animate({
     top: '-20px'
   })
@@ -35,7 +28,6 @@ var form = function(view) {
 form()
 
 function format() {
-  debugger;
   $('span:contains("Not Available")').parent().parent().animate({
     top: '-20px'
   })
