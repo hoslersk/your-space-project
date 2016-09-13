@@ -1,7 +1,13 @@
 // Place all the styles related to the Reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#calendar_res {
+#calendar_res_r {
+  width: 50%;
+  margin: auto;
+  display: table;
+}
+
+#calendar_res_h {
   width: 50%;
   margin: auto;
   display: table;
