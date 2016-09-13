@@ -47,7 +47,14 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     else
       @venues = Venue.all
     end
+    respond_to do |format|
+      format.js 
+      # render HTML if not a ajax request
+      format.html
+
+    end
   end
+
 
   def edit
   end

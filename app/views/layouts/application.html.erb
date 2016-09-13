@@ -15,7 +15,6 @@
  <li class="nav" style="float:left">Welcome to YourSpace, <%= current_user.first_name %></li>
  <li class="nav" style="float:left"><%= link_to "Find a Place!", venues_path %></li>
  <li class="dropdown" style="float:left" class="dropbtn">Host YourSpace
-    <!-- <a href="#" class="dropbtn">Dropdown</a> -->
   <div class="dropdown-content">
     <%= link_to "New Venue", new_venue_path %>
     <%= link_to "Manage YourSpaces", my_venues_path %>

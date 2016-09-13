@@ -1,6 +1,6 @@
 <h2>Find YourSpace</h2>
 
-<p><%= form_tag('/venues', :method => :get) do |f| %>
+<p><%= form_tag('/venues', :method => :get, :remote => true ) do |f| %>
 
 <%= label_tag :zip_code %>
 <%= text_field_tag :zip_code, @zip_code, :required => true %>
@@ -22,21 +22,7 @@
 <% end %>
 
 <div id="search-results">
-<h2>Search Results</h2>
 
-<% @venues.each do |venue| %>
-
-  <div id="venue-results">
-  <%= link_to image_tag(venue.images.first.image.url(:small)), venue_path(venue) %><br>
-  <strong><%= link_to venue.name, venue_path(venue) %></strong><br>
-  Street: <%= venue.address %><br>
-  City, Zip Code: <%= venue.city %>, <%= venue.zip_code %><br>
-  <% venue.listings.each do |listing| %>
-    Available Dates: <li><%= listing.available_start_date.strftime("%B %e, %Y") + " - " + listing.available_end_date.strftime("%B %e, %Y") %>
-    <br>Price Per Day: $<%= listing.price.to_s %></li><br>
-  <% end %>
-  </div>
-
-<% end %>
+  <%= render partial: 'venue_search_results', locals: { venues: @venues } %>
 
 </div>
