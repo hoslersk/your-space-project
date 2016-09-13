@@ -7,12 +7,11 @@ class RegistrationsController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      #byebug
       session[:user_id] = user.id
-      #WelcomeMailer.welcome_email(@user).deliver
+      WelcomeMailer.welcome_email(user).deliver
       redirect_to venues_path
     else
-      redirect_to root_path
+      redirect_to signup_path, notice: user.errors.full_messages.join(". ")
     end
   end
 

@@ -6,8 +6,8 @@ class Listing < ApplicationRecord
   has_many :images, through: :venue
   # has_many :reviews
 
-  validates :available_start_date, presence: {message: 'Please enter a date'}
-  validates :available_end_date, presence: {message: 'Please enter a date'}
+  validates :available_start_date, presence: {message: 'Please enter a start date'}
+  validates :available_end_date, presence: {message: 'Please enter an end date'}
   validates :price, presence: {message: "Please enter an amount"}
   validates :price, numericality: {message: "Please enter a numeric value"}
 
