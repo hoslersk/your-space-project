@@ -64,8 +64,8 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
-    CancellationMailer.cancellation_mail(@reservation.host).deliver
-    CancellationMailer.cancellation_mail(@reservation.renter).deliver
+    CancellationMailer.cancellation_email(@reservation.host).deliver
+    CancellationMailer.cancellation_email(@reservation.renter).deliver
     redirect_to reservations_path, notice: "This reservation has been deleted!"
   end
 
