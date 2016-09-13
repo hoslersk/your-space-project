@@ -30,13 +30,6 @@
 <p><%= f.label :end_date %>
 <%= f.date_select :end_date %></p>
 
-<p><%= f.label :start_time %>
-<%= f.time_select :start_time, {ampm: true, minute_step: 15} %></p>
-
-
-<p><%= f.label :end_time %>
-<%= f.time_select :end_time, {ampm: true, minute_step: 15} %></p>
-
 <p><%= f.submit %></p>
 
 <% end %>
@@ -55,12 +48,6 @@
 
 <%= f.label :available_end_date %>
 <%= date_field_tag 'listing[available_end_date]', nil, :required => true %></p>
-
-<p><%= f.label :available_start_time %>
-<%= f.time_select :available_start_time, {ampm: true, minute_step: 15} %>
-
-<%= f.label :available_end_time %>
-<%= f.time_select :available_end_time, {ampm: true, minute_step: 15} %></p>
 
 <p><%= f.label :price_per_day %> $
 <%= f.text_field :price, :required => true %></p>

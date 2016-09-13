@@ -21,12 +21,17 @@
  <li class="dropdown" style="float:left" class="dropbtn">Host YourSpace
   <div class="dropdown-content">
     <%= link_to "New Venue", new_venue_path %>
-    <%= link_to "Manage YourSpaces", my_venues_path %>
+    <%= link_to "Manage MySpaces", my_venues_path %>
   </div>
   </li>
  <li class="nav" style="float:right"><%= link_to "Sign Out", signout_path, method: :delete %></li>
  <li class="nav" style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
- <li class="nav" style="float:right"><%= link_to "Your Reservations", reservations_path%></li>
+ <li class="dropdown" style="float:right" class="dropbtn">Your Reservations
+  <div class="dropdown-content">
+    <%= link_to "As Renter", reservations_path %>
+    <%= link_to "As Host", host_reservations_path %>
+  </div>
+  </li>
 </ul>
  <% else %>
 <ul class="nav">
