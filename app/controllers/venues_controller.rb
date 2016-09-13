@@ -46,9 +46,8 @@ before_action :authorize, except: [:show, :index]
   def get_venues_for_map
     @venues = Venue.all
     respond_to do |format|
-      format.json {render json: @venues}
+      format.json {render json: {venues: @venues, searchInput: params[:searchInput]}}
     end
-  #  redirect_to venues_path.json
   end
 
  private

@@ -1,25 +1,19 @@
 <h1>Venues Index</h1>
 <div id="venues-list">
-  <% @venue_zips = [] %>
-  <% @venue_names = [] %>
 
   <% @venues.each do |venue| %>
   <%= link_to venue.name, venue_path(venue) %> | <%= venue.city %> | <%= venue.description %><br>
-  <% @venue_zips << venue.zip_code %>
-  <% @venue_names << venue.name %>
-
-
   <% end %>
+
   <%= link_to "List a new venue", new_venue_path %>
 </div>
+
 <div id="map-container">
   <div id="geosearch-box">
     <input type="text" id="inputTextAddress" title="Address to Geocode"/>
-    <input type="button" onclick="codeAddress();codeVenueMarkers();" id="inputButtonGeocode" title="Click to Geocode" value="Find venues" />
+    <input type="button" id="inputButtonGeocode" title="Click to Geocode" value="Find venues" />
   </div>
   <div id="map-canvas"></div>
 </div>
 
 <div id="my_div"> </div>
-
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"> </script>
