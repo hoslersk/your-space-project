@@ -40,20 +40,17 @@ class ListingsController < ApplicationController
   def destroy
     listing = Listing.find(params[:id])
     # venue_id = @listing.venue_id
-    listing.reservations.destroy_all
-    # @listing.reservations.each do |res|
-    #   res.destroy
-    # end
-    # CancellationMailer.cancellation_mail(@reservation.host).deliver
-    # CancellationMailer.cancellation_mail(@reservation.renter).deliver
+    # listing.reservations.destroy_all
+    listing.reservations.each do |res|
+      CancellationMailer.cancellation_email(res.host).deliver
+      CancellationMailer.cancellation_email(res.renter).deliver
+      res.destroy
+    end
     listing.destroy
     @listings = Venue.find(listing.venue_id).listings
     respond_to do |format|
       format.js
-      # render HTML if not a ajax request
-      # format.html
     end
-    # redirect_to venue_path(venue_id)
   end
 
   private

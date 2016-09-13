@@ -1,9 +1,13 @@
+
+
+
+
 <h2>Find YourSpace</h2>
 
-<p><%= form_tag('/venues', :method => :get, :remote => true ) do |f| %>
+<p><%= form_tag('/venues', :method => :get) do |f| %> 
 
 <%= label_tag :zip_code %>
-<%= text_field_tag :zip_code, @zip_code, :required => true %>
+<%= text_field_tag :zip_code, @zip_code,:id => "someAddress" , :required => true %>
 
 <%= label_tag :from %>
 <%= date_field_tag :start_date, @start_date, :required => true %>

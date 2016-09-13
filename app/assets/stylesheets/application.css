@@ -16,6 +16,35 @@
  *= require fullcalendar
  */
 
+ html, body, #map-container {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
+#venues-list {
+display: block;
+float: left;
+}
+
+#geosearch-box, #map-canvas {
+  float:right;
+  margin-right: 20px;
+}
+
+#map-canvas {
+  margin-top: 10px;
+  width: 500px;
+  height: 500px;
+}
+
+#inputButtonGeocode {
+  width: 150px;
+}
+
+#inputTextAddress {
+  width: 200px;
+}
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -38,9 +67,12 @@ body.home {
      overflow: hidden;
      background-color: #333;
      opacity: 0.8;
-     list-style: none;
-     padding: 0;
+
+     /*list-style: none;
+     padding: 0;*/
+
  }
+
  li.nav {
      display: inline-block;
      color: white;
@@ -58,7 +90,7 @@ body.home {
      display: inline-block;
      color: white;
      text-align: center;
-     padding: 14px 16px;
+     padding: 14px 10px;
      text-decoration: none;
  }
  li.dropdown {

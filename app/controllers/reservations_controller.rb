@@ -41,6 +41,11 @@ class ReservationsController < ApplicationController
 
   end
 
+  def host_reservations
+    @user = current_user
+
+  end
+
   def edit
   end
 

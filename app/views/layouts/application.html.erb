@@ -3,6 +3,10 @@
   <head>
     <title>YourSpace</title>
     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%#= javascript_include_tag 'application' %>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"> </script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,17 +16,22 @@
 
   <% if current_user %>
 <ul class="nav">
- <li class="nav" style="float:left">Welcome to YourSpace, <%= current_user.first_name %></li>
+ <li class="nav" style="float:left"><%= link_to "Welcome to YourSpace, #{current_user.first_name}", home_path%></li>
  <li class="nav" style="float:left"><%= link_to "Find a Place!", venues_path %></li>
- <li class="dropdown" style="float:left" class="dropbtn">Host YourSpace
+ <li class="dropdown dropbtn" style="float:left">Host YourSpace
   <div class="dropdown-content">
     <%= link_to "New Venue", new_venue_path %>
-    <%= link_to "Manage YourSpaces", my_venues_path %>
+    <%= link_to "Manage MySpaces", my_venues_path %>
   </div>
   </li>
  <li class="nav" style="float:right"><%= link_to "Sign Out", signout_path, method: :delete %></li>
  <li class="nav" style="float:right"><%= link_to "Manage Profile", user_path(current_user) %></li>
- <li class="nav" style="float:right"><%= link_to "Your Reservations", reservations_path%></li>
+ <li class="dropdown dropbtn" style="float:right">Your Reservations
+  <div class="dropdown-content">
+    <%= link_to "As Renter", reservations_path %>
+    <%= link_to "As Host", host_reservations_path %>
+  </div>
+  </li>
 </ul>
  <% else %>
 <ul class="nav">
@@ -36,5 +45,6 @@
   <% end %>
 
     <%= yield %>
+
   </body>
 </html>

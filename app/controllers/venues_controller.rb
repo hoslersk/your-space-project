@@ -2,6 +2,7 @@ class VenuesController < ApplicationController
 before_action :authorize, except: [:show, :index]
 before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
+@@venues_for_maps = []
   def new
     @venue = Venue.new
     3.times do
@@ -24,6 +25,7 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
   end
 
   def index
+
     # if the request is coming from a 'search' page, set params equal to respective attributes
     if params[:commit] == "Search"
       @zip_code = params[:zip_code]
@@ -52,7 +54,9 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
       format.html
 
     end
+    @@venues_for_maps = @venues
   end
+  # redirect_to root_path
 
 
   def edit
@@ -78,6 +82,13 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     redirect_to venues_path
   end
 
+  def get_venues_for_map
+    @venues = Venue.all
+    respond_to do |format|
+      format.json {render json: {venues: @venues, searchInput: params[:searchInput]}}
+    end
+  end
+
   def my_venues
     @venues = current_user.host_venues
 
@@ -93,5 +104,8 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
  def venue_params
    params.require(:venue).permit(:name, :address, :description, :host_id, :zip_code, :city, images_attributes: [:id, :image, :description, :venue_id])
  end
+
+
+
 
 end

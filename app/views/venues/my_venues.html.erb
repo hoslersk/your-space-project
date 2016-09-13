@@ -1,8 +1,9 @@
 <h2>Manage Your Venues</h2>
 
 <% @venues.each do |venue| %>
+
 <div id="photo-container">
-  <h3><%= venue.name %></h3><%= link_to "Edit", venue_path(venue) %>
+  <h3><%= link_to venue.name, venue_path(venue) %></h3>
   <div class="photobanner">
     <% venue.images.each do |image| %>
       <%= image_tag(image.image.url(:medium), :style => "max-width:100%;
@@ -10,4 +11,5 @@ max-height:100%;" ) %>
     <% end %>
   </div>
 </div>
+
 <% end %>
