@@ -57,8 +57,7 @@ End Date: <%= res.end_date %> <br>
 <h3>Confirmed Reservations (as host)</h1>
 
 <%@user.confirmed_host_reservations.each do |res| %>
-
-<%= res.listing.venue.name %> <br>
+<%= link_to res.listing.venue.name, reservation_path(res) %> <br>
 Reservaton ID: <%= res.id %> <br>
 Start Date: <%= res.start_date %> <br>
 End Date: <%= res.end_date %> <br>

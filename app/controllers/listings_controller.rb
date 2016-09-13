@@ -7,8 +7,6 @@ class ListingsController < ApplicationController
     # @listing.each do |list|
     #   @list_dates = []
 
-
-
   end
 
   def index
@@ -20,26 +18,20 @@ class ListingsController < ApplicationController
   end
 
   def create
-    listing = Listing.create(listing_params)
-    if listing.id != nil
-      redirect_to listing_path(listing)
+    listing = Listing.new(listing_params)
+    if listing.save
+      redirect_to venue_path(listing_params[:venue_id])
     else
-      flash[:notice] = ""
-      listing.errors.messages.each do |attribute, error_message_array|
-        error_message_array.each do |error_message|
-          flash[:notice] << error_message
-        end
-      end
-      @listing = listing
-      render 'new'
+      redirect_to venue_path(listing_params[:venue_id]), notice: listing.errors.full_messages.join(". ")
     end
+
   end
 
-  def edit
+  def edit #delete
     @listing = Listing.find(params[:id])
   end
 
-  def update
+  def update #delete
     @listing = Listing.find(params[:id])
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
@@ -47,6 +39,11 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find(params[:id])
+    @listing.reservations.each do |res|
+      res.destroy
+    end
+    # CancellationMailer.cancellation_mail(@reservation.host).deliver
+    # CancellationMailer.cancellation_mail(@reservation.renter).deliver
     @listing.destroy
     redirect_to listings_path
   end

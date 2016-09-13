@@ -13,35 +13,39 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     @venue = Venue.create(venue_params)
     # @venue.host_id=(current_user.id)
     # @venue.save
-    redirect_to venue_path(@venue)
+    if @venue.errors.any?
+      redirect_to venue_path(@venue), notice: @venue.errors.full_messages.join(". ")
+    else
+      redirect_to venue_path(@venue)
+    end
   end
 
   def show
-    listings = @venue.listings
-    hash = {}
-    listings.each do |listing|
-      listing.reservations.each do |res|
-      end
-    end
-
 
   end
 
   def index
+    # if the request is coming from a 'search' page, set params equal to respective attributes
     if params[:commit] == "Search"
       @zip_code = params[:zip_code]
       @start_date = params[:start_date]
       @end_date = params[:end_date]
       flash[:notice] = ""
+      # if search submission attributes are nil, return error and load all venues
       if @zip_code == nil || @start_date == nil || @end_date == nil
         flash[:notice] << "Search fields cannot be blank"
+        @venues = Venue.all
+      # else if search dates sensible, return error and load all venues
       elsif @start_date > @end_date
         flash[:notice] << "Start date cannot be before end date"
+        @venues = Venue.all
+      # else run the Active Record query
       else
         @venues = Venue.joins(:listings).where("available_start_date <= ? AND available_end_date >= ? AND price >= ? AND price <= ?", params[:start_date], params[:end_date], params[:price_min_input], params[:price_max_input])
       end
+    # if the request is not coming from the search page, load all venues
     else
-      render 'index'
+      @venues = Venue.all
     end
   end
 
@@ -50,12 +54,27 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def update
     @venue.update(venue_params)
-    redirect_to venue_path(@venue)
+    if @venue.errors.any?
+      redirect_to venue_path(@venue), notice: @venue.errors.full_messages.join(". ")
+    else
+      redirect_to venue_path(@venue)
+    end
   end
 
   def destroy
-    @venue.delete
+    @venue.listings.each do |lis|
+      lis.reservations.each do |res|
+        res.destroy
+      end
+      lis.destroy
+    end
+    @venue.destroy
     redirect_to venues_path
+  end
+
+  def my_venues
+    @venues = current_user.host_venues
+
   end
 
 
