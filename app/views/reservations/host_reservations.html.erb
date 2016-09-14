@@ -8,9 +8,9 @@
   <% if @user.pending_host_reservations.length > 0 %>
     <h3>Pending Reservations for YourSpace</h3>
       <%@user.pending_host_reservations.each do |res| %>
-        <strong><%= link_to "#{res.renter.first_name} #{res.renter.last_name}", user_path(res.renter) %></strong> wants to rent <strong><%= link_to res.listing.venue.name, venue_path(res.listing.venue) %></strong>. <br>
-        Start Date: <%= res.start_date %> <br>
-        End Date: <%= res.end_date %> <br>
+        <strong><%= "#{res.renter.first_name} #{res.renter.last_name}" %></strong> wants to rent <strong><%= link_to res.listing.venue.name, venue_path(res.listing.venue) %></strong>. <br>
+        <strong>Start Date: </strong><%= res.start_date %> <br>
+        <strong>End Date: </strong><%= res.end_date %> <br>
 
         <%= form_for(res) do |f|%>
           <%= f.hidden_field :confirmed, :value => true %>
@@ -21,7 +21,7 @@
   <% end %>
 
   <% if @user.confirmed_host_reservations.length > 0 %>
-    <h3>Confirmed Reservations for YourSpaces</h1>
+    <h3>Confirmed Reservations for YourSpace</h1>
       <% @user.confirmed_host_reservations.each do |res| %>
         <%= link_to res.listing.venue.name, reservation_path(res) %> <br>
         <strong>Reservaton ID: </strong><%= res.id %> <br>

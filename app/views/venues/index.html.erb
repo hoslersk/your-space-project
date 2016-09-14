@@ -1,13 +1,9 @@
-
-
-
-
 <h2>Find YourSpace</h2>
 
-<p><%= form_tag('/venues', :method => :get) do |f| %>
+<p><%= form_tag('/venues', :method => :get, :remote => true) do |f| %>
 
 <%= label_tag :zip_code %>
-<%= text_field_tag :zip_code, @zip_code,:id => "someAddress" , :required => true %>
+<%= text_field_tag :zip_code, @zip_code, :id => "someAddress" , :required => true %>
 
 <%= label_tag :from %>
 <%= date_field_tag :start_date, @start_date, :required => true %>
@@ -22,8 +18,12 @@
 <%= hidden_field_tag :price_max_input, 0 %>
 
 <br>
-<%= submit_tag "Search" %></p>
+<%= submit_tag "Search", id: "venue-search-button"%></p>
 <% end %>
+
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
 
 <div id="search-results">
 

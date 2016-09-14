@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
-  get '/venueinfo', to: 'venues#get_venues_for_map'
+  # get '/venueinfo', to: 'venues#get_venues_for_map'
 
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create', as: 'registration'

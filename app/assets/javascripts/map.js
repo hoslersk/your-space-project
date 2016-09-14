@@ -1,22 +1,44 @@
 $(window).load(function() {
-    $.ajax({
-        method: 'GET',
-        url: "/venueinfo",
-        dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
-        success: codeVenueMarkersDefaults
-    })
-    $("#someAddress").click(function() {
-        var searchInput = $('#inputTextAddress').val()
-        $.ajax({
-            data: {
-                searchInput: searchInput
-            },
-            method: 'GET',
-            url: "/venueinfo",
-            dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
-            success: codeVenueMarkers
+    // $.ajax({
+    //     method: 'GET',
+    //     url: "/venues",
+    //     dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
+    //     success: codeVenueMarkersDefaults
+    // })
+
+      $(document).ajaxSuccess(function(event, data, settings) {
+        $(function() {
+          debugger;
+          venues = data.responseJSON.venues
+          venueResultsHtml = ""
+          var searchInput = $('#someAddress').val()
+          for(var i = 0; i < venues.length; i++) {
+            venueResultsHtml += `<div id="venue-results">
+            <a href="/venues/${venues[i].id}"><img src="/system/images/images/000/000/004/small/${venues[i].image.image_file_name}"></a><br>
+            <strong><a href="/venues/${venues[i].id}">${venues[i].name}</a></strong><br>
+            Street: ${venues[i].address}<br>
+            City, Zip Code: ${venues[i].city}, ${venues[i].zip_code}<br>
+              Available Dates: <li>${venues[i].listings[0].available_start_date} - ${venues[i].listings[0].available_end_date}
+              <br>Price Per Day: $${venues[i].listings[0].price} </li><br>
+            </div>`
+          }
+          $('#search-results').html(venueResultsHtml)
+          codeVenueMarkers(data.responseJSON)
         })
-    });
+      })
+
+    // $("#venues-search-button").click(function() {
+    //
+    //     $.ajax({
+    //         data: {
+    //             searchInput: searchInput
+    //         },
+    //         method: 'GET',
+    //         url: "/venues",
+    //         dataType: 'json', //required to hit   below (matching request and response formats here and in controller's 'respond_to')
+    //         success: codeVenueMarkers
+    //     })
+    // });
     //Declare the variable that will store the geocode object
     var geocoder;
     var map;
@@ -87,6 +109,7 @@ $(window).load(function() {
     initialize('#map-container');
     //Add a second function to your javascript code, call it codeAddress.  It will not have any values passed to it.
     function codeAddress() {
+      debugger;
         var myPlace;
 
         //The first line of the function should use getElementById to get the address from the text box and place it into a variable we'll call sAddress.
@@ -170,6 +193,7 @@ $(window).load(function() {
         });
 
         //  }
+
         function makeMarkers() {
             var markers = []
                 //  ;
