@@ -5,6 +5,8 @@ FactoryGirl.define do
     email {Faker::Internet.email}
     username {Faker::Internet.user_name}
     password "password"
+    after(:create) do |user|
+      create_list(:venue, 3, host_id: user.id)
+    end
   end
-
 end

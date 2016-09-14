@@ -65,15 +65,10 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    ReservationCancellationNotifier.execute(@reservation)
     if @reservation.host.id == current_user.id
-      @reservation.destroy
-      CancellationMailer.cancellation_email(@reservation.host).deliver
-      CancellationMailer.cancellation_email(@reservation.renter).deliver
       redirect_to host_reservations_path, notice: "This reservation has been deleted!"
     elsif @reservation.renter_id == current_user.id
-      @reservation.destroy
-      CancellationMailer.cancellation_email(@reservation.host).deliver
-      CancellationMailer.cancellation_email(@reservation.renter).deliver
       redirect_to reservations_path, notice: "This reservation has been deleted!"
     end
   end
