@@ -46,6 +46,7 @@ group :development, :test do
   gem 'pry'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do

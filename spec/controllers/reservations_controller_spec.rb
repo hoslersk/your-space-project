@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe ReservationsController, :type => :controller do
 
-  let(:uneek) { User.create(username: "uneek", first_name: "Uneek", last_name: "Smith", email: "uneek.smith@gmail.com", password: "password") }
-  let(:usneek) { User.create(username: "usneek", first_name: "Usneek", last_name: "Jones", email: "usneek.jones@gmail.com", password: "password") }
-  let(:junkyard) { Venue.create(name: "Junkyard", host_id: uneek.id, address: "123 Street", description: "garbage") }
-  let(:j_listing) { Listing.create(venue_id: junkyard.id, available_start_date: "2026-01-01", available_end_date: "2026-02-01", price: 100.00) }
+  let!(:uneek) { User.create(username: "uneek", first_name: "Uneek", last_name: "Smith", email: "uneek.smith@gmail.com", password: "password") }
+  let!(:usneek) { User.create(username: "usneek", first_name: "Usneek", last_name: "Jones", email: "usneek.jones@gmail.com", password: "password") }
+  let!(:junkyard) { Venue.create(name: "Junkyard", host_id: uneek.id, address: "123 Street", city: "J-town", zip_code: "34215", description: "garbage") }
+
+  let!(:j_listing) { Listing.create(venue_id: junkyard.id, available_start_date: "2026-01-01", available_end_date: "2026-02-01", price: 100.00) }
   let(:j_res) { Reservation.create(listing_id: j_listing.id, renter_id: usneek.id, start_date: "2026-01-05", end_date: "2026-01-07", confirmed: false) }
 
   # before(:each) do
@@ -13,9 +14,19 @@ RSpec.describe ReservationsController, :type => :controller do
   # end
 
   describe "#destroy" do
+
+    before(:each) do
+      @res = j_res
+      allow(controller).to receive(:logged_in?).and_return(true)
+      allow(controller).to receive(:current_user).and_return(@res.host)
+    end
+
     it "cancels (destroys) a reservation" do
+
       expect do
-        delete :destroy, id: j_res
+        binding.pry
+        delete :destroy, :id => @res
+
       end.to change {Reservation.count}.from(1).to(0)
     end
   end
