@@ -50,14 +50,13 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     end
     venues_array = @venues.map do |venue|
       { id: venue.id,
-        host_id: venue.host_id,
         name: venue.name,
         address: venue.address,
-        description: venue.description,
         city: venue.city,
         zip_code: venue.zip_code,
-        image: venue.images[0],
-        listings: venue.listings }
+        image_url: venue.images[0].image.url(:small),
+        listings: venue.listings
+      }
     end
     respond_to do |format|
       format.json {render json: {venues: venues_array, searchInput: params[:zip_code]}}

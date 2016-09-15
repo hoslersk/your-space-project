@@ -15,8 +15,8 @@
         <%= form_for(res) do |f|%>
           <%= f.hidden_field :confirmed, :value => true %>
           <%= f.submit "Confirm Reservation", data: { confirm: "Confirm this reservation?" } %> <br>
-          <%= button_to "Cancel Reservation", reservation_path(res), method: :delete, data: { confirm: "Cancel this reservation?" } %> <br>
         <% end %>
+          <%= button_to "Cancel Reservation", reservation_path(res), method: :delete, data: { confirm: "Cancel this reservation?" } %> <br>
       <% end %>
   <% end %>
 

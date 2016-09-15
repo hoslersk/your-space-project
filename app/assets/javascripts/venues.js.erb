@@ -16,24 +16,6 @@ $( document ).ready(function() {
         " - $" + $( "#price-range" ).slider( "values", 1 ) );
     } );
 
-  $(document).ajaxSuccess(function(event, data, settings) {
-    $(function() {
-      venues = data.responseJSON.venues
-      venueResultsHtml = ""
-      debugger
-      for(var i = 0; i < venues.length; i++) {
-        venueResultsHtml += `<div id="venue-results">
-        <a href="/venues/${venues[i].id}"><img src="/system/images/images/000/000/004/small/${venues[i].image.image_file_name}"></a><br>
-        <strong><a href="/venues/${venues[i].id}">${venues[i].name}</a></strong><br>
-        Street: ${venues[i].address}<br>
-        City, Zip Code: ${venues[i].city}, ${venues[i].zip_code}<br>
-          Available Dates: <li>${venues[i].listings[0].available_start_date} - ${venues[i].listings[0].available_end_date}
-          <br>Price Per Day: $${venues[i].listings[0].price} </li><br>
-        </div>`
-      }
-      $('#search-results').html(venueResultsHtml)
-    })
-  })
 
 
 });
