@@ -33417,3 +33417,762 @@ Processing by VenuesController#index as JS
 Completed 200 OK in 17ms (Views: 4.5ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/" for ::1 at 2016-09-15 16:15:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#home as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (1045.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1799ms (Views: 1749.2ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:15:54 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (12.2ms)
+  Rendered venues/index.html.erb within layouts/application (15.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 286ms (Views: 224.9ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:17:20 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.8ms)
+  Rendered venues/index.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 653ms (Views: 636.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:17:51 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.2ms)
+  Rendered venues/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 576ms (Views: 561.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:18:23 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (7.7ms)
+  Rendered venues/index.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 610ms (Views: 589.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:18:48 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.5ms)
+  Rendered venues/index.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 597ms (Views: 582.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:21:34 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (11.7ms)
+  Rendered venues/index.html.erb within layouts/application (19.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 854ms (Views: 810.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-19&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:21:55 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-19", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (2.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-19' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 41ms (Views: 3.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:22:25 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.5ms)
+  Rendered venues/index.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 656ms (Views: 640.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-18&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:22:38 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-18", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-18' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 16ms (Views: 4.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:26:57 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (7.2ms)
+  Rendered venues/index.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 346ms (Views: 327.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-18&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:27:09 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-18", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-18' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 16ms (Views: 3.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=sf&start_date=2016-09-16&end_date=2016-09-18&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:27:28 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"sf", "start_date"=>"2016-09-16", "end_date"=>"2016-09-18", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-18' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 16ms (Views: 3.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=hong+kong&start_date=2016-09-16&end_date=2016-09-18&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:27:48 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"hong kong", "start_date"=>"2016-09-16", "end_date"=>"2016-09-18", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-18' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:28:05 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (7.8ms)
+  Rendered venues/index.html.erb within layouts/application (10.9ms)
+Started GET "/venues?utf8=%E2%9C%93&zip_code=hong+kong&start_date=2016-09-16&end_date=2016-09-18&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:28:05 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"hong kong", "start_date"=>"2016-09-16", "end_date"=>"2016-09-18", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (4.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-18' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (2.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (2.6ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (2.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 26ms (Views: 4.4ms | ActiveRecord: 13.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 397ms (Views: 379.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=hong+kong&start_date=2016-09-16&end_date=2016-09-20&price_min_input=0&price_max_input=0&commit=Search" for ::1 at 2016-09-15 16:28:14 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"hong kong", "start_date"=>"2016-09-16", "end_date"=>"2016-09-20", "price_min_input"=>"0", "price_max_input"=>"0", "commit"=>"Search"}
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-20' AND price >= '0' AND price <= '0')[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=hong+kong&start_date=2016-09-16&end_date=2016-09-20&price_min_input=22&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:28:19 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"hong kong", "start_date"=>"2016-09-16", "end_date"=>"2016-09-20", "price_min_input"=>"22", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-20' AND price >= '22' AND price <= '600')[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 13ms (Views: 2.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-15 16:34:13 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 981ms (Views: 960.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:34:16 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.4ms)
+  Rendered venues/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 287ms (Views: 267.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-19&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:34:28 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-19", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-19' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.9ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:35:09 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (7.3ms)
+  Rendered venues/index.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 629ms (Views: 612.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-19&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:35:22 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-19", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-19' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 15ms (Views: 3.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:36:35 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (8.7ms)
+  Rendered venues/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 645ms (Views: 627.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:36:58 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.8ms)
+  Rendered venues/index.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 701ms (Views: 686.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-19&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:37:11 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-19", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-19' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 19ms (Views: 3.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:38:27 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.8ms)
+  Rendered venues/index.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 353ms (Views: 337.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/venues?utf8=%E2%9C%93&zip_code=10016&start_date=2016-09-16&end_date=2016-09-19&price_min_input=0&price_max_input=600&commit=Search" for ::1 at 2016-09-15 16:38:40 -0400
+Processing by VenuesController#index as JS
+  Parameters: {"utf8"=>"✓", "zip_code"=>"10016", "start_date"=>"2016-09-16", "end_date"=>"2016-09-19", "price_min_input"=>"0", "price_max_input"=>"600", "commit"=>"Search"}
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues" INNER JOIN "listings" ON "listings"."venue_id" = "venues"."id" WHERE (available_start_date <= '2016-09-16' AND available_end_date >= '2016-09-19' AND price >= '0' AND price <= '600')[0m
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+Completed 200 OK in 19ms (Views: 4.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/host_reservations" for ::1 at 2016-09-15 16:42:14 -0400
+Processing by ReservationsController#host_reservations as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.html.erb within layouts/application
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from pending_host_reservations at /Users/veronicali/Development/code/your-space-project/app/models/user.rb:33)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from pending_host_reservations at /Users/veronicali/Development/code/your-space-project/app/models/user.rb:33)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.html.erb within layouts/application (59.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 405ms (Views: 390.4ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/host_reservations.json?start=2016-08-28&end=2016-10-09&_=1473972134952" for ::1 at 2016-09-15 16:42:15 -0400
+Processing by ReservationsController#host_reservations as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972134952"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 1]]
+  [1m[36mListing Load (0.6ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.json.jbuilder (38.6ms)
+Completed 200 OK in 54ms (Views: 43.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-15 16:42:32 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (15.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 284ms (Views: 277.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473972152959" for ::1 at 2016-09-15 16:42:33 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972152959"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (14.7ms)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/host_reservations" for ::1 at 2016-09-15 16:42:35 -0400
+Processing by ReservationsController#host_reservations as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.html.erb within layouts/application (14.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 285ms (Views: 278.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/host_reservations.json?start=2016-08-28&end=2016-10-09&_=1473972157161" for ::1 at 2016-09-15 16:42:37 -0400
+Processing by ReservationsController#host_reservations as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972157161"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.json.jbuilder
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 1]]
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.json.jbuilder (14.2ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-15 16:42:47 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (12.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 273ms (Views: 267.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473972168547" for ::1 at 2016-09-15 16:42:48 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972168547"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (11.1ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reservations.json?start=2016-09-25&end=2016-11-06&_=1473972168548" for ::1 at 2016-09-15 16:43:12 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-09-25", "end"=>"2016-11-06", "_"=>"1473972168548"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (7.8ms)
+Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473972168549" for ::1 at 2016-09-15 16:43:13 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972168549"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (6.6ms)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-15 16:43:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 265ms (Views: 260.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues/new" for ::1 at 2016-09-15 16:43:22 -0400
+Processing by VenuesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/new.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/_form.html.erb (38.5ms)
+  Rendered venues/new.html.erb within layouts/application (41.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 321ms (Views: 309.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_venues" for ::1 at 2016-09-15 16:43:26 -0400
+Processing by VenuesController#my_venues as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering venues/my_venues.html.erb within layouts/application
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."host_id" = $1[0m  [["host_id", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  Rendered venues/my_venues.html.erb within layouts/application (11.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 245.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/venues/4" for ::1 at 2016-09-15 16:43:33 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  Rendered listings/_venue_listings.html.erb (2.1ms)
+  Rendered venues/show.html.erb within layouts/application (14.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 282ms (Views: 275.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/venues/4.json?start=2016-08-28&end=2016-10-09&_=1473972214300" for ::1 at 2016-09-15 16:43:34 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473972214300", "id"=>"4"}
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering venues/show.json.jbuilder
+  [1m[36mListing Load (2.7ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mReservation Load (1.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 14]]
+  Rendered venues/show.json.jbuilder (17.1ms)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/venues/4/edit" for ::1 at 2016-09-15 16:44:15 -0400
+Processing by VenuesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering venues/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/_form.html.erb (7.2ms)
+  Rendered venues/edit.html.erb within layouts/application (8.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 270ms (Views: 263.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 16:44:20 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  Rendered venues/_venue_search_results.html.erb (6.2ms)
+  Rendered venues/index.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 275ms (Views: 258.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-09-15 16:44:25 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 273ms (Views: 269.5ms | ActiveRecord: 0.3ms)
+
+
