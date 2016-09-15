@@ -2,7 +2,7 @@ class VenuesController < ApplicationController
 before_action :authorize, except: [:show, :index]
 before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
-@@venues_for_maps = []
+@venues_for_maps = []
   def new
     @venue = Venue.new
     3.times do
@@ -48,13 +48,21 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     else
       @venues = Venue.all
     end
+    venues_array = @venues.map do |venue|
+      { id: venue.id,
+        name: venue.name,
+        address: venue.address,
+        city: venue.city,
+        zip_code: venue.zip_code,
+        image_url: venue.images[0].image.url(:small),
+        listings: venue.listings
+      }
+    end
     respond_to do |format|
-      format.js
+      format.json {render json: {venues: venues_array, searchInput: params[:zip_code]}}
       # render HTML if not a ajax request
       format.html
-
     end
-    @@venues_for_maps = @venues
   end
   # redirect_to root_path
 
@@ -82,12 +90,12 @@ before_action :set_venue, only: [:show, :edit, :update, :destroy]
     redirect_to venues_path
   end
 
-  def get_venues_for_map
-    @venues = Venue.all
-    respond_to do |format|
-      format.json {render json: {venues: @venues, searchInput: params[:searchInput]}}
-    end
-  end
+  # def get_venues_for_map
+  #   @venues = Venue.all
+  #   respond_to do |format|
+  #     format.json {render json: {venues: @venues}}
+  #   end
+  # end
 
   def my_venues
     @venues = current_user.host_venues

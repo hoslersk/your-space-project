@@ -8,4 +8,6 @@ class Image < ApplicationRecord
   has_attached_file :image, :default_url => "/images/missing.png", styles: { small: "300x300", medium: "475x475" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+
+
 end
