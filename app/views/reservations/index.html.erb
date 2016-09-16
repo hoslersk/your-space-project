@@ -8,10 +8,10 @@
   <% if @user.pending_renter_reservations.length > 0 %>
   <h3>Pending Renter Reservations</h3>
     <% @user.pending_renter_reservations.each do |res| %>
-      <strong>Venue: </strong><%= link_to res.listing.venue.name, reservation_path(res) %>
-      <strong>Host: <strong><%= "#{res.listing.venue.host.first_name} #{res.listing.venue.host.last_name}" %></strong>. <br>
-      <strong>Start Date: </strong><%= res.start_date %> <br>
-      <strong>End Date: </stong><%= res.end_date %> <br>
+      <strong>Venue: </strong><%= link_to res.listing.venue.name, reservation_path(res) %> <br>
+      <strong>Host: <strong><%= "#{res.listing.venue.host.first_name} #{res.listing.venue.host.last_name}" %></strong> <br>
+      <strong>Start Date: </strong><%= res.start_date.strftime("%B %e, %Y") %> <br>
+      <strong>End Date: </stong><%= res.end_date.strftime("%B %e, %Y") %> <br>
       <%= button_to "Cancel Reservation", reservation_path(res), method: :delete, data: { confirm: "Cancel this reservation?" } %> <br>
     <% end %>
   <% end %>
@@ -22,8 +22,8 @@
         <%= link_to res.listing.venue.name, reservation_path(res) %> <br>
         <strong>Reservaton ID: </strong><%= res.id %> <br>
         <strong>Host: </strong><%= "#{res.listing.venue.host.first_name} #{res.listing.venue.host.last_name}" %> <br>
-        <strong>Start Date: </strong><%= res.start_date %> <br>
-        <strong>End Date: </strong><%= res.end_date %> <br>
+        <strong>Start Date: </strong><%= res.start_date.strftime("%B %e, %Y") %> <br>
+        <strong>End Date: </strong><%= res.end_date.strftime("%B %e, %Y") %> <br>
         <%= button_to "Cancel Reservation", reservation_path(res), method: :delete, data: { confirm: "Cancel this reservation?" } %> <br>
       <% end %>
   <% end %>

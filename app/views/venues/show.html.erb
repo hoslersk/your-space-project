@@ -1,13 +1,13 @@
 <div id="venue-show">
 <h1><%= @venue.name %></h1>
 <div id="venue-info">
-  <% if current_user.id == @venue.host.id %>
-  <%= link_to "Edit Venue", edit_venue_path(@venue) %>
-  <%= link_to "Delete Venue", venue_path(@venue), method: :delete%>
+  <% if current_user != nil && current_user.id == @venue.host.id %>
+    <%= link_to "Edit Venue", edit_venue_path(@venue) %>
+    <%= link_to "Delete Venue", venue_path(@venue), method: :delete%>
   <% end %>
   <ul>
   <% @venue.images.each do |image| %>
-   <p><%= image_tag(image.image.url(:medium)) %></p>
+    <p><%= image_tag(image.image.url(:medium)) %></p>
   <% end %>
   <p><strong>Location: </strong><%= @venue.address + ", " + @venue.city + " " + @venue.zip_code %></p>
   <p><strong>Description: </strong><%=  @venue.description%></p>
@@ -19,54 +19,50 @@
 <div id="calendar_ven" align="left" data-ven-id=<%= @venue.id %>></div>
 <br>
 
-<% if @venue.host_id != current_user.id %>
+<% if current_user == nil || @venue.host_id != current_user.id %>
+  <% if @venue.listings == [] %>
+    <p>There are currently no listings for this venues.</p>
+  <% elsif @venue.listings.length > 0 %>
+    <h3> Make a reservation</h3>
+    <%= form_for Reservation.new do |f| %>
+      <p><%= f.label :start_date %>
+      <%= f.date_select :start_date %></p>
 
-<h3> Make a reservation</h3>
+      <%= f.hidden_field :venue_id, :value => @venue.id  %>
 
-<%= form_for Reservation.new do |f| %>
+      <p><%= f.label :end_date %>
+      <%= f.date_select :end_date %></p>
 
-<p><%= f.label :start_date %>
-<%= f.date_select :start_date %></p>
+      <p><%= f.submit %></p>
+    <% end %>
+  <% end %>
 
+<% elsif current_user != nil && current_user.id == @venue.host.id %>
+  <h3>Create a New Listing</h3>
+  <%= form_for(Listing.new) do |f| %>
 
-<%= f.hidden_field :venue_id, :value => @venue.id  %>
+    <%= f.hidden_field :venue_id, :value => @venue.id %>
 
-<p><%= f.label :end_date %>
-<%= f.date_select :end_date %></p>
+    <p><%= f.label :available_start_date %>
+    <%= date_field_tag 'listing[available_start_date]', nil, :required => true %>
 
-<p><%= f.submit %></p>
+    <%= f.label :available_end_date %>
+    <%= date_field_tag 'listing[available_end_date]', nil, :required => true %></p>
 
-<% end %>
+    <p><%= f.label :price_per_day %> $
+    <%= f.text_field :price, :required => true %></p>
 
-<% elsif current_user.id == @venue.host.id %>
-<h3>Create a New Listing</h3>
+    <%= f.submit %>
 
-<%= form_for(Listing.new) do |f| %>
+  <% end %>
+  <br>
 
-<%= f.hidden_field :venue_id, :value => @venue.id %>
+  <h3>Your Current Listings</h3>
+  <div id="venue-listings">
 
-<p><%= f.label :available_start_date %>
-<%= date_field_tag 'listing[available_start_date]', nil, :required => true %>
+    <%= render partial: 'listings/venue_listings', locals: { listings: @venue.listings } %>
 
-<%= f.label :available_end_date %>
-<%= date_field_tag 'listing[available_end_date]', nil, :required => true %></p>
-
-<p><%= f.label :price_per_day %> $
-<%= f.text_field :price, :required => true %></p>
-
-<%= f.submit %>
-
-<% end %>
-<br>
-
-<h3>Your Current Listings</h3>
-
-<div id="venue-listings">
-
-
-  <%= render partial: 'listings/venue_listings', locals: { listings: @venue.listings } %>
-
-</div>
+  </div>
 
 <% end %>
 
