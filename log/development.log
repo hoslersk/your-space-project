@@ -37216,3 +37216,1256 @@ Processing by ReservationsController#host_reservations as JSON
 Completed 200 OK in 29ms (Views: 21.4ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/reservations" for ::1 at 2016-09-15 23:18:33 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (14.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 291ms (Views: 283.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473995914721" for ::1 at 2016-09-15 23:18:35 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995914721"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (17.8ms)
+Completed 200 OK in 30ms (Views: 23.3ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/reservations/25" for ::1 at 2016-09-15 23:18:47 -0400
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y+/gC5ElcbnX0x+jIU3Nu8w3DYJ2IjH7vP4NkXaBLIcMw+Dv9UnLxcVFQrRBL5d+D9QKKmXsg/4TJ9lBaciCaA==", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (2.3ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.7ms)
+CancellationMailer#cancellation_email: processed outbound mail in 42.4ms
+Sent mail to mom@gmail.com (1464.5ms)
+Date: Thu, 15 Sep 2016 23:18:47 -0400
+From: flatiron.app.test@gmail.com
+To: mom@gmail.com
+Message-ID: <57db64979315e_f4143ffc075d3458946fd@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db6497918b4_f4143ffc075d345894543";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db6497918b4_f4143ffc075d345894543
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Mom,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db6497918b4_f4143ffc075d345894543
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Mom,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db6497918b4_f4143ffc075d345894543--
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (1.2ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.1ms)
+CancellationMailer#cancellation_email: processed outbound mail in 25.4ms
+Sent mail to vronnieli@gmail.com (1003.2ms)
+Date: Thu, 15 Sep 2016 23:18:49 -0400
+From: flatiron.app.test@gmail.com
+To: vronnieli@gmail.com
+Message-ID: <57db649916ff3_f4143ffc075d345894852@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db649915be9_f4143ffc075d345894764";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db649915be9_f4143ffc075d345894764
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Veronica,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db649915be9_f4143ffc075d345894764
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Veronica,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db649915be9_f4143ffc075d345894764--
+
+Redirected to http://localhost:3000/reservations
+Completed 302 Found in 2590ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-15 23:18:50 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (13.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 267ms (Views: 260.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473995930589" for ::1 at 2016-09-15 23:18:50 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995930589"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered reservations/index.json.jbuilder (11.1ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/reservations/27" for ::1 at 2016-09-15 23:18:54 -0400
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M96WEcyM1bN9omsAQGPvQZ9lJBdmEE0vZ7GLJWWzoOJc8pb1qOBvz280NhcgAbWEXIYjv3Xe/yrIaF/1evoODQ==", "id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (1.5ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.5ms)
+CancellationMailer#cancellation_email: processed outbound mail in 26.4ms
+Sent mail to mom@gmail.com (1057.6ms)
+Date: Thu, 15 Sep 2016 23:18:54 -0400
+From: flatiron.app.test@gmail.com
+To: mom@gmail.com
+Message-ID: <57db649e9e396_f4143ffc075d35fc950b2@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db649e9d0cc_f4143ffc075d35fc949e7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db649e9d0cc_f4143ffc075d35fc949e7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Mom,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db649e9d0cc_f4143ffc075d35fc949e7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Mom,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db649e9d0cc_f4143ffc075d35fc949e7--
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (1.0ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.0ms)
+CancellationMailer#cancellation_email: processed outbound mail in 19.8ms
+Sent mail to vronnieli@gmail.com (930.5ms)
+Date: Thu, 15 Sep 2016 23:18:55 -0400
+From: flatiron.app.test@gmail.com
+To: vronnieli@gmail.com
+Message-ID: <57db649fb185d_f4143ffc075d35fc952f8@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db649fb0c24_f4143ffc075d35fc951a7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db649fb0c24_f4143ffc075d35fc951a7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Veronica,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db649fb0c24_f4143ffc075d35fc951a7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Veronica,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db649fb0c24_f4143ffc075d35fc951a7--
+
+Redirected to http://localhost:3000/reservations
+Completed 302 Found in 2052ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-15 23:18:56 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (7.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 221ms (Views: 216.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473995937139" for ::1 at 2016-09-15 23:18:57 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995937139"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  Rendered reservations/index.json.jbuilder (5.0ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations" for ::1 at 2016-09-15 23:19:07 -0400
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (1.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1 AND "reservations"."confirmed" = $2[0m  [["renter_id", 1], ["confirmed", true]]
+  Rendered reservations/index.html.erb within layouts/application (10.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 243.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reservations.json?start=2016-08-28&end=2016-10-09&_=1473995948056" for ::1 at 2016-09-15 23:19:08 -0400
+Processing by ReservationsController#index as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995948056"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/index.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."renter_id" = $1[0m  [["renter_id", 1]]
+  Rendered reservations/index.json.jbuilder (4.5ms)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/host_reservations" for ::1 at 2016-09-15 23:19:09 -0400
+Processing by ReservationsController#host_reservations as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.html.erb within layouts/application (23.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 253.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/host_reservations.json?start=2016-08-28&end=2016-10-09&_=1473995950098" for ::1 at 2016-09-15 23:19:10 -0400
+Processing by ReservationsController#host_reservations as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995950098"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered reservations/host_reservations.json.jbuilder (14.0ms)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/reservations/26" for ::1 at 2016-09-15 23:19:22 -0400
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2bvayghMDBOjXqYnlchSfds708/V3lrr6J5rmLX8yre2l9oubCC2b7HI+zD1qgi4GNjUZ8YQ6O5HR79IqrVkWA==", "id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "venues" ON "users"."id" = "venues"."host_id" INNER JOIN "listings" ON "venues"."id" = "listings"."venue_id" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 26]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (1.8ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.4ms)
+CancellationMailer#cancellation_email: processed outbound mail in 23.1ms
+Sent mail to vronnieli@gmail.com (1067.3ms)
+Date: Thu, 15 Sep 2016 23:19:22 -0400
+From: flatiron.app.test@gmail.com
+To: vronnieli@gmail.com
+Message-ID: <57db64baaa727_f4143ffc075d36ec95434@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db64baa9b0c_f4143ffc075d36ec95344";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db64baa9b0c_f4143ffc075d36ec95344
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Veronica,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db64baa9b0c_f4143ffc075d36ec95344
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Veronica,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db64baa9b0c_f4143ffc075d36ec95344--
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cancellation_mailer/cancellation_email.html.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.html.erb within layouts/mailer (1.0ms)
+  Rendering cancellation_mailer/cancellation_email.text.erb within layouts/mailer
+  Rendered cancellation_mailer/cancellation_email.text.erb within layouts/mailer (0.0ms)
+CancellationMailer#cancellation_email: processed outbound mail in 18.0ms
+Sent mail to mom@gmail.com (797.9ms)
+Date: Thu, 15 Sep 2016 23:19:23 -0400
+From: flatiron.app.test@gmail.com
+To: mom@gmail.com
+Message-ID: <57db64bbbfb9d_f4143ffc075d36ec95669@Veronicas-MBP.home.mail>
+Subject: YourSpace Reservation Has Been Cancelled! :(
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57db64bbbf11f_f4143ffc075d36ec95527";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57db64bbbf11f_f4143ffc075d36ec95527
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello Mom,
+
+Your reservation has just been cancelled! :(
+
+Please sign in to your account to view details.
+
+Sincerely,
+
+YourSpace Team
+
+
+----==_mimepart_57db64bbbf11f_f4143ffc075d36ec95527
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+     <tr>
+       <td align="center" bgcolor="E4C7A8" style="padding: 40px 0 30px 0;">
+         <img alt="yourspace logo" src="/assets/yourspace-white-d558f72e6534e415e99e9e82bbd3bfb4e8795bc3dcf9c13bcdc90c1cfb60347a.png" />
+       </td>
+     </tr>
+     <tr>
+       <td bgcolor="#F0FFFF" style="padding: 40px 30px 40px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <strong>Hello Mom,</strong><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 16px;">
+            <p>
+              Your reservation has just been cancelled! :(
+            </p>
+            <p>
+              Please sign in to your account to view details.
+            </p><br></br>
+          </td>
+         </tr>
+         <tr>
+          <td style="color: #153643; font-family: Arial, sans-serif; font-size: 20px;">
+            <strong>Sincerely,</strong><br>
+            <strong>YourSpace Team</strong>
+          </td>
+        </table>
+       </td>
+     </tr>
+     <tr>
+      <td bgcolor="#E4C7A8" style="padding: 30px 30px 30px 30px; color: #FFF; font-family: Arial, sans-serif; font-size: 16px;">
+        YourSpace, 2016 <br></br>
+        <u>Unsubscribe</u>
+      </td>
+     </tr>
+    </table>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_57db64bbbf11f_f4143ffc075d36ec95527--
+
+Redirected to http://localhost:3000/host_reservations
+Completed 302 Found in 1920ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/host_reservations" for ::1 at 2016-09-15 23:19:24 -0400
+Processing by ReservationsController#host_reservations as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", false]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1 AND "reservations"."confirmed" = $2[0m  [["host_id", 1], ["confirmed", true]]
+  Rendered reservations/host_reservations.html.erb within layouts/application (10.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 233ms (Views: 228.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/host_reservations.json?start=2016-08-28&end=2016-10-09&_=1473995965101" for ::1 at 2016-09-15 23:19:25 -0400
+Processing by ReservationsController#host_reservations as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1473995965101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/host_reservations.json.jbuilder
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" INNER JOIN "listings" ON "reservations"."listing_id" = "listings"."id" INNER JOIN "venues" ON "listings"."venue_id" = "venues"."id" WHERE "venues"."host_id" = $1[0m  [["host_id", 1]]
+  Rendered reservations/host_reservations.json.jbuilder (7.8ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-15 23:19:44 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendered venues/_venue_search_results.html.erb (7.3ms)
+  Rendered venues/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 232.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-16 09:01:49 -0400
+Processing by SessionsController#home as HTML
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (44.9ms)
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2176ms (Views: 2116.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-17 16:30:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#home as HTML
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from home at /Users/veronicali/Development/code/your-space-project/app/controllers/sessions_controller.rb:4)
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (492.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1058ms (Views: 984.8ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-17 16:30:20 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (2.9ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.5ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.8ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendered venues/_venue_search_results.html.erb (23.7ms)
+  Rendered venues/index.html.erb within layouts/application (26.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 357ms (Views: 273.0ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/venues/2" for ::1 at 2016-09-17 16:30:25 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.4ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  Rendered listings/_venue_listings.html.erb (5.3ms)
+  Rendered venues/show.html.erb within layouts/application (61.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 346ms (Views: 339.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/venues/2.json?start=2016-08-28&end=2016-10-09&_=1474144225925" for ::1 at 2016-09-17 16:30:26 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1474144225925", "id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering venues/show.json.jbuilder
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_venues_show_json_jbuilder__327593160940870612_70123009347660 at /Users/veronicali/Development/code/your-space-project/app/views/venues/show.json.jbuilder:16)
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from block in _app_views_venues_show_json_jbuilder__327593160940870612_70123009347660 at /Users/veronicali/Development/code/your-space-project/app/views/venues/show.json.jbuilder:16)
+  [1m[36mReservation Load (2.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 19]]
+  Rendered venues/show.json.jbuilder (29.5ms)
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/venues/2/edit" for ::1 at 2016-09-17 16:30:29 -0400
+Processing by VenuesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering venues/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/_form.html.erb (11.4ms)
+  Rendered venues/edit.html.erb within layouts/application (13.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 291ms (Views: 285.7ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/venues/2" for ::1 at 2016-09-17 16:30:58 -0400
+Processing by VenuesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yRA8OS7YtB2Qa+TQcIA1DvsZQb2lQESXlg31Dts6o++mPDzdSrQOYYL9uccQ4m/LOPpGFbaO9pI51CHexHMNAA==", "venue"=>{"name"=>"Space 530", "address"=>"530 7th Avenue", "city"=>"New York", "zip_code"=>"10018", "description"=>"Space 530 is New York's leading Luxury Co-working and Showroom Space. Located in the heart of the garment district. Chic space, flexible terms.", "images_attributes"=>{"0"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d935b4398 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-1asix0k.jpg>, @original_filename="Space530-photo1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][0][image]\"; filename=\"Space530-photo1.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Conference area", "id"=>"4"}, "1"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d935b41b8 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-1xepf17.jpg>, @original_filename="space530-photo2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][1][image]\"; filename=\"space530-photo2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Conference area (bird's eye)", "id"=>"5"}, "2"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d9358ff98 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-1sexnjd.jpg>, @original_filename="space530-photo3.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][2][image]\"; filename=\"space530-photo3.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Elevator area", "id"=>"6"}}, "host_id"=>"1"}, "commit"=>"Update Venue", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1 AND "images"."id" IN (4, 5, 6)[0m  [["venue_id", 2]]
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-1hlwtn6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/07f110e6b927ef0bf1b6d4994f5affcc20160917-71330-lerm80'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-x17iqu.jpg[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/07f110e6b927ef0bf1b6d4994f5affcc20160917-71330-1brdb3n'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-avo7q3.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/5d0019f43425274ea3cdc39a498c8cdd20160917-71330-4ye9ah'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-1or84s7.jpg[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/5d0019f43425274ea3cdc39a498c8cdd20160917-71330-1auauu5'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-q75dtj.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/61346bb0bb53f917395af6b61069df8720160917-71330-1uyca35'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ujwxhi.jpg[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/61346bb0bb53f917395af6b61069df8720160917-71330-1th1imi'
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/4a6723cf757c302aec3b191036764bac20160917-71330-1lmfkno.jpg'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/b2e3296ef87a4dc108b86b8c358217b020160917-71330-g3go7d.jpg'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/560848b1d7a810649c68a80690bf6ad820160917-71330-ii2x3a.jpg'
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:30:59 UTC], ["updated_at", 2016-09-17 20:31:00 UTC], ["image_file_name", "Space530-photo1.jpg"], ["id", 4]]
+[paperclip] saving /images/images/000/000/004/original/Space530-photo1.jpg
+[paperclip] saving /images/images/000/000/004/small/Space530-photo1.jpg
+[paperclip] saving /images/images/000/000/004/medium/Space530-photo1.jpg
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:30:59 UTC], ["updated_at", 2016-09-17 20:31:01 UTC], ["image_file_name", "space530-photo2.jpg"], ["id", 5]]
+[paperclip] saving /images/images/000/000/005/original/space530-photo2.jpg
+[paperclip] saving /images/images/000/000/005/small/space530-photo2.jpg
+[paperclip] saving /images/images/000/000/005/medium/space530-photo2.jpg
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:31:00 UTC], ["updated_at", 2016-09-17 20:31:04 UTC], ["image_file_name", "space530-photo3.jpg"], ["id", 6]]
+[paperclip] saving /images/images/000/000/006/original/space530-photo3.jpg
+[paperclip] saving /images/images/000/000/006/small/space530-photo3.jpg
+[paperclip] saving /images/images/000/000/006/medium/space530-photo3.jpg
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/venues/2
+Completed 302 Found in 7546ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/venues/2" for ::1 at 2016-09-17 16:31:05 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  Rendered listings/_venue_listings.html.erb (1.9ms)
+  Rendered venues/show.html.erb within layouts/application (15.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 272.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/venues/2.json?start=2016-08-28&end=2016-10-09&_=1474144266232" for ::1 at 2016-09-17 16:31:06 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1474144266232", "id"=>"2"}
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering venues/show.json.jbuilder
+  [1m[36mListing Load (1.1ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 19]]
+  Rendered venues/show.json.jbuilder (6.4ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/venues" for ::1 at 2016-09-17 16:31:23 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendering venues/index.html.erb within layouts/application
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 4]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 5]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 27]]
+  Rendered venues/_venue_search_results.html.erb (8.5ms)
+  Rendered venues/index.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 363ms (Views: 344.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/venues/3" for ::1 at 2016-09-17 16:31:31 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  Rendered listings/_venue_listings.html.erb (2.3ms)
+  Rendered venues/show.html.erb within layouts/application (15.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 299ms (Views: 295.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/venues/3.json?start=2016-08-28&end=2016-10-09&_=1474144291608" for ::1 at 2016-09-17 16:31:31 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1474144291608", "id"=>"3"}
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering venues/show.json.jbuilder
+  [1m[36mListing Load (1.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mReservation Load (1.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 12]]
+  Rendered venues/show.json.jbuilder (10.1ms)
+Completed 200 OK in 24ms (Views: 16.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/venues/3/edit" for ::1 at 2016-09-17 16:31:34 -0400
+Processing by VenuesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering venues/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered venues/_form.html.erb (9.8ms)
+  Rendered venues/edit.html.erb within layouts/application (12.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 291ms (Views: 287.2ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/venues/3" for ::1 at 2016-09-17 16:31:54 -0400
+Processing by VenuesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EEwPbagqVt9Nf1hvmAaTCoYwUIBt4JJXij68K0JO3cJ/YA+JzEbso1/pBXj4ZMnPRdNXKH4uIFIl52j7XQdzLQ==", "venue"=>{"name"=>"Midtown Loft & Terrace", "address"=>"267 5th Avenue", "city"=>"New York", "zip_code"=>"10016", "description"=>"Midtown Terrace (3400 square ft), our largely open-air Terrace, can accommodate up to 200 people. It is the perfect party venue for use in any season.", "images_attributes"=>{"0"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d92382f80 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-120a0d3.JPG>, @original_filename="midtownterrace-photo1.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][0][image]\"; filename=\"midtownterrace-photo1.JPG\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Wedding", "id"=>"7"}, "1"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d92382d50 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-dm0i3z.jpg>, @original_filename="midtownterrace-photo2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][1][image]\"; filename=\"midtownterrace-photo2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Cocktail event", "id"=>"8"}, "2"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f8d92382b48 @tempfile=#<Tempfile:/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/RackMultipart20160917-71330-6gr7h9.jpg>, @original_filename="midtownterrace-photo3.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"venue[images_attributes][2][image]\"; filename=\"midtownterrace-photo3.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Open space", "id"=>"9"}}, "host_id"=>"1"}, "commit"=>"Update Venue", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1 AND "images"."id" IN (7, 8, 9)[0m  [["venue_id", 3]]
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-11bvnw8.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/346accbb878aa0ca7afdba973b25832d20160917-71330-10dgbwm'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-a5k0dq.JPG[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/346accbb878aa0ca7afdba973b25832d20160917-71330-sir1df'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-hg2kg.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/21a64eb094199b95f94ae530737399d620160917-71330-1rbrhyg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-16hq0cs.jpg[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/21a64eb094199b95f94ae530737399d620160917-71330-s29odt'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-gzzp1e.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]' -auto-orient -resize "300x300" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/8974239387b8203c22d7e4960d2e547720160917-71330-1165qql'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]'
+Command :: convert '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-kpq05p.jpg[0]' -auto-orient -resize "475x475" '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/8974239387b8203c22d7e4960d2e547720160917-71330-1b16xmu'
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/3274777d2f43fec91c348d5b5277b96520160917-71330-czxzf3.JPG'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/a78c470695207b5f960aa7640ffd285a20160917-71330-1ly6ssy.jpg'
+Command :: file -b --mime '/var/folders/sj/q0qjkp7j013gjnvcz_dq05g40000gn/T/31011f32387e58c0545692f033dbe12720160917-71330-1byw33f.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:31:55 UTC], ["updated_at", 2016-09-17 20:31:57 UTC], ["image_file_name", "midtownterrace-photo1.JPG"], ["id", 7]]
+[paperclip] saving /images/images/000/000/007/original/midtownterrace-photo1.JPG
+[paperclip] saving /images/images/000/000/007/small/midtownterrace-photo1.JPG
+[paperclip] saving /images/images/000/000/007/medium/midtownterrace-photo1.JPG
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:31:56 UTC], ["updated_at", 2016-09-17 20:31:58 UTC], ["image_file_name", "midtownterrace-photo2.jpg"], ["id", 8]]
+[paperclip] saving /images/images/000/000/008/original/midtownterrace-photo2.jpg
+[paperclip] saving /images/images/000/000/008/small/midtownterrace-photo2.jpg
+[paperclip] saving /images/images/000/000/008/medium/midtownterrace-photo2.jpg
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "images" SET "image_updated_at" = $1, "updated_at" = $2, "image_file_name" = $3 WHERE "images"."id" = $4[0m  [["image_updated_at", 2016-09-17 20:31:56 UTC], ["updated_at", 2016-09-17 20:32:00 UTC], ["image_file_name", "midtownterrace-photo3.jpg"], ["id", 9]]
+[paperclip] saving /images/images/000/000/009/original/midtownterrace-photo3.jpg
+[paperclip] saving /images/images/000/000/009/small/midtownterrace-photo3.jpg
+[paperclip] saving /images/images/000/000/009/medium/midtownterrace-photo3.jpg
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/venues/3
+Completed 302 Found in 8799ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/venues/3" for ::1 at 2016-09-17 16:32:03 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering venues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mListing Load (0.2ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  Rendered listings/_venue_listings.html.erb (1.5ms)
+  Rendered venues/show.html.erb within layouts/application (14.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 327ms (Views: 323.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues/3.json?start=2016-08-28&end=2016-10-09&_=1474144323792" for ::1 at 2016-09-17 16:32:03 -0400
+Processing by VenuesController#show as JSON
+  Parameters: {"start"=>"2016-08-28", "end"=>"2016-10-09", "_"=>"1474144323792", "id"=>"3"}
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering venues/show.json.jbuilder
+  [1m[36mListing Load (0.3ms)[0m  [1m[34mSELECT "listings".* FROM "listings" WHERE "listings"."venue_id" = $1[0m  [["venue_id", 3]]
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 12]]
+  Rendered venues/show.json.jbuilder (6.8ms)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 1.0ms)
+
+

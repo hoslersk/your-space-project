@@ -2,7 +2,7 @@
   <div id="calendar_res_r"></div>
 
   <% if @user.confirmed_renter_reservations.count == 0 && @user.pending_renter_reservations.count == 0 %>
-    <h3>You have no renter reservations! <%= link_to "See Available Venues", venues_path %></h3>
+    <h3>You have no places booked! <%= link_to "See Available Venues", venues_path %></h3>
   <% end %>
 
   <% if @user.pending_renter_reservations.length > 0 %>
