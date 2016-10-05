@@ -2,9 +2,9 @@
 <% venues.each do |venue| %>
   <div id="venue-results">
   <%= link_to image_tag(venue.images.first.image.url(:small)), venue_path(venue) %><br>
-  <strong><%= link_to venue.name, venue_path(venue) %></strong><br>
+  <strong><%= link_to venue.name, venue_path(venue), class: "venue-name" %></strong><br>
   Street: <%= venue.address %><br>
-  City, Zip Code: <%= venue.city %>, <%= venue.zip_code %><br>
+  City, Zip Code: <%= venue.city %>,<div class="zip-code"><%= venue.zip_code %></div><br>
   <% venue.listings.each do |listing| %>
     Available Dates: <li><%= listing.available_start_date.strftime("%B %e, %Y") + " - " + listing.available_end_date.strftime("%B %e, %Y") %>
     <br>Price Per Day: $<%= listing.price.to_s %></li><br>
