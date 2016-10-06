@@ -17,7 +17,6 @@ RSpec.describe ReservationsController, :type => :controller do
 
     before(:each) do
       @res = j_res
-      binding.pry
       allow(controller).to receive(:logged_in?).and_return(true)
       allow(controller).to receive(:current_user).and_return(@res.host)
     end
@@ -26,6 +25,23 @@ RSpec.describe ReservationsController, :type => :controller do
 
       expect do
         delete :destroy, :id => @res
+
+      end.to change {Reservation.count}.from(1).to(0)
+    end
+
+  end
+
+  describe "#create" do
+
+    before(:each) do
+      allow(controller).to receive(:logged_in?).and_return(true)
+      allow(controller).to receive(:current_user).and_return(@res.host)
+    end
+
+    it "creates a reservation" do
+
+      expect do
+        post :create, :id => @res
 
       end.to change {Reservation.count}.from(1).to(0)
     end

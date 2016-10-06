@@ -26,16 +26,16 @@ class UsersController < ApplicationController
 
     def destroy
       @user.renter_reservations.each do |res|
-        res.delete
+        res.destroy
       end
       @user.host_reservations.each do |res|
-        res.delete
+        res.destroy
       end
       @user.host_venues.each do |ven|
-        ven.delete
+        ven.destroy
       end
       @user.host_listings.each do |list|
-        list.delete
+        list.destroy
       end
       @user.destroy
       redirect_to users_path
